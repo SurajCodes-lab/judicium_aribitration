@@ -8,22 +8,23 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-18 md:pt-20 lg:pt-22">
-        {/* Background Image - starts below header */}
-        <div className="absolute left-0 right-0 bottom-0 top-16 sm:top-18 md:top-20 lg:top-22">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image - full screen */}
+        <div className="absolute inset-0">
           <Image
             src="/hero-bg.jpg"
             alt="Judicium Arbitration Background"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
-            quality={100}
+            quality={90}
+            sizes="100vw"
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
-        <div className="relative z-10 w-full max-w-[90vw] xl:max-w-[85vw] 2xl:max-w-[80vw] mx-auto px-4 text-center">
+        <div className="relative z-10 w-full max-w-[90vw] xl:max-w-[85vw] 2xl:max-w-[80vw] mx-auto px-4 pt-20 sm:pt-24 md:pt-28 text-center">
           {/* Main Heading */}
           <div className="mb-6 sm:mb-8 md:mb-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold mb-2 sm:mb-3 md:mb-4 text-gold-primary tracking-tight" style={{ textShadow: '0 0 40px rgba(212, 175, 55, 0.5), 0 0 80px rgba(212, 175, 55, 0.3)' }}>
