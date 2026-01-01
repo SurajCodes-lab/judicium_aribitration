@@ -214,7 +214,7 @@ export default function PracticeAreasPage() {
         const isDark = categoryIdx % 2 === 1;
 
         return (
-          <Section key={categoryName} dark={isDark}>
+          <Section key={categoryName} variant={isDark ? "dark" : "default"}>
             <div className="max-w-7xl mx-auto">
               {/* Category Header */}
               <div className="text-center mb-10 sm:mb-12 md:mb-16">

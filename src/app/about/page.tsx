@@ -180,7 +180,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Mission, Vision & Values */}
-      <Section dark>
+      <Section variant="dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
@@ -388,7 +388,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Our Presence */}
-      <Section dark>
+      <Section variant="dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">

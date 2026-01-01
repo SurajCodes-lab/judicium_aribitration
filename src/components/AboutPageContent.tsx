@@ -137,7 +137,7 @@ export default function AboutPageContent() {
       </Section>
 
       {/* Mission, Vision & Values */}
-      <Section dark>
+      <Section variant="dark">
         <PremiumBackground />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -334,7 +334,7 @@ export default function AboutPageContent() {
       </Section>
 
       {/* Our Presence */}
-      <Section dark>
+      <Section variant="dark">
         <PremiumBackground />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -478,7 +478,7 @@ export default function AboutPageContent() {
       </Section>
 
       {/* CTA Section */}
-      <Section dark>
+      <Section variant="dark">
         <PremiumBackground showCornerFrames />
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="relative bg-white/[0.04] backdrop-blur-xl p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/30 overflow-hidden text-center shadow-2xl shadow-gold-primary/10">

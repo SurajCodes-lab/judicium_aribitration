@@ -217,7 +217,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
       </Section>
 
       {/* Why Choose Us Section */}
-      <Section dark>
+      <Section variant="dark">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 sm:mb-12">
             <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
@@ -299,7 +299,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
 
       {/* FAQs Section (if available) */}
       {practiceArea.content.faqs && practiceArea.content.faqs.length > 0 && (
-        <Section dark>
+        <Section variant="dark">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10 sm:mb-12">
               <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
