@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
@@ -24,28 +25,37 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-bg-dark via-bg-alt-dark to-bg-dark py-16 sm:py-20 md:py-24 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative bg-[#0D1117] py-16 sm:py-20 lg:py-24 overflow-hidden">
+        {/* Premium gradient overlays */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_80%,rgba(229,179,42,0.10),transparent_50%)]" />
+        </div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.04]">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage:
-                'radial-gradient(circle at 20% 50%, #D4AF37 0%, transparent 50%), radial-gradient(circle at 80% 80%, #C9A040 0%, transparent 50%)',
+              backgroundImage: `radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)`,
+              backgroundSize: '32px 32px',
             }}
           ></div>
         </div>
 
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                'repeating-linear-gradient(0deg, #D4AF37 0px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #D4AF37 0px, transparent 1px, transparent 40px)',
-            }}
-          ></div>
+        {/* Floating Icons */}
+        <div className="absolute left-[5%] top-[20%] opacity-[0.12]">
+          <LawIcons.Mail className="w-20 h-20 text-gold-primary" />
         </div>
+        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
+          <LawIcons.Handshake className="w-16 h-16 text-gold-primary" />
+        </div>
+
+        {/* Corner frames */}
+        <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-gold-primary/30" />
+        <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-gold-primary/30" />
+        <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-gold-primary/30" />
+        <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-gold-primary/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           {/* Breadcrumb */}
@@ -56,14 +66,15 @@ export default function ContactPage() {
                   Home
                 </Link>
               </li>
-              <li>/</li>
-              <li className="text-gold-primary">Contact Us</li>
+              <li className="text-gold-primary/50">/</li>
+              <li className="text-gold-primary font-medium">Contact Us</li>
             </ol>
           </nav>
 
           {/* Main Heading */}
           <div className="mb-8">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-6">
+              <LawIcons.Handshake className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Get In Touch
               </span>
@@ -71,7 +82,7 @@ export default function ContactPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gold-primary tracking-tight">
               Contact Us
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Ready to resolve your dispute? Let our experienced team guide you with
               professional legal expertise
             </p>
@@ -81,45 +92,39 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
             <a
               href="mailto:Judiciumarbitration@gmail.com"
-              className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
+              className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gold-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gold-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                  </svg>
+                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <LawIcons.Mail className="w-7 h-7 text-black" />
                 </div>
-                <p className="text-sm text-foreground/60 mb-2">Email Us</p>
-                <p className="text-gold-secondary font-semibold text-sm break-all">Judiciumarbitration@gmail.com</p>
+                <p className="text-sm text-white/60 mb-2">Email Us</p>
+                <p className="text-gold-primary font-semibold text-sm break-all">Judiciumarbitration@gmail.com</p>
               </div>
             </a>
 
             <a
               href="tel:+91-XXX-XXX-XXXX"
-              className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
+              className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
-              <div className="absolute inset-0 bg-gold-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gold-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-7 h-7 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                  </svg>
+                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-secondary to-gold-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
+                  <LawIcons.Handshake className="w-7 h-7 text-black" />
                 </div>
-                <p className="text-sm text-foreground/60 mb-2">Call Us</p>
-                <p className="text-gold-secondary font-semibold">+91-XXX-XXX-XXXX</p>
+                <p className="text-sm text-white/60 mb-2">Call Us</p>
+                <p className="text-gold-primary font-semibold">+91-XXX-XXX-XXXX</p>
               </div>
             </a>
 
-            <div className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-2xl border border-gold-primary/20">
+            <div className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20">
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gold-primary/10 rounded-full flex items-center justify-center">
-                  <svg className="w-7 h-7 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
+                  <LawIcons.Clock className="w-7 h-7 text-black" />
                 </div>
-                <p className="text-sm text-foreground/60 mb-2">Business Hours</p>
-                <p className="text-gold-secondary font-semibold text-sm">Mon-Fri: 9 AM - 6 PM</p>
+                <p className="text-sm text-white/60 mb-2">Business Hours</p>
+                <p className="text-gold-primary font-semibold text-sm">Mon-Fri: 9 AM - 6 PM</p>
               </div>
             </div>
           </div>
@@ -262,48 +267,48 @@ export default function ContactPage() {
                     city: "New Delhi",
                     badge: "Headquarters",
                     address: "Supreme Court Area, New Delhi, India",
-                    icon: "🏛️"
+                    Icon: LawIcons.Landmark
                   },
                   {
                     city: "Gurgaon",
                     badge: "Corporate Hub",
                     address: "DLF Cyber City, Gurgaon, Haryana",
-                    icon: "🏢"
+                    Icon: LawIcons.Building
                   },
                   {
                     city: "Noida",
                     badge: "Commercial Center",
                     address: "Sector 62, Noida, Uttar Pradesh",
-                    icon: "🏗️"
+                    Icon: LawIcons.City
                   },
                   {
                     city: "Chandigarh",
                     badge: "Regional Office",
                     address: "Sector 17, Chandigarh, Punjab",
-                    icon: "🏛️"
+                    Icon: LawIcons.Landmark
                   }
                 ].map((office, idx) => (
                   <div
                     key={idx}
-                    className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-2xl border border-gold-primary/10 hover:border-gold-primary/30 transition-all duration-300 overflow-hidden"
+                    className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
                   >
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gold-primary/5 rounded-full blur-2xl group-hover:w-32 group-hover:h-32 transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-3xl">{office.icon}</span>
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                            <office.Icon className="w-6 h-6 text-black" />
+                          </div>
                           <div>
-                            <h3 className="text-xl font-bold text-gold-secondary">{office.city}</h3>
-                            <span className="inline-block px-2 py-1 bg-gold-primary/10 rounded-full text-xs text-gold-primary mt-1">
+                            <h3 className="text-xl font-bold text-white group-hover:text-gold-primary transition-colors">{office.city}</h3>
+                            <span className="inline-block px-2 py-1 bg-gold-primary/20 rounded-full text-xs text-gold-primary mt-1 border border-gold-primary/30">
                               {office.badge}
                             </span>
                           </div>
                         </div>
                       </div>
-                      <p className="text-foreground/70 text-sm flex items-start gap-2">
-                        <svg className="w-5 h-5 text-gold-primary shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
-                        </svg>
+                      <p className="text-white/70 text-sm flex items-start gap-2 ml-16">
+                        <LawIcons.Location className="w-4 h-4 text-gold-primary shrink-0 mt-0.5" />
                         {office.address}
                       </p>
                     </div>
@@ -312,41 +317,44 @@ export default function ContactPage() {
               </div>
 
               {/* Additional Contact Info */}
-              <div className="bg-linear-to-br from-gold-primary/10 to-transparent p-8 rounded-2xl border border-gold-primary/30">
-                <h3 className="text-xl font-bold text-gold-secondary mb-6">Other Ways to Reach Us</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-gold-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                    <div>
-                      <p className="text-sm text-foreground/60 mb-1">Email</p>
-                      <a href="mailto:Judiciumarbitration@gmail.com" className="text-gold-primary hover:text-gold-secondary transition-colors break-all">
-                        Judiciumarbitration@gmail.com
-                      </a>
+              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/30 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-white mb-6">Other Ways to Reach Us</h3>
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                        <LawIcons.Mail className="w-5 h-5 text-gold-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/50 mb-1">Email</p>
+                        <a href="mailto:Judiciumarbitration@gmail.com" className="text-gold-primary hover:text-gold-secondary transition-colors break-all">
+                          Judiciumarbitration@gmail.com
+                        </a>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-gold-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                    <div>
-                      <p className="text-sm text-foreground/60 mb-1">Phone</p>
-                      <a href="tel:+91-XXX-XXX-XXXX" className="text-gold-primary hover:text-gold-secondary transition-colors">
-                        +91-XXX-XXX-XXXX
-                      </a>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                        <LawIcons.Handshake className="w-5 h-5 text-gold-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/50 mb-1">Phone</p>
+                        <a href="tel:+91-XXX-XXX-XXXX" className="text-gold-primary hover:text-gold-secondary transition-colors">
+                          +91-XXX-XXX-XXXX
+                        </a>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-gold-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    <div>
-                      <p className="text-sm text-foreground/60 mb-1">Business Hours</p>
-                      <p className="text-gold-primary">Monday - Friday: 9:00 AM - 6:00 PM IST</p>
-                      <p className="text-foreground/60 text-sm mt-1">Closed on Weekends & Public Holidays</p>
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                        <LawIcons.Clock className="w-5 h-5 text-gold-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/50 mb-1">Business Hours</p>
+                        <p className="text-gold-primary">Monday - Friday: 9:00 AM - 6:00 PM IST</p>
+                        <p className="text-white/50 text-sm mt-1">Closed on Weekends & Public Holidays</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -357,44 +365,55 @@ export default function ContactPage() {
       </Section>
 
       {/* All Locations Grid */}
-      <Section dark>
-        <div className="max-w-7xl mx-auto">
+      <Section variant="dark">
+        {/* Floating Icons */}
+        <div className="absolute left-[5%] top-[20%] opacity-[0.08]">
+          <LawIcons.Location className="w-20 h-20 text-gold-primary" />
+        </div>
+        <div className="absolute right-[8%] bottom-[25%] opacity-[0.06]">
+          <LawIcons.Building className="w-24 h-24 text-gold-primary" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-6">
+              <LawIcons.Location className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Our Presence
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-4">
-              Serving 8 Cities Across North India
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Serving <span className="text-gold-primary">8 Cities</span> Across North India
             </h2>
-            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-lg text-white/60 max-w-3xl mx-auto">
               Strategically positioned offices for accessible and efficient legal services
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {[
-              { name: "New Delhi", icon: "🏛️", desc: "HQ" },
-              { name: "Gurgaon", icon: "🏢", desc: "Corporate" },
-              { name: "Noida", icon: "🏗️", desc: "Commercial" },
-              { name: "Ghaziabad", icon: "🌆", desc: "Industrial" },
-              { name: "Greater NCR", icon: "📍", desc: "Extended" },
-              { name: "Chandigarh", icon: "🏛️", desc: "Regional" },
-              { name: "Jaipur", icon: "🕌", desc: "Rajasthan" },
-              { name: "Panipat", icon: "🏙️", desc: "Service" },
+              { name: "New Delhi", Icon: LawIcons.Landmark, desc: "HQ" },
+              { name: "Gurgaon", Icon: LawIcons.Building, desc: "Corporate" },
+              { name: "Noida", Icon: LawIcons.City, desc: "Commercial" },
+              { name: "Ghaziabad", Icon: LawIcons.Building, desc: "Industrial" },
+              { name: "Greater NCR", Icon: LawIcons.Location, desc: "Extended" },
+              { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional" },
+              { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan" },
+              { name: "Panipat", Icon: LawIcons.City, desc: "Service" },
             ].map((city, idx) => (
               <div
                 key={idx}
-                className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-2xl border border-gold-primary/10 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
+                className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gold-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="text-5xl mb-3">{city.icon}</div>
-                  <h3 className="text-lg font-bold text-gold-secondary group-hover:text-gold-primary transition-colors mb-1">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                    <city.Icon className="w-6 h-6 text-black" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white group-hover:text-gold-primary transition-colors mb-1">
                     {city.name}
                   </h3>
-                  <p className="text-xs text-foreground/60">{city.desc}</p>
+                  <p className="text-xs text-white/50">{city.desc}</p>
                 </div>
               </div>
             ))}
@@ -456,31 +475,45 @@ export default function ContactPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section dark>
-        <div className="max-w-5xl mx-auto">
-          <div className="relative bg-linear-to-br from-gold-primary/10 to-transparent p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/30 overflow-hidden text-center">
-            <div
-              className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: 'radial-gradient(circle at 50% 50%, #D4AF37 1px, transparent 1px)',
-                backgroundSize: '20px 20px',
-              }}
-            ></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-6">
-                Ready to Resolve Your Dispute?
-              </h2>
-              <p className="text-lg sm:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-                Don't let legal disputes hold you back. Contact our expert team today and take
-                the first step towards resolution.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="lg" href="mailto:Judiciumarbitration@gmail.com">
-                  Email Us Now
-                </Button>
-                <Button variant="secondary" size="lg" href="/practice-areas">
-                  Our Services
-                </Button>
+      <Section variant="gold">
+        {/* Floating decorative icons */}
+        <div className="absolute left-[5%] top-[25%] opacity-[0.12]">
+          <LawIcons.Scales className="w-16 h-16 text-gold-primary" />
+        </div>
+        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
+          <LawIcons.Shield className="w-20 h-20 text-gold-primary" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+              <div
+                className="absolute inset-0 opacity-[0.04]"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)',
+                  backgroundSize: '24px 24px',
+                }}
+              ></div>
+              <div className="relative z-10">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                  <LawIcons.Gavel className="w-10 h-10 text-black" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                  Ready to Resolve Your <span className="text-gold-primary">Dispute</span>?
+                </h2>
+                <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+                  Don't let legal disputes hold you back. Contact our expert team today and take
+                  the first step towards resolution.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button variant="primary" size="lg" href="mailto:Judiciumarbitration@gmail.com">
+                    Email Us Now
+                  </Button>
+                  <Button variant="secondary" size="lg" href="/practice-areas">
+                    Our Services
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

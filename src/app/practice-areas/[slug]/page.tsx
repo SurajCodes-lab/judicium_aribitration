@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getPracticeAreaBySlug, getAllPracticeAreaSlugs } from "@/data/practiceAreas";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import { LawIcons } from "@/components/Icons";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -53,17 +54,37 @@ export default async function PracticeAreaPage({ params }: PageProps) {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-bg-dark via-bg-alt-dark to-bg-dark py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative bg-[#0D1117] py-16 sm:py-20 lg:py-24 overflow-hidden">
+        {/* Premium gradient overlays */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_80%,rgba(229,179,42,0.10),transparent_50%)]" />
+        </div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.04]">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage:
-                "radial-gradient(circle at 20% 50%, #D4AF37 0%, transparent 50%), radial-gradient(circle at 80% 80%, #C9A040 0%, transparent 50%)",
+              backgroundImage: `radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)`,
+              backgroundSize: '32px 32px',
             }}
           ></div>
         </div>
+
+        {/* Floating Icons */}
+        <div className="absolute left-[5%] top-[20%] opacity-[0.12]">
+          <LawIcons.Gavel className="w-20 h-20 text-gold-primary" />
+        </div>
+        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
+          <LawIcons.Document className="w-16 h-16 text-gold-primary" />
+        </div>
+
+        {/* Corner frames */}
+        <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-gold-primary/30" />
+        <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-gold-primary/30" />
+        <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-gold-primary/30" />
+        <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-gold-primary/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Breadcrumb */}
@@ -74,26 +95,28 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                   Home
                 </Link>
               </li>
-              <li>/</li>
+              <li className="text-gold-primary/50">/</li>
               <li>
-                <Link href="/#practice-areas" className="hover:text-gold-primary transition-colors">
+                <Link href="/practice-areas" className="hover:text-gold-primary transition-colors">
                   Practice Areas
                 </Link>
               </li>
-              <li>/</li>
-              <li className="text-gold-primary">{practiceArea.shortTitle}</li>
+              <li className="text-gold-primary/50">/</li>
+              <li className="text-gold-primary font-medium">{practiceArea.shortTitle}</li>
             </ol>
           </nav>
 
           {/* Title */}
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-3 mb-4 sm:mb-6">
-              <span className="text-4xl sm:text-5xl md:text-6xl">{practiceArea.icon}</span>
+            <div className="inline-flex items-center gap-4 mb-4 sm:mb-6">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
+                <span className="text-3xl sm:text-4xl">{practiceArea.icon}</span>
+              </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gold-primary">
                 {practiceArea.title}
               </h1>
             </div>
-            <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 leading-relaxed">
               {practiceArea.description}
             </p>
           </div>
@@ -113,16 +136,21 @@ export default async function PracticeAreaPage({ params }: PageProps) {
       </Section>
 
       {/* Services Section */}
-      <Section dark>
-        <div className="max-w-6xl mx-auto">
+      <Section variant="dark">
+        <div className="absolute right-[5%] top-[15%] opacity-[0.08]">
+          <LawIcons.Shield className="w-24 h-24 text-gold-primary" />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-10 sm:mb-12">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-6">
+              <LawIcons.Document className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Our Services
               </span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
-              What We Offer
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+              What We <span className="text-gold-primary">Offer</span>
             </h2>
           </div>
 
@@ -130,13 +158,13 @@ export default async function PracticeAreaPage({ params }: PageProps) {
             {practiceArea.content.services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-4 sm:p-6 rounded-xl border border-gold-primary/10 hover:border-gold-primary/30 transition-all duration-300 overflow-hidden"
+                className="group relative bg-[#161B22] p-5 sm:p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gold-primary/5 rounded-full blur-2xl transition-all duration-300 group-hover:w-28 group-hover:h-28"></div>
-                <div className="relative z-10 flex items-start gap-3">
-                  <div className="shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-gold-primary/10 rounded-lg flex items-center justify-center mt-1">
+                <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className="shrink-0 w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-lg flex items-center justify-center mt-0.5 shadow-lg shadow-gold-primary/20">
                     <svg
-                      className="w-3 h-3 sm:w-4 sm:h-4 text-gold-primary"
+                      className="w-5 h-5 text-black"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -147,7 +175,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                       />
                     </svg>
                   </div>
-                  <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">{service}</p>
+                  <p className="text-sm sm:text-base text-white/80 leading-relaxed">{service}</p>
                 </div>
               </div>
             ))}
@@ -302,31 +330,45 @@ export default async function PracticeAreaPage({ params }: PageProps) {
       )}
 
       {/* CTA Section */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
-          <div className="relative bg-linear-to-br from-gold-primary/10 to-transparent p-8 sm:p-10 md:p-12 rounded-2xl border border-gold-primary/30 overflow-hidden text-center">
-            <div
-              className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: "radial-gradient(circle at 50% 50%, #D4AF37 1px, transparent 1px)",
-                backgroundSize: "20px 20px",
-              }}
-            ></div>
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary mb-4">
-                Need Expert Legal Assistance?
-              </h2>
-              <p className="text-base sm:text-lg text-foreground/70 mb-6 sm:mb-8">
-                Our experienced team is ready to help you with your {practiceArea.shortTitle.toLowerCase()} matters.
-                Contact us today for a consultation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="lg" href="#contact">
-                  Schedule Consultation
-                </Button>
-                <Button variant="secondary" size="lg" href="/#practice-areas">
-                  View All Practice Areas
-                </Button>
+      <Section variant="gold">
+        {/* Floating decorative icons */}
+        <div className="absolute left-[5%] top-[25%] opacity-[0.12]">
+          <LawIcons.Scales className="w-16 h-16 text-gold-primary" />
+        </div>
+        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
+          <LawIcons.Handshake className="w-20 h-20 text-gold-primary" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-8 sm:p-10 md:p-12 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+              <div
+                className="absolute inset-0 opacity-[0.04]"
+                style={{
+                  backgroundImage: "radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)",
+                  backgroundSize: "24px 24px",
+                }}
+              ></div>
+              <div className="relative z-10">
+                <div className="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                  <LawIcons.Handshake className="w-8 h-8 text-black" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+                  Need Expert <span className="text-gold-primary">Legal Assistance</span>?
+                </h2>
+                <p className="text-base sm:text-lg text-white/70 mb-6 sm:mb-8">
+                  Our experienced team is ready to help you with your {practiceArea.shortTitle.toLowerCase()} matters.
+                  Contact us today for a consultation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button variant="primary" size="lg" href="/contact">
+                    Schedule Consultation
+                  </Button>
+                  <Button variant="secondary" size="lg" href="/practice-areas">
+                    View All Practice Areas
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

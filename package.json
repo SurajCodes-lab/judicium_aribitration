@@ -6,14 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
-    "test:headed": "playwright test --headed",
-    "test:report": "playwright show-report"
+    "lint": "eslint"
   },
   "dependencies": {
     "autoprefixer": "^10.4.23",
+    "framer-motion": "^12.23.26",
     "mammoth": "^1.11.0",
     "next": "16.0.10",
     "react": "19.2.1",
@@ -21,7 +18,6 @@
     "textract": "^2.5.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,63 +1,19 @@
-import { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
-import { getTeamMembers } from "@/data/teamMembers";
+import PremiumBackground from "@/components/PremiumBackground";
 import { LawIcons } from "@/components/Icons";
+import { getTeamMembers } from "@/data/teamMembers";
 
-export const metadata: Metadata = {
-  title: "About Us | Judicium Arbitration - Leading Legal Experts in North India",
-  description: "Learn about Judicium Arbitration's 20+ years of expertise in dispute resolution across Delhi, Gurgaon, Noida, Chandigarh, and Jaipur. Our mission, values, and commitment to excellence.",
-  keywords: [
-    "about Judicium",
-    "law firm Delhi",
-    "arbitration experts",
-    "legal team North India",
-    "dispute resolution specialists"
-  ].join(", "),
-  openGraph: {
-    title: "About Us | Judicium Arbitration",
-    description: "Leading legal experts with 20+ years of experience in North India",
-    type: "website",
-  },
-};
-
-export default function AboutPage() {
+export default function AboutPageContent() {
   return (
-    <main className="min-h-screen pt-20 sm:pt-22 md:pt-24 bg-[#0D1117]">
+    <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section with Premium Background */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#0D1117]">
-        {/* Premium gradient overlays */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_80%,rgba(229,179,42,0.10),transparent_50%)]" />
-        </div>
-
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.04]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)`,
-              backgroundSize: '32px 32px',
-            }}
-          ></div>
-        </div>
-
-        {/* Floating Icons */}
-        <div className="absolute left-[5%] top-[20%] opacity-[0.12]">
-          <LawIcons.Scales className="w-20 h-20 text-gold-primary" />
-        </div>
-        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
-          <LawIcons.Pillar className="w-16 h-16 text-gold-primary" />
-        </div>
-
-        {/* Corner frames */}
-        <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-gold-primary/30" />
-        <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-gold-primary/30" />
-        <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-gold-primary/30" />
-        <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-gold-primary/30" />
+      <section className="relative py-12 sm:py-14 lg:py-16 overflow-hidden">
+        <PremiumBackground showCornerFrames />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           {/* Breadcrumb */}
@@ -75,8 +31,8 @@ export default function AboutPage() {
 
           {/* Main Heading */}
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-6">
-              <LawIcons.Shield className="w-4 h-4 text-gold-primary" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+              <LawIcons.Scales className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Who We Are
               </span>
@@ -100,7 +56,7 @@ export default function AboutPage() {
             ].map((stat, idx) => (
               <div key={idx} className="group relative">
                 <div className="absolute inset-0 bg-gold-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 group-hover:border-gold-primary/40 transition-all duration-300">
+                <div className="relative bg-white/[0.04] backdrop-blur-xl p-6 rounded-2xl border border-white/10 group-hover:border-gold-primary/40 transition-all duration-300 shadow-lg shadow-black/10">
                   <stat.Icon className="w-6 h-6 text-gold-primary/60 mx-auto mb-2" />
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-2">
                     {stat.number}
@@ -121,7 +77,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Content */}
             <div>
-              <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+                <LawIcons.Book className="w-4 h-4 text-gold-primary" />
                 <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                   Our Story
                 </span>
@@ -152,7 +109,7 @@ export default function AboutPage() {
             {/* Visual Element */}
             <div className="relative">
               <div className="absolute inset-0 bg-gold-primary/20 rounded-3xl blur-3xl"></div>
-              <div className="relative bg-linear-to-br from-bg-alt-dark to-bg-dark p-8 sm:p-12 rounded-3xl border border-gold-primary/30">
+              <div className="relative bg-white/[0.04] backdrop-blur-xl p-8 sm:p-12 rounded-3xl border border-white/10 shadow-lg shadow-black/10">
                 <div className="space-y-6">
                   {[
                     { year: "2003", event: "Foundation & Early Years", description: "Established with a vision for excellence in dispute resolution" },
@@ -162,7 +119,7 @@ export default function AboutPage() {
                   ].map((milestone, idx) => (
                     <div key={idx} className="flex gap-4 group">
                       <div className="shrink-0">
-                        <div className="w-16 h-16 bg-gold-primary/10 rounded-full flex items-center justify-center group-hover:bg-gold-primary/20 transition-colors duration-300">
+                        <div className="w-16 h-16 bg-gold-primary/10 rounded-full flex items-center justify-center group-hover:bg-gold-primary/20 transition-colors duration-300 border border-gold-primary/20">
                           <span className="text-gold-primary font-bold text-sm">{milestone.year}</span>
                         </div>
                       </div>
@@ -181,9 +138,11 @@ export default function AboutPage() {
 
       {/* Mission, Vision & Values */}
       <Section dark>
-        <div className="max-w-7xl mx-auto">
+        <PremiumBackground />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+              <LawIcons.Pillar className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Our Foundation
               </span>
@@ -195,11 +154,11 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden shadow-lg shadow-black/10 hover:bg-white/[0.06]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
-                  <LawIcons.Target className="w-8 h-8 text-black" />
+                <div className="w-16 h-16 mb-6 bg-white/[0.04] backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gold-primary/20">
+                  <LawIcons.Target className="w-8 h-8 text-gold-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Mission</h3>
                 <p className="text-foreground/70 leading-relaxed">
@@ -210,11 +169,11 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden shadow-lg shadow-black/10 hover:bg-white/[0.06]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-secondary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-secondary to-gold-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
-                  <LawIcons.Globe className="w-8 h-8 text-black" />
+                <div className="w-16 h-16 mb-6 bg-white/[0.04] backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gold-primary/20">
+                  <LawIcons.Globe className="w-8 h-8 text-gold-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Vision</h3>
                 <p className="text-foreground/70 leading-relaxed">
@@ -225,11 +184,11 @@ export default function AboutPage() {
             </div>
 
             {/* Values */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden shadow-lg shadow-black/10 hover:bg-white/[0.06]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
-                  <LawIcons.Shield className="w-8 h-8 text-black" />
+                <div className="w-16 h-16 mb-6 bg-white/[0.04] backdrop-blur-xl rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-gold-primary/20">
+                  <LawIcons.Shield className="w-8 h-8 text-gold-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Values</h3>
                 <ul className="space-y-2 text-foreground/70">
@@ -260,7 +219,8 @@ export default function AboutPage() {
       <Section>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+              <LawIcons.Team className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Meet Our Team
               </span>
@@ -278,15 +238,13 @@ export default function AboutPage() {
             {getTeamMembers().map((member, idx) => (
               <div
                 key={member.order}
-                className={`group relative bg-linear-to-br from-bg-alt-dark to-bg-dark rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden ${
-                  idx % 2 === 0 ? '' : ''
-                }`}
+                className="group relative bg-white/[0.03] backdrop-blur-xl rounded-3xl border border-white/10 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden shadow-lg shadow-black/10"
               >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gold-primary/5 rounded-full blur-3xl group-hover:bg-gold-primary/10 transition-all duration-500"></div>
 
                 <div className="relative z-10 p-6 sm:p-8 md:p-10">
                   <div className={`grid grid-cols-1 ${member.image ? 'lg:grid-cols-12' : ''} gap-8 items-start`}>
-                    {/* Image Section - Only show if member has image */}
+                    {/* Image Section */}
                     {member.image && (
                       <div className="lg:col-span-3">
                         <div className="relative aspect-square w-full max-w-xs mx-auto lg:max-w-full">
@@ -305,7 +263,6 @@ export default function AboutPage() {
 
                     {/* Content Section */}
                     <div className={`${member.image ? 'lg:col-span-9' : ''} space-y-6`}>
-                      {/* Header */}
                       <div>
                         <div className="flex flex-wrap items-center gap-3 mb-2">
                           <h3 className="text-2xl sm:text-3xl font-bold text-gold-primary">
@@ -318,17 +275,13 @@ export default function AboutPage() {
                         <p className="text-gold-primary/70 text-lg">{member.role}</p>
                       </div>
 
-                      {/* Bio */}
                       <p className="text-foreground/80 leading-relaxed text-base">
                         {member.bio}
                       </p>
 
-                      {/* Experience */}
-                      <div className="bg-gold-primary/5 rounded-xl p-5 border border-gold-primary/10">
+                      <div className="bg-white/[0.04] backdrop-blur-xl rounded-xl p-5 border border-white/10">
                         <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                          </svg>
+                          <LawIcons.Book className="w-5 h-5" />
                           Experience & Background
                         </h4>
                         <p className="text-foreground/70 text-sm leading-relaxed">
@@ -337,12 +290,9 @@ export default function AboutPage() {
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Education */}
                         <div>
                           <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
-                            </svg>
+                            <LawIcons.Document className="w-5 h-5" />
                             Education
                           </h4>
                           <ul className="space-y-2">
@@ -357,20 +307,16 @@ export default function AboutPage() {
                           </ul>
                         </div>
 
-                        {/* Specializations */}
                         <div>
                           <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                              <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                            </svg>
+                            <LawIcons.Scales className="w-5 h-5" />
                             Specializations
                           </h4>
                           <div className="flex flex-wrap gap-2">
                             {member.specializations.map((spec, specIdx) => (
                               <span
                                 key={specIdx}
-                                className="px-3 py-1.5 bg-gold-primary/10 border border-gold-primary/20 rounded-lg text-xs text-foreground/80 hover:bg-gold-primary/20 transition-colors"
+                                className="px-3 py-1.5 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-lg text-xs text-foreground/80 hover:bg-gold-primary/20 transition-colors"
                               >
                                 {spec}
                               </span>
@@ -389,9 +335,11 @@ export default function AboutPage() {
 
       {/* Our Presence */}
       <Section dark>
-        <div className="max-w-7xl mx-auto">
+        <PremiumBackground />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+              <LawIcons.Globe className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Our Network
               </span>
@@ -410,22 +358,20 @@ export default function AboutPage() {
               { name: "New Delhi", Icon: LawIcons.Landmark, desc: "Headquarters & Primary Office" },
               { name: "Gurgaon", Icon: LawIcons.Building, desc: "Corporate Hub" },
               { name: "Noida", Icon: LawIcons.City, desc: "Commercial Center" },
-              { name: "Ghaziabad", Icon: LawIcons.Building, desc: "Industrial Zone" },
+              { name: "Ghaziabad", Icon: LawIcons.City, desc: "Industrial Zone" },
               { name: "Greater NCR", Icon: LawIcons.Location, desc: "Extended Coverage" },
               { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional Office" },
-              { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan Hub" },
-              { name: "Panipat", Icon: LawIcons.City, desc: "Service Center" },
+              { name: "Jaipur", Icon: LawIcons.Landmark, desc: "Rajasthan Hub" },
+              { name: "Panipat", Icon: LawIcons.Building, desc: "Service Center" },
             ].map((city, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
+                className="group relative bg-white/[0.03] backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:border-gold-primary/40 hover:bg-white/[0.08] transition-all duration-300 text-center overflow-hidden shadow-lg shadow-black/10"
               >
-                <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
-                    <city.Icon className="w-7 h-7 text-black" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-gold-primary transition-colors mb-2">
+                  <city.Icon className="w-12 h-12 text-gold-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="text-lg font-bold text-gold-secondary group-hover:text-gold-primary transition-colors mb-2">
                     {city.name}
                   </h3>
                   <p className="text-xs text-foreground/60">{city.desc}</p>
@@ -435,20 +381,12 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 rounded-2xl blur-xl"></div>
-              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/30">
-                <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
-                    <LawIcons.Location className="w-6 h-6 text-black" />
-                  </div>
-                  <span className="text-gold-primary font-bold text-xl">Strategic Positioning</span>
-                </div>
-                <p className="text-white/70 text-lg max-w-3xl">
-                  Our offices are located near major courts, arbitration centers, and commercial districts, ensuring
-                  accessibility and efficient service delivery across North India.
-                </p>
-              </div>
+            <div className="inline-block bg-white/[0.04] backdrop-blur-xl p-8 rounded-2xl border border-gold-primary/30 shadow-lg shadow-black/10">
+              <p className="text-foreground/70 text-lg max-w-3xl">
+                <span className="text-gold-primary font-semibold">Strategic Positioning:</span> Our offices
+                are located near major courts, arbitration centers, and commercial districts, ensuring
+                accessibility and efficient service delivery across North India.
+              </p>
             </div>
           </div>
         </div>
@@ -458,7 +396,8 @@ export default function AboutPage() {
       <Section>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/[0.04] backdrop-blur-xl border border-gold-primary/20 rounded-full mb-6">
+              <LawIcons.Trophy className="w-4 h-4 text-gold-primary" />
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Our Advantage
               </span>
@@ -506,26 +445,26 @@ export default function AboutPage() {
                 description: "Strategic presence near Supreme Court, High Courts, and DIAC for efficient litigation"
               },
               {
-                Icon: LawIcons.Document,
+                Icon: LawIcons.Book,
                 title: "Sector Expertise",
                 description: "Specialized knowledge across banking, real estate, corporate, IP, and infrastructure sectors"
               },
               {
-                Icon: LawIcons.Trophy,
+                Icon: LawIcons.Shield,
                 title: "Quality Standards",
                 description: "Commitment to highest professional standards, ethics, and client confidentiality"
               }
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/[0.03] backdrop-blur-xl p-8 rounded-2xl border border-white/10 hover:border-gold-primary/40 hover:bg-white/[0.08] transition-all duration-300 overflow-hidden shadow-lg shadow-black/10"
               >
-                <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mb-5 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
-                    <item.Icon className="w-7 h-7 text-black" />
+                  <div className="mb-4">
+                    <item.Icon className="w-12 h-12 text-gold-primary group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-primary transition-colors">
+                  <h3 className="text-xl font-bold text-gold-secondary mb-3 group-hover:text-gold-primary transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
@@ -539,45 +478,32 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA Section */}
-      <Section variant="gold">
-        {/* Floating decorative icons */}
-        <div className="absolute left-[5%] top-[25%] opacity-[0.12]">
-          <LawIcons.Scales className="w-16 h-16 text-gold-primary" />
-        </div>
-        <div className="absolute right-[8%] bottom-[25%] opacity-[0.10]">
-          <LawIcons.Handshake className="w-20 h-20 text-gold-primary" />
-        </div>
-
+      <Section dark>
+        <PremiumBackground showCornerFrames />
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
-              <div
-                className="absolute inset-0 opacity-[0.04]"
-                style={{
-                  backgroundImage: 'radial-gradient(circle at 1px 1px, #F0C246 1px, transparent 0)',
-                  backgroundSize: '24px 24px',
-                }}
-              ></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
-                  <LawIcons.Shield className="w-10 h-10 text-black" />
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-                  Partner With Us for Your <span className="text-gold-primary">Legal Needs</span>
-                </h2>
-                <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-2xl mx-auto">
-                  Experience the Judicium difference. Let our expert team guide you through your legal
-                  challenges with professionalism and dedication.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button variant="primary" size="lg" href="/contact">
-                    Get In Touch
-                  </Button>
-                  <Button variant="secondary" size="lg" href="/practice-areas">
-                    Our Services
-                  </Button>
-                </div>
+          <div className="relative bg-white/[0.04] backdrop-blur-xl p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/30 overflow-hidden text-center shadow-2xl shadow-gold-primary/10">
+            <div
+              className="absolute inset-0 opacity-5"
+              style={{
+                backgroundImage: 'radial-gradient(circle at 50% 50%, #D4AF37 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+              }}
+            ></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-6">
+                Partner With Us for Your Legal Needs
+              </h2>
+              <p className="text-lg sm:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
+                Experience the Judicium difference. Let our expert team guide you through your legal
+                challenges with professionalism and dedication.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="primary" size="lg" href="/#contact">
+                  Get In Touch
+                </Button>
+                <Button variant="secondary" size="lg" href="/practice-areas">
+                  Our Services
+                </Button>
               </div>
             </div>
           </div>
