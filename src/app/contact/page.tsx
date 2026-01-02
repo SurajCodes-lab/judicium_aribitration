@@ -6,7 +6,7 @@ import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
-  description: "Contact Judicium Arbitration for expert legal consultation across Delhi, Gurgaon, Noida, Chandigarh, Jaipur. Schedule a consultation with our arbitration experts today.",
+  description: "Contact Judicium Arbitration for expert legal consultation across Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Prayagraj, Lucknow. Schedule a consultation with our arbitration experts today.",
   keywords: [
     "contact Judicium",
     "legal consultation Delhi",
@@ -286,6 +286,18 @@ export default function ContactPage() {
                     badge: "Regional Office",
                     address: "Sector 17, Chandigarh, Punjab",
                     Icon: LawIcons.Landmark
+                  },
+                  {
+                    city: "Prayagraj",
+                    badge: "Eastern UP Hub",
+                    address: "Civil Lines, Prayagraj, Uttar Pradesh",
+                    Icon: LawIcons.Landmark
+                  },
+                  {
+                    city: "Lucknow",
+                    badge: "State Capital",
+                    address: "Hazratganj, Lucknow, Uttar Pradesh",
+                    Icon: LawIcons.Building
                   }
                 ].map((office, idx) => (
                   <div
@@ -383,7 +395,7 @@ export default function ContactPage() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Serving <span className="text-gold-primary">8 Cities</span> Across North India
+              Serving <span className="text-gold-primary">10 Cities</span> Across North India
             </h2>
             <p className="text-lg text-white/60 max-w-3xl mx-auto">
               Strategically positioned offices for accessible and efficient legal services
@@ -400,6 +412,8 @@ export default function ContactPage() {
               { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional" },
               { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan" },
               { name: "Panipat", Icon: LawIcons.City, desc: "Service" },
+              { name: "Prayagraj", Icon: LawIcons.Landmark, desc: "Eastern UP" },
+              { name: "Lucknow", Icon: LawIcons.Building, desc: "State Capital" },
             ].map((city, idx) => (
               <div
                 key={idx}
@@ -447,7 +461,7 @@ export default function ContactPage() {
               },
               {
                 question: "Do you offer consultations in all cities you serve?",
-                answer: "Yes, we offer consultations across all 8 cities we serve: Delhi, Gurgaon, Noida, Ghaziabad, NCR, Chandigarh, Jaipur, and Panipat. We can also arrange virtual consultations if preferred."
+                answer: "Yes, we offer consultations across all 10 cities we serve: Delhi, Gurgaon, Noida, Ghaziabad, NCR, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. We can also arrange virtual consultations if preferred."
               },
               {
                 question: "What are your consultation fees?",

@@ -96,7 +96,7 @@ export default function AboutPage() {
               { number: "20+", label: "Years Experience", Icon: LawIcons.Shield },
               { number: "500+", label: "Cases Resolved", Icon: LawIcons.Document },
               { number: "98%", label: "Success Rate", Icon: LawIcons.Trophy },
-              { number: "8", label: "Cities Served", Icon: LawIcons.Location },
+              { number: "10", label: "Cities Served", Icon: LawIcons.Location },
             ].map((stat, idx) => (
               <div key={idx} className="group relative">
                 <div className="absolute inset-0 bg-gold-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -138,13 +138,13 @@ export default function AboutPage() {
                 <p className="text-base sm:text-lg">
                   Our co-founder Nadeem's extensive 20-year tenure at KKD Court has given us unparalleled
                   insights into the dispute lifecycle and ground realities of India's legal system. This
-                  experience, combined with our strategic presence across 8 major cities, enables us to
+                  experience, combined with our strategic presence across 10 major cities, enables us to
                   deliver exceptional results for our clients.
                 </p>
                 <p className="text-base sm:text-lg">
                   We specialize in resolving complex commercial disputes through arbitration, mediation,
                   and conciliation, operating from strategically located offices in Delhi, Gurgaon, Noida,
-                  Ghaziabad, NCR, Chandigarh, Jaipur, and Panipat.
+                  Ghaziabad, NCR, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow.
                 </p>
               </div>
             </div>
@@ -311,9 +311,11 @@ export default function AboutPage() {
                           <h3 className="text-2xl sm:text-3xl font-bold text-gold-primary">
                             {member.name}
                           </h3>
-                          <span className="px-3 py-1 bg-gold-secondary/10 border border-gold-secondary/30 rounded-full text-sm text-gold-secondary font-semibold">
-                            {member.title}
-                          </span>
+                          {member.role === "Co-Founder" && (
+                            <span className="px-3 py-1 bg-gold-secondary/10 border border-gold-secondary/30 rounded-full text-sm text-gold-secondary font-semibold">
+                              {member.title}
+                            </span>
+                          )}
                         </div>
                         <p className="text-gold-primary/70 text-lg">{member.role}</p>
                       </div>
@@ -400,7 +402,7 @@ export default function AboutPage() {
               Strategic Presence Across North India
             </h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-              Serving 8 major cities with offices strategically positioned in key commercial
+              Serving 10 major cities with offices strategically positioned in key commercial
               and legal hubs
             </p>
           </div>
@@ -415,6 +417,8 @@ export default function AboutPage() {
               { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional Office" },
               { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan Hub" },
               { name: "Panipat", Icon: LawIcons.City, desc: "Service Center" },
+              { name: "Prayagraj", Icon: LawIcons.Landmark, desc: "Eastern UP Hub" },
+              { name: "Lucknow", Icon: LawIcons.Building, desc: "State Capital" },
             ].map((city, idx) => (
               <div
                 key={idx}

@@ -31,6 +31,8 @@ export default function Footer() {
     "Chandigarh",
     "Jaipur",
     "Panipat",
+    "Prayagraj",
+    "Lucknow",
   ];
 
   return (

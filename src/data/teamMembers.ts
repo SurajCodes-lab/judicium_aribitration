@@ -143,6 +143,25 @@ export const teamMembers: TeamMember[] = [
       "Policy & Legal Frameworks"
     ],
     order: 6
+  },
+  {
+    name: "Pankaj Kumar",
+    title: "Advocate",
+    role: "Associate",
+    image: "/PankajKumar.jpeg",
+    bio: "Advocate Pankaj Kumar is a dedicated and emerging legal counsel practicing at the Delhi High Court. With a focused track record in litigation and commercial disputes, he possesses the procedural acumen and substantive knowledge required to serve effectively on arbitration panels.",
+    experience: "Practice before the Delhi High Court with focused expertise in litigation and commercial disputes. Experienced in arbitration proceedings and possesses strong procedural knowledge for effective representation on arbitration panels.",
+    education: [
+      "LL.B - Aligarh Muslim University"
+    ],
+    specializations: [
+      "Arbitration & ADR",
+      "Commercial Disputes",
+      "Litigation",
+      "Delhi High Court Practice",
+      "Procedural Law"
+    ],
+    order: 7
   }
 ];
 
