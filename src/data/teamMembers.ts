@@ -148,7 +148,7 @@ export const teamMembers: TeamMember[] = [
     name: "Pankaj Kumar",
     title: "Advocate",
     role: "Associate",
-    image: "/PankajKumar.jpeg",
+    image: "",
     bio: "Advocate Pankaj Kumar is a dedicated and emerging legal counsel practicing at the Delhi High Court. With a focused track record in litigation and commercial disputes, he possesses the procedural acumen and substantive knowledge required to serve effectively on arbitration panels.",
     experience: "Practice before the Delhi High Court with focused expertise in litigation and commercial disputes. Experienced in arbitration proceedings and possesses strong procedural knowledge for effective representation on arbitration panels.",
     education: [

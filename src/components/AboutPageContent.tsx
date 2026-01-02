@@ -272,7 +272,6 @@ export default function AboutPageContent() {
                             {member.title}
                           </span>
                         </div>
-                        <p className="text-gold-primary/70 text-lg">{member.role}</p>
                       </div>
 
                       <p className="text-foreground/80 leading-relaxed text-base">

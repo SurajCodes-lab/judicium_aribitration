@@ -317,7 +317,6 @@ export default function AboutPage() {
                             </span>
                           )}
                         </div>
-                        <p className="text-gold-primary/70 text-lg">{member.role}</p>
                       </div>
 
                       {/* Bio */}
