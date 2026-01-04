@@ -152,7 +152,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Advocate Pankaj Kumar is a dedicated and emerging legal counsel practicing at the Delhi High Court. With a focused track record in litigation and commercial disputes, he possesses the procedural acumen and substantive knowledge required to serve effectively on arbitration panels.",
     experience: "Practice before the Delhi High Court with focused expertise in litigation and commercial disputes. Experienced in arbitration proceedings and possesses strong procedural knowledge for effective representation on arbitration panels.",
     education: [
-      "LL.B - Aligarh Muslim University"
+      "BA LLB HONS - Law Department, Aligarh Campus"
     ],
     specializations: [
       "Arbitration & ADR",
@@ -162,6 +162,27 @@ export const teamMembers: TeamMember[] = [
       "Procedural Law"
     ],
     order: 7
+  },
+  {
+    name: "Parul Garg",
+    title: "Advocate",
+    role: "Partner",
+    image: "",
+    bio: "Parul Garg brings great leadership, enthusiasm, advice and practicality in forming and solving complex disputes. He has vast experience in dealing with arbitration law and has been dealing with civil and criminal cases for the last 12 years.",
+    experience: "Over a decade of experience advising clients in dispute resolution in courts and arbitration. Drafts, negotiates, and provides advice on a broad array of arbitration matters. Offers guidance on arbitration strategies and assists in resolving disputes at an early stage during projects. Leverages experience to help clients avoid disputes by focusing on potential conflict areas and facilitating early dispute resolution.",
+    education: [
+      "LL.M - Kurukshetra University, Kurukshetra",
+      "B.A. LL.B - Punjabi University, Patiala"
+    ],
+    specializations: [
+      "Arbitration Law & Practice",
+      "Civil Litigation",
+      "Criminal Law",
+      "Dispute Resolution Strategy",
+      "Early Dispute Resolution",
+      "Contract Drafting & Negotiation"
+    ],
+    order: 8
   }
 ];
 
