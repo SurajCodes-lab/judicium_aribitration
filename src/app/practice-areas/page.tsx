@@ -67,7 +67,7 @@ export default function PracticeAreasPage() {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section */}
-      <section className="relative bg-[#0D1117] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
@@ -140,7 +140,7 @@ export default function PracticeAreasPage() {
             ].map((stat, idx) => (
               <div key={idx} className="group relative">
                 <div className="absolute inset-0 bg-gold-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 group-hover:border-gold-primary/40 transition-all duration-300">
+                <div className="relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 group-hover:border-gold-primary/40 transition-all duration-300">
                   <stat.Icon className="w-6 h-6 text-gold-primary/60 mx-auto mb-2" />
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-2">
                     {stat.number}
@@ -178,24 +178,24 @@ export default function PracticeAreasPage() {
           <p className="text-white/60 max-w-2xl mx-auto mb-10">
             Strategically positioned across North India's key commercial and legal hubs
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mb-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-10">
             {[
               { name: "New Delhi", Icon: LawIcons.Landmark },
               { name: "Gurgaon", Icon: LawIcons.Building },
               { name: "Noida", Icon: LawIcons.City },
-              { name: "Ghaziabad", Icon: LawIcons.City },
-              { name: "Greater NCR", Icon: LawIcons.Location },
               { name: "Chandigarh", Icon: LawIcons.Landmark },
               { name: "Jaipur", Icon: LawIcons.Pillar },
               { name: "Panipat", Icon: LawIcons.Building },
+              { name: "Prayagraj", Icon: LawIcons.Landmark },
+              { name: "Lucknow", Icon: LawIcons.City },
             ].map((city, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                className="group relative bg-bg-alt-dark p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                     <city.Icon className="w-6 h-6 text-black" />
                   </div>
                   <h3 className="text-base sm:text-lg font-semibold text-white group-hover:text-gold-primary transition-colors">
@@ -234,7 +234,7 @@ export default function PracticeAreasPage() {
                   <Link
                     key={area.slug}
                     href={`/practice-areas/${area.slug}`}
-                    className="group relative bg-[#161B22] rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500 overflow-hidden block"
+                    className="group relative bg-bg-alt-dark rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500 overflow-hidden block"
                   >
                     {/* Hover Glow Effect */}
                     <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -244,7 +244,7 @@ export default function PracticeAreasPage() {
 
                     <div className="relative z-10 p-6 sm:p-8">
                       {/* Icon */}
-                      <div className="w-16 h-16 sm:w-18 sm:h-18 mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-gold-primary/30">
+                      <div className="w-16 h-16 sm:w-18 sm:h-18 mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg shadow-gold-primary/30">
                         <span className="text-3xl sm:text-4xl">{area.icon}</span>
                       </div>
 
@@ -352,11 +352,11 @@ export default function PracticeAreasPage() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                className="group relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mb-5 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <div className="w-14 h-14 mb-5 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                     <item.Icon className="w-7 h-7 text-black" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-primary transition-colors">
@@ -384,8 +384,8 @@ export default function PracticeAreasPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
               <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{
@@ -394,7 +394,7 @@ export default function PracticeAreasPage() {
                 }}
               ></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
                   <LawIcons.Scales className="w-10 h-10 text-black" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">

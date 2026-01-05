@@ -69,7 +69,7 @@ const LawIcons = {
 // Premium Background with Law Elements - BALANCED
 function PremiumLawBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0D1117]">
+    <div className="absolute inset-0 overflow-hidden bg-bg-dark">
       {/* Balanced gradient base */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-30%,rgba(240,194,70,0.18),transparent_70%)]" />
@@ -147,7 +147,7 @@ function PremiumLawBackground() {
 
       {/* Central large scale watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04]">
-        <LawIcons.Scales className="w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] text-gold-primary" />
+        <LawIcons.Scales className="w-125 h-125 sm:w-175 sm:h-175 text-gold-primary" />
       </div>
 
       {/* Elegant corner frames */}
@@ -181,8 +181,8 @@ function PremiumLawBackground() {
       />
 
       {/* Horizontal decorative lines */}
-      <div className="absolute top-[25%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/20 to-transparent" />
-      <div className="absolute bottom-[25%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/20 to-transparent" />
+      <div className="absolute top-[25%] left-0 w-full h-px bg-linear-to-r from-transparent via-gold-primary/20 to-transparent" />
+      <div className="absolute bottom-[25%] left-0 w-full h-px bg-linear-to-r from-transparent via-gold-primary/20 to-transparent" />
     </div>
   );
 }
@@ -195,7 +195,7 @@ export default function HeroSection() {
 
       {/* Top accent line */}
       <motion.div
-        className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-gold-primary/0 via-gold-primary to-gold-primary/0"
+        className="absolute top-0 left-0 h-0.5 bg-linear-to-r from-gold-primary/0 via-gold-primary to-gold-primary/0"
         initial={{ width: "0%", left: "50%" }}
         animate={{ width: "100%", left: "0%" }}
         transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
@@ -242,13 +242,13 @@ export default function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex items-center justify-center gap-3 sm:gap-4 mb-5"
         >
-          <div className="w-12 sm:w-20 h-px bg-gradient-to-r from-transparent to-gold-primary/60" />
+          <div className="w-12 sm:w-20 h-px bg-linear-to-r from-transparent to-gold-primary/60" />
           <LawIcons.Pillar className="w-4 h-4 text-gold-primary/40" />
           <span className="text-sm sm:text-base text-gold-secondary/80 tracking-[0.3em] uppercase font-light">
             Arbitration
           </span>
           <LawIcons.Pillar className="w-4 h-4 text-gold-primary/40" />
-          <div className="w-12 sm:w-20 h-px bg-gradient-to-l from-transparent to-gold-primary/60" />
+          <div className="w-12 sm:w-20 h-px bg-linear-to-l from-transparent to-gold-primary/60" />
         </motion.div>
 
         {/* Tagline */}
@@ -274,7 +274,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <div className="inline-flex items-center">
-            <div className="flex items-center gap-6 sm:gap-10 py-4 px-6 sm:px-10 bg-white/[0.02] backdrop-blur-sm border border-gold-primary/10 rounded-xl">
+            <div className="flex items-center gap-6 sm:gap-10 py-4 px-6 sm:px-10 bg-white/2 backdrop-blur-sm border border-gold-primary/10 rounded-xl">
               {[
                 { value: "20+", label: "Years", icon: LawIcons.Shield },
                 { value: "500+", label: "Cases", icon: LawIcons.Document },
@@ -316,7 +316,7 @@ export default function HeroSection() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
-          <span className="tracking-wide">Delhi NCR · Chandigarh · Jaipur · Panipat</span>
+          <span className="tracking-wide">New Delhi · Gurgaon · Noida · Chandigarh · Jaipur · Panipat · Prayagraj · Lucknow</span>
         </motion.div>
       </div>
 

@@ -19,8 +19,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Judicium Arbitration | Leading Arbitration Services in North India",
-  description: "Premier arbitration and alternative dispute resolution services serving Delhi, Gurgaon, Noida, Ghaziabad, NCR, Chandigarh, Jaipur, and Panipat. Expert legal solutions in commercial disputes, banking, real estate, and more.",
-  keywords: ["arbitration", "ADR", "Delhi", "Gurgaon", "Noida", "Ghaziabad", "NCR", "Chandigarh", "Jaipur", "Panipat", "legal services", "dispute resolution", "commercial arbitration"],
+  description: "Premier arbitration and alternative dispute resolution services serving New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. Expert legal solutions in commercial disputes, banking, real estate, and more.",
+  keywords: ["arbitration", "ADR", "Delhi", "Gurgaon", "Noida", "Chandigarh", "Jaipur", "Panipat", "Prayagraj", "Lucknow", "legal services", "dispute resolution", "commercial arbitration"],
   openGraph: {
     title: "Judicium Arbitration",
     description: "Leading Arbitration Services in North India - Delhi, Gurgaon, Noida, Chandigarh, Jaipur",

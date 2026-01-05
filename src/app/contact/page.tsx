@@ -6,7 +6,7 @@ import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
-  description: "Contact Judicium Arbitration for expert legal consultation across Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Prayagraj, Lucknow. Schedule a consultation with our arbitration experts today.",
+  description: "Contact Judicium Arbitration for expert legal consultation across New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, Lucknow. Schedule a consultation with our arbitration experts today.",
   keywords: [
     "contact Judicium",
     "legal consultation Delhi",
@@ -25,7 +25,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section */}
-      <section className="relative bg-[#0D1117] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
@@ -92,11 +92,11 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
             <a
               href="mailto:Judiciumarbitration@gmail.com"
-              className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
+              className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                <div className="w-14 h-14 mx-auto mb-4 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                   <LawIcons.Mail className="w-7 h-7 text-black" />
                 </div>
                 <p className="text-sm text-white/60 mb-2">Email Us</p>
@@ -105,22 +105,22 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="tel:+91-XXX-XXX-XXXX"
-              className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
+              href="tel:+91-9899686394"
+              className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-secondary to-gold-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
+                <div className="w-14 h-14 mx-auto mb-4 bg-linear-to-br from-gold-secondary to-gold-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
                   <LawIcons.Handshake className="w-7 h-7 text-black" />
                 </div>
                 <p className="text-sm text-white/60 mb-2">Call Us</p>
-                <p className="text-gold-primary font-semibold">+91-XXX-XXX-XXXX</p>
+                <p className="text-gold-primary font-semibold">+91-9899686394</p>
               </div>
             </a>
 
-            <div className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20">
+            <div className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20">
               <div className="relative z-10 text-center">
-                <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
+                <div className="w-14 h-14 mx-auto mb-4 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
                   <LawIcons.Clock className="w-7 h-7 text-black" />
                 </div>
                 <p className="text-sm text-white/60 mb-2">Business Hours</p>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                     name="phone"
                     required
                     className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors"
-                    placeholder="+91-XXX-XXX-XXXX"
+                    placeholder="+91-9899686394"
                   />
                 </div>
 
@@ -288,6 +288,18 @@ export default function ContactPage() {
                     Icon: LawIcons.Landmark
                   },
                   {
+                    city: "Jaipur",
+                    badge: "Rajasthan Hub",
+                    address: "C-Scheme, Jaipur, Rajasthan",
+                    Icon: LawIcons.Pillar
+                  },
+                  {
+                    city: "Panipat",
+                    badge: "Service Center",
+                    address: "GT Road, Panipat, Haryana",
+                    Icon: LawIcons.City
+                  },
+                  {
                     city: "Prayagraj",
                     badge: "Eastern UP Hub",
                     address: "Civil Lines, Prayagraj, Uttar Pradesh",
@@ -302,13 +314,13 @@ export default function ContactPage() {
                 ].map((office, idx) => (
                   <div
                     key={idx}
-                    className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                    className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                          <div className="w-12 h-12 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                             <office.Icon className="w-6 h-6 text-black" />
                           </div>
                           <div>
@@ -329,13 +341,13 @@ export default function ContactPage() {
               </div>
 
               {/* Additional Contact Info */}
-              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/30 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/10 to-transparent"></div>
+              <div className="relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/30 overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-br from-gold-primary/10 to-transparent"></div>
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white mb-6">Other Ways to Reach Us</h3>
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                      <div className="w-10 h-10 bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
                         <LawIcons.Mail className="w-5 h-5 text-gold-primary" />
                       </div>
                       <div>
@@ -347,19 +359,19 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                      <div className="w-10 h-10 bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
                         <LawIcons.Handshake className="w-5 h-5 text-gold-primary" />
                       </div>
                       <div>
                         <p className="text-sm text-white/50 mb-1">Phone</p>
-                        <a href="tel:+91-XXX-XXX-XXXX" className="text-gold-primary hover:text-gold-secondary transition-colors">
-                          +91-XXX-XXX-XXXX
+                        <a href="tel:+91-9899686394" className="text-gold-primary hover:text-gold-secondary transition-colors">
+                          +91-9899686394
                         </a>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
+                      <div className="w-10 h-10 bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 rounded-lg flex items-center justify-center border border-gold-primary/20">
                         <LawIcons.Clock className="w-5 h-5 text-gold-primary" />
                       </div>
                       <div>
@@ -395,20 +407,18 @@ export default function ContactPage() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Serving <span className="text-gold-primary">10 Cities</span> Across North India
+              Serving <span className="text-gold-primary">8 Cities</span> Across North India
             </h2>
             <p className="text-lg text-white/60 max-w-3xl mx-auto">
               Strategically positioned offices for accessible and efficient legal services
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { name: "New Delhi", Icon: LawIcons.Landmark, desc: "HQ" },
               { name: "Gurgaon", Icon: LawIcons.Building, desc: "Corporate" },
               { name: "Noida", Icon: LawIcons.City, desc: "Commercial" },
-              { name: "Ghaziabad", Icon: LawIcons.Building, desc: "Industrial" },
-              { name: "Greater NCR", Icon: LawIcons.Location, desc: "Extended" },
               { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional" },
               { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan" },
               { name: "Panipat", Icon: LawIcons.City, desc: "Service" },
@@ -417,11 +427,11 @@ export default function ContactPage() {
             ].map((city, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
+                className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                     <city.Icon className="w-6 h-6 text-black" />
                   </div>
                   <h3 className="text-lg font-bold text-white group-hover:text-gold-primary transition-colors mb-1">
@@ -461,7 +471,7 @@ export default function ContactPage() {
               },
               {
                 question: "Do you offer consultations in all cities you serve?",
-                answer: "Yes, we offer consultations across all 10 cities we serve: Delhi, Gurgaon, Noida, Ghaziabad, NCR, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. We can also arrange virtual consultations if preferred."
+                answer: "Yes, we offer consultations across all 8 cities we serve: New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. We can also arrange virtual consultations if preferred."
               },
               {
                 question: "What are your consultation fees?",
@@ -500,8 +510,8 @@ export default function ContactPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
               <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{
@@ -510,7 +520,7 @@ export default function ContactPage() {
                 }}
               ></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
                   <LawIcons.Gavel className="w-10 h-10 text-black" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">

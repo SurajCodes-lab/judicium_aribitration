@@ -54,7 +54,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? "bg-bg-dark/95 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-gold-primary/10"
-            : "bg-gradient-to-b from-black/50 to-transparent"
+            : "bg-linear-to-b from-black/50 to-transparent"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,12 +89,12 @@ export default function Header() {
                   className="relative px-4 py-2 text-white/80 hover:text-gold-primary transition-colors duration-300 text-sm font-medium tracking-wide group"
                 >
                   {item.label}
-                  <span className="absolute bottom-1 left-4 right-4 h-px bg-gradient-to-r from-gold-primary to-gold-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="absolute bottom-1 left-4 right-4 h-px bg-linear-to-r from-gold-primary to-gold-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </Link>
               ))}
               <Link
                 href="/contact"
-                className="ml-4 px-6 py-2.5 bg-gradient-to-r from-gold-primary to-gold-secondary text-bg-dark font-bold text-sm tracking-wide rounded-lg hover:shadow-lg hover:shadow-gold-primary/30 transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
+                className="ml-4 px-6 py-2.5 bg-linear-to-r from-gold-primary to-gold-secondary text-bg-dark font-bold text-sm tracking-wide rounded-lg hover:shadow-lg hover:shadow-gold-primary/30 transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
               >
                 <LawIcons.Handshake className="w-4 h-4" />
                 Get Started
@@ -149,7 +149,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
-              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-[#0D1117] border-l border-gold-primary/20 z-50 lg:hidden"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-bg-dark border-l border-gold-primary/20 z-50 lg:hidden"
             >
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-[0.03]">
@@ -164,7 +164,7 @@ export default function Header() {
 
               <div className="relative flex flex-col h-full">
                 {/* Menu Header */}
-                <div className="flex items-center justify-between p-4 border-b border-gold-primary/20 bg-[#161B22]/50">
+                <div className="flex items-center justify-between p-4 border-b border-gold-primary/20 bg-bg-alt-dark/50">
                   <div className="flex items-center gap-3">
                     <Image
                       src="/logo.jpeg"
@@ -202,7 +202,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex items-center gap-4 px-4 py-4 text-white/80 hover:text-gold-primary bg-[#161B22]/50 hover:bg-gold-primary/10 rounded-xl transition-all duration-300 text-lg font-medium border border-transparent hover:border-gold-primary/20"
+                          className="flex items-center gap-4 px-4 py-4 text-white/80 hover:text-gold-primary bg-bg-alt-dark/50 hover:bg-gold-primary/10 rounded-xl transition-all duration-300 text-lg font-medium border border-transparent hover:border-gold-primary/20"
                         >
                           {item.label}
                         </Link>
@@ -212,18 +212,18 @@ export default function Header() {
                 </nav>
 
                 {/* Menu Footer */}
-                <div className="p-4 border-t border-gold-primary/20 bg-[#161B22]/50">
+                <div className="p-4 border-t border-gold-primary/20 bg-bg-alt-dark/50">
                   <Link
                     href="/contact"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-gold-primary to-gold-secondary text-bg-dark font-bold text-base tracking-wide rounded-xl shadow-lg shadow-gold-primary/20"
+                    className="flex items-center justify-center gap-2 w-full py-4 bg-linear-to-r from-gold-primary to-gold-secondary text-bg-dark font-bold text-base tracking-wide rounded-xl shadow-lg shadow-gold-primary/20"
                   >
                     <LawIcons.Handshake className="w-5 h-5" />
                     Schedule Consultation
                   </Link>
                   <div className="mt-4 flex items-center justify-center gap-2 text-white/40 text-xs">
                     <LawIcons.Location className="w-4 h-4 text-gold-primary/60" />
-                    <span>Serving Delhi NCR, Chandigarh, Jaipur & Panipat</span>
+                    <span>Serving 8 Cities Across North India</span>
                   </div>
                 </div>
               </div>

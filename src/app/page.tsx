@@ -9,7 +9,7 @@ import { LawIcons } from "@/components/Icons";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0D1117]">
+    <main className="min-h-screen bg-bg-dark">
       {/* Hero Section */}
       <HeroSection />
 
@@ -42,10 +42,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
             {/* Card 1 - Head Office */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500">
                 <div className="flex items-start gap-5 mb-5">
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30 shrink-0">
+                  <div className="w-14 h-14 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30 shrink-0">
                     <LawIcons.Building className="w-7 h-7 text-black" />
                   </div>
                   <div>
@@ -67,10 +67,10 @@ export default function Home() {
 
             {/* Card 2 - Expert Team */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-secondary/20 to-gold-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500">
+              <div className="absolute inset-0 bg-linear-to-r from-gold-secondary/20 to-gold-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-500">
                 <div className="flex items-start gap-5 mb-5">
-                  <div className="w-14 h-14 bg-gradient-to-br from-gold-secondary to-gold-primary rounded-xl flex items-center justify-center shadow-lg shadow-gold-secondary/30 shrink-0">
+                  <div className="w-14 h-14 bg-linear-to-br from-gold-secondary to-gold-primary rounded-xl flex items-center justify-center shadow-lg shadow-gold-secondary/30 shrink-0">
                     <LawIcons.Team className="w-7 h-7 text-black" />
                   </div>
                   <div>
@@ -93,8 +93,8 @@ export default function Home() {
 
           {/* Why Choose Us - Premium Cards */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/10 via-transparent to-gold-secondary/10 rounded-3xl blur-2xl" />
-            <div className="relative bg-[#0D1117] border border-gold-primary/30 p-8 sm:p-10 rounded-3xl">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/10 via-transparent to-gold-secondary/10 rounded-3xl blur-2xl" />
+            <div className="relative bg-bg-dark border border-gold-primary/30 p-8 sm:p-10 rounded-3xl">
               <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
                 Why Choose <span className="text-gold-primary">Judicium</span>?
               </h3>
@@ -149,9 +149,9 @@ export default function Home() {
               <Link
                 key={index}
                 href={`/practice-areas/${area.slug}`}
-                className="group block relative bg-[#161B22] p-5 rounded-xl border border-white/10 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-primary/10"
+                className="group block relative bg-bg-alt-dark p-5 rounded-xl border border-white/10 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-primary/10"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-primary/0 to-gold-primary/0 group-hover:from-gold-primary/10 group-hover:to-transparent transition-all rounded-xl" />
+                <div className="absolute inset-0 bg-linear-to-br from-gold-primary/0 to-gold-primary/0 group-hover:from-gold-primary/10 group-hover:to-transparent transition-all rounded-xl" />
                 <div className="relative flex items-center gap-4">
                   <div className="w-12 h-12 bg-gold-primary/10 border border-gold-primary/20 rounded-lg flex items-center justify-center group-hover:bg-gold-primary/20 group-hover:border-gold-primary/40 transition-all shrink-0">
                     <span className="text-2xl">{area.icon}</span>
@@ -205,16 +205,16 @@ export default function Home() {
             ].map((item, i) => (
               <div key={i} className="group">
                 {item.href ? (
-                  <a href={item.href} className="block bg-[#161B22] hover:bg-[#1C2128] p-6 rounded-xl border border-white/10 hover:border-gold-primary/40 transition-all text-center">
-                    <div className={`w-14 h-14 mx-auto mb-4 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <a href={item.href} className="block bg-bg-alt-dark hover:bg-[#1C2128] p-6 rounded-xl border border-white/10 hover:border-gold-primary/40 transition-all text-center">
+                    <div className={`w-14 h-14 mx-auto mb-4 bg-linear-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg`}>
                       <item.Icon className="w-7 h-7 text-black" />
                     </div>
                     <h4 className="text-white font-bold mb-2">{item.title}</h4>
                     <p className="text-gold-primary text-sm break-all">{item.value}</p>
                   </a>
                 ) : (
-                  <div className="bg-[#161B22] p-6 rounded-xl border border-white/10 text-center">
-                    <div className={`w-14 h-14 mx-auto mb-4 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg`}>
+                  <div className="bg-bg-alt-dark p-6 rounded-xl border border-white/10 text-center">
+                    <div className={`w-14 h-14 mx-auto mb-4 bg-linear-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg`}>
                       <item.Icon className="w-7 h-7 text-black" />
                     </div>
                     <h4 className="text-white font-bold mb-2">{item.title}</h4>
@@ -227,8 +227,8 @@ export default function Home() {
 
           {/* CTA Box */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-2xl blur-xl" />
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-8 sm:p-10 rounded-2xl border border-gold-primary/40 text-center">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-2xl blur-xl" />
+            <div className="relative bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 p-8 sm:p-10 rounded-2xl border border-gold-primary/40 text-center">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                 Schedule Your Free Consultation
               </h3>

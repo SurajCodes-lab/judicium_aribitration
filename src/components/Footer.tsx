@@ -38,7 +38,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#080B0E] overflow-hidden">
       {/* Top decorative line */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/40 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold-primary/40 to-transparent" />
 
       {/* Premium gradient overlays */}
       <div className="absolute inset-0 pointer-events-none">
@@ -100,7 +100,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-[#161B22] hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-[#161B22] hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
                 aria-label="Twitter"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -118,7 +118,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:Judiciumarbitration@gmail.com"
-                className="w-10 h-10 rounded-lg bg-[#161B22] hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
                 aria-label="Email"
               >
                 <LawIcons.Mail className="w-4 h-4" />
@@ -134,7 +134,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-              <span className="w-8 h-px bg-gradient-to-r from-gold-primary to-transparent" />
+              <span className="w-8 h-px bg-linear-to-r from-gold-primary to-transparent" />
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -160,7 +160,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-              <span className="w-8 h-px bg-gradient-to-r from-gold-primary to-transparent" />
+              <span className="w-8 h-px bg-linear-to-r from-gold-primary to-transparent" />
               Practice Areas
             </h3>
             <ul className="space-y-3">
@@ -186,7 +186,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-              <span className="w-8 h-px bg-gradient-to-r from-gold-primary to-transparent" />
+              <span className="w-8 h-px bg-linear-to-r from-gold-primary to-transparent" />
               Our Locations
             </h3>
 
@@ -194,7 +194,7 @@ export default function Footer() {
               {locations.map((location) => (
                 <span
                   key={location}
-                  className="px-3 py-1.5 bg-[#161B22] border border-gold-primary/20 rounded-lg text-xs text-white/70 hover:text-gold-primary hover:border-gold-primary/40 hover:bg-gold-primary/10 transition-all cursor-default"
+                  className="px-3 py-1.5 bg-bg-alt-dark border border-gold-primary/20 rounded-lg text-xs text-white/70 hover:text-gold-primary hover:border-gold-primary/40 hover:bg-gold-primary/10 transition-all cursor-default"
                 >
                   {location}
                 </span>
@@ -206,14 +206,14 @@ export default function Footer() {
                 href="mailto:Judiciumarbitration@gmail.com"
                 className="flex items-center gap-3 text-white/60 hover:text-gold-primary transition-colors text-sm group"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 flex items-center justify-center text-gold-primary group-hover:from-gold-primary/30 group-hover:to-gold-secondary/20 transition-all border border-gold-primary/20">
+                <div className="w-10 h-10 rounded-lg bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 flex items-center justify-center text-gold-primary group-hover:from-gold-primary/30 group-hover:to-gold-secondary/20 transition-all border border-gold-primary/20">
                   <LawIcons.Mail className="w-5 h-5" />
                 </div>
                 <span className="break-all">Judiciumarbitration@gmail.com</span>
               </a>
 
               <div className="flex items-center gap-3 text-white/60 text-sm">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-primary/20 to-gold-secondary/10 flex items-center justify-center text-gold-primary border border-gold-primary/20">
+                <div className="w-10 h-10 rounded-lg bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 flex items-center justify-center text-gold-primary border border-gold-primary/20">
                   <LawIcons.Clock className="w-5 h-5" />
                 </div>
                 <span>Mon - Fri: 9:00 AM - 6:00 PM</span>

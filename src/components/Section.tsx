@@ -22,10 +22,10 @@ export default function Section({
 }: SectionProps) {
 
   const bgClasses = {
-    default: 'bg-[#0D1117]',
+    default: 'bg-bg-dark',
     dark: 'bg-[#080B0E]',
-    gold: 'bg-gradient-to-br from-[#1a1510] via-[#0D1117] to-[#0D1117]',
-    gradient: 'bg-gradient-to-b from-[#161B22] via-[#0D1117] to-[#161B22]'
+    gold: 'bg-linear-to-br from-[#1a1510] via-[#0D1117] to-[#0D1117]',
+    gradient: 'bg-linear-to-b from-[#161B22] via-[#0D1117] to-[#161B22]'
   };
 
   return (
@@ -55,14 +55,14 @@ export default function Section({
       {/* Top and bottom accent lines */}
       {showAccents && (
         <>
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-primary/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-primary/20 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gold-primary/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gold-primary/20 to-transparent" />
         </>
       )}
 
       {/* Side accent lines */}
-      <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-transparent via-gold-primary/25 to-transparent" />
-      <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-gold-primary/25 to-transparent" />
+      <div className="absolute top-0 left-0 w-px h-full bg-linear-to-b from-transparent via-gold-primary/25 to-transparent" />
+      <div className="absolute top-0 right-0 w-px h-full bg-linear-to-b from-transparent via-gold-primary/25 to-transparent" />
 
       {/* Corner accents */}
       <div className="absolute top-4 left-4 w-8 h-8 border-l-2 border-t-2 border-gold-primary/30" />

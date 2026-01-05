@@ -30,7 +30,7 @@ export default function Button({
 
   const variantStyles = {
     primary: `
-      bg-gradient-to-r from-gold-primary to-gold-secondary
+      bg-linear-to-r from-gold-primary to-gold-secondary
       text-bg-dark
       shadow-lg shadow-gold-primary/20
       hover:shadow-xl hover:shadow-gold-primary/30

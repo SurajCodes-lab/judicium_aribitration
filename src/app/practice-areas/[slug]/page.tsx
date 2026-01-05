@@ -54,7 +54,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
       {/* Hero Section */}
-      <section className="relative bg-[#0D1117] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
@@ -109,7 +109,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
           {/* Title */}
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-4 mb-4 sm:mb-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
                 <span className="text-3xl sm:text-4xl">{practiceArea.icon}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gold-primary">
@@ -158,11 +158,11 @@ export default async function PracticeAreaPage({ params }: PageProps) {
             {practiceArea.content.services.map((service, index) => (
               <div
                 key={index}
-                className="group relative bg-[#161B22] p-5 sm:p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                className="group relative bg-bg-alt-dark p-5 sm:p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex items-start gap-4">
-                  <div className="shrink-0 w-10 h-10 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-lg flex items-center justify-center mt-0.5 shadow-lg shadow-gold-primary/20">
+                  <div className="shrink-0 w-10 h-10 bg-linear-to-br from-gold-primary to-gold-secondary rounded-lg flex items-center justify-center mt-0.5 shadow-lg shadow-gold-primary/20">
                     <svg
                       className="w-5 h-5 text-black"
                       fill="currentColor"
@@ -341,8 +341,8 @@ export default async function PracticeAreaPage({ params }: PageProps) {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-8 sm:p-10 md:p-12 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 p-8 sm:p-10 md:p-12 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
               <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{
@@ -351,7 +351,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                 }}
               ></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 mx-auto mb-5 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                <div className="w-16 h-16 mx-auto mb-5 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
                   <LawIcons.Handshake className="w-8 h-8 text-black" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">

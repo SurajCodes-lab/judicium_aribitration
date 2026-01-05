@@ -25,9 +25,9 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen pt-20 sm:pt-22 md:pt-24 bg-[#0D1117]">
+    <main className="min-h-screen pt-20 sm:pt-22 md:pt-24 bg-bg-dark">
       {/* Hero Section with Premium Background */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-[#0D1117]">
+      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-bg-dark">
         {/* Premium gradient overlays */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(240,194,70,0.15),transparent_60%)]" />
@@ -96,11 +96,11 @@ export default function AboutPage() {
               { number: "20+", label: "Years Experience", Icon: LawIcons.Shield },
               { number: "500+", label: "Cases Resolved", Icon: LawIcons.Document },
               { number: "98%", label: "Success Rate", Icon: LawIcons.Trophy },
-              { number: "10", label: "Cities Served", Icon: LawIcons.Location },
+              { number: "8", label: "Cities Served", Icon: LawIcons.Location },
             ].map((stat, idx) => (
               <div key={idx} className="group relative">
                 <div className="absolute inset-0 bg-gold-primary/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 group-hover:border-gold-primary/40 transition-all duration-300">
+                <div className="relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 group-hover:border-gold-primary/40 transition-all duration-300">
                   <stat.Icon className="w-6 h-6 text-gold-primary/60 mx-auto mb-2" />
                   <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-2">
                     {stat.number}
@@ -138,13 +138,13 @@ export default function AboutPage() {
                 <p className="text-base sm:text-lg">
                   Our co-founder Nadeem's extensive 20-year tenure at KKD Court has given us unparalleled
                   insights into the dispute lifecycle and ground realities of India's legal system. This
-                  experience, combined with our strategic presence across 10 major cities, enables us to
+                  experience, combined with our strategic presence across 8 major cities, enables us to
                   deliver exceptional results for our clients.
                 </p>
                 <p className="text-base sm:text-lg">
                   We specialize in resolving complex commercial disputes through arbitration, mediation,
-                  and conciliation, operating from strategically located offices in Delhi, Gurgaon, Noida,
-                  Ghaziabad, NCR, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow.
+                  and conciliation, operating from strategically located offices in New Delhi, Gurgaon, Noida,
+                  Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow.
                 </p>
               </div>
             </div>
@@ -195,10 +195,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-bg-alt-dark rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                <div className="w-16 h-16 mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                   <LawIcons.Target className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Mission</h3>
@@ -210,10 +210,10 @@ export default function AboutPage() {
             </div>
 
             {/* Vision */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-bg-alt-dark rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-secondary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-secondary to-gold-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
+                <div className="w-16 h-16 mb-6 bg-linear-to-br from-gold-secondary to-gold-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-secondary/30">
                   <LawIcons.Globe className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Vision</h3>
@@ -225,10 +225,10 @@ export default function AboutPage() {
             </div>
 
             {/* Values */}
-            <div className="group relative bg-[#161B22] rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
+            <div className="group relative bg-bg-alt-dark rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold-primary/10 rounded-full blur-3xl group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
               <div className="relative z-10 p-8 sm:p-10">
-                <div className="w-16 h-16 mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                <div className="w-16 h-16 mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                   <LawIcons.Shield className="w-8 h-8 text-black" />
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Values</h3>
@@ -401,18 +401,16 @@ export default function AboutPage() {
               Strategic Presence Across North India
             </h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-              Serving 10 major cities with offices strategically positioned in key commercial
+              Serving 8 major cities with offices strategically positioned in key commercial
               and legal hubs
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { name: "New Delhi", Icon: LawIcons.Landmark, desc: "Headquarters & Primary Office" },
               { name: "Gurgaon", Icon: LawIcons.Building, desc: "Corporate Hub" },
               { name: "Noida", Icon: LawIcons.City, desc: "Commercial Center" },
-              { name: "Ghaziabad", Icon: LawIcons.Building, desc: "Industrial Zone" },
-              { name: "Greater NCR", Icon: LawIcons.Location, desc: "Extended Coverage" },
               { name: "Chandigarh", Icon: LawIcons.Landmark, desc: "Regional Office" },
               { name: "Jaipur", Icon: LawIcons.Pillar, desc: "Rajasthan Hub" },
               { name: "Panipat", Icon: LawIcons.City, desc: "Service Center" },
@@ -421,11 +419,11 @@ export default function AboutPage() {
             ].map((city, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
+                className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 text-center overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mx-auto mb-4 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <div className="w-14 h-14 mx-auto mb-4 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                     <city.Icon className="w-7 h-7 text-black" />
                   </div>
                   <h3 className="text-lg font-bold text-white group-hover:text-gold-primary transition-colors mb-2">
@@ -439,10 +437,10 @@ export default function AboutPage() {
 
           <div className="mt-12 text-center">
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 rounded-2xl blur-xl"></div>
-              <div className="relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/30">
+              <div className="absolute inset-0 bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 rounded-2xl blur-xl"></div>
+              <div className="relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/30">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
+                  <div className="w-12 h-12 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center shadow-lg shadow-gold-primary/30">
                     <LawIcons.Location className="w-6 h-6 text-black" />
                   </div>
                   <span className="text-gold-primary font-bold text-xl">Strategic Positioning</span>
@@ -521,11 +519,11 @@ export default function AboutPage() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="group relative bg-[#161B22] p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
+                className="group relative bg-bg-alt-dark p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mb-5 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
+                  <div className="w-14 h-14 mb-5 bg-linear-to-br from-gold-primary to-gold-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/30">
                     <item.Icon className="w-7 h-7 text-black" />
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-primary transition-colors">
@@ -553,8 +551,8 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
-            <div className="relative bg-gradient-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
+            <div className="absolute inset-0 bg-linear-to-r from-gold-primary/30 via-gold-primary/20 to-gold-secondary/30 rounded-3xl blur-xl"></div>
+            <div className="relative bg-linear-to-r from-gold-primary/20 to-gold-secondary/20 p-10 sm:p-12 md:p-16 rounded-3xl border border-gold-primary/40 overflow-hidden text-center">
               <div
                 className="absolute inset-0 opacity-[0.04]"
                 style={{
@@ -563,7 +561,7 @@ export default function AboutPage() {
                 }}
               ></div>
               <div className="relative z-10">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
+                <div className="w-20 h-20 mx-auto mb-6 bg-linear-to-br from-gold-primary to-gold-secondary rounded-2xl flex items-center justify-center shadow-lg shadow-gold-primary/40">
                   <LawIcons.Shield className="w-10 h-10 text-black" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">

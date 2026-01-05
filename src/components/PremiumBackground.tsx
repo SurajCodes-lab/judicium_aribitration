@@ -131,8 +131,8 @@ export default function PremiumBackground({
       />
 
       {/* Horizontal decorative lines */}
-      <div className="absolute top-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/10 to-transparent" />
-      <div className="absolute bottom-[20%] left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-primary/10 to-transparent" />
+      <div className="absolute top-[20%] left-0 w-full h-px bg-linear-to-r from-transparent via-gold-primary/10 to-transparent" />
+      <div className="absolute bottom-[20%] left-0 w-full h-px bg-linear-to-r from-transparent via-gold-primary/10 to-transparent" />
     </div>
   );
 }
