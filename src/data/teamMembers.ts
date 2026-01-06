@@ -35,7 +35,7 @@ export const teamMembers: TeamMember[] = [
     name: "Dr. Ravikant Bhardwaj",
     title: "Senior Advocate",
     role: "Partner",
-    image: "",
+    image: "/Ravikant.jpeg",
     bio: "Dr. Ravikant Bhardwaj brings great leadership, enthusiasm, advice and practicality in forming and solving complex disputes. He is composed, solution-oriented, and able to deal with complex business transactions, making him a highly valued member of the firm.",
     experience: "Over a decade of experience advising clients in dispute resolution in courts and arbitration. Previously affiliated with Indian Institute of Corporate Affairs (IICA) dealing with sectoral regulations, competition law and arbitration. Has taught and undertaken research on arbitration law at National Law University Jodhpur.",
     education: [
