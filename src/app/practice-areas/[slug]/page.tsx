@@ -1,10 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPracticeAreaBySlug, getAllPracticeAreaSlugs } from "@/data/practiceAreas";
+import {
+  getPracticeAreaBySlug,
+  getAllPracticeAreaSlugs,
+  PracticeArea,
+} from "@/data/practiceAreas";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import { LawIcons } from "@/components/Icons";
+
+const BASE_URL = "https://judicium-arbitration.com";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,30 +23,122 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const practiceArea = getPracticeAreaBySlug(slug);
 
   if (!practiceArea) {
     return {
-      title: "Practice Area Not Found | Judicium Arbitration",
+      title: "Practice Area Not Found",
     };
   }
 
   return {
-    title: `${practiceArea.title} | Judicium Arbitration`,
+    title: `${practiceArea.title}`,
     description: practiceArea.metaDescription,
     keywords: practiceArea.keywords.join(", "),
     openGraph: {
       title: `${practiceArea.title} | Judicium Arbitration`,
       description: practiceArea.metaDescription,
-      type: "website",
-      url: `https://judicium-arbitration.com/practice-areas/${slug}`,
+      type: "article",
+      url: `${BASE_URL}/practice-areas/${slug}`,
+      images: [
+        {
+          url: "/logo.jpeg",
+          width: 800,
+          height: 600,
+          alt: `${practiceArea.title} - Judicium Arbitration`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${practiceArea.title} | Judicium Arbitration`,
+      description: practiceArea.metaDescription,
+      images: ["/logo.jpeg"],
     },
     alternates: {
-      canonical: `https://judicium-arbitration.com/practice-areas/${slug}`,
+      canonical: `${BASE_URL}/practice-areas/${slug}`,
     },
   };
+}
+
+function generateStructuredData(practiceArea: PracticeArea, slug: string) {
+  const pageUrl = `${BASE_URL}/practice-areas/${slug}`;
+
+  // Service schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: practiceArea.title,
+    description: practiceArea.metaDescription,
+    provider: {
+      "@type": "LegalService",
+      name: "Judicium Arbitration",
+      url: BASE_URL,
+    },
+    areaServed: [
+      { "@type": "City", name: "New Delhi" },
+      { "@type": "City", name: "Gurgaon" },
+      { "@type": "City", name: "Noida" },
+      { "@type": "City", name: "Chandigarh" },
+      { "@type": "City", name: "Jaipur" },
+      { "@type": "City", name: "Panipat" },
+      { "@type": "City", name: "Prayagraj" },
+      { "@type": "City", name: "Lucknow" },
+    ],
+    url: pageUrl,
+  };
+
+  // BreadcrumbList schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Practice Areas",
+        item: `${BASE_URL}/practice-areas`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: practiceArea.shortTitle,
+        item: pageUrl,
+      },
+    ],
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const schemas: Record<string, any>[] = [serviceSchema, breadcrumbSchema];
+
+  // FAQ schema (if FAQs exist)
+  if (practiceArea.content.faqs && practiceArea.content.faqs.length > 0) {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: practiceArea.content.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+    schemas.push(faqSchema);
+  }
+
+  return schemas;
 }
 
 export default async function PracticeAreaPage({ params }: PageProps) {
@@ -51,8 +149,17 @@ export default async function PracticeAreaPage({ params }: PageProps) {
     notFound();
   }
 
+  const structuredData = generateStructuredData(practiceArea, slug);
+
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
+      {structuredData.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* Hero Section */}
       <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
