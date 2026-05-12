@@ -5,7 +5,24 @@ import Section from "@/components/Section";
 export const metadata: Metadata = {
   title: "Disclaimer | Judicium Arbitration",
   description: "Legal disclaimer for Judicium Arbitration. Important information about the use of our website and legal services.",
-  robots: "noindex, nofollow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.judiciumarbitration.com/disclaimer",
+  },
+  openGraph: {
+    title: "Disclaimer | Judicium Arbitration",
+    description: "Legal disclaimer for Judicium Arbitration. Important information about the use of our website and legal services.",
+    type: "website",
+    url: "https://www.judiciumarbitration.com/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {

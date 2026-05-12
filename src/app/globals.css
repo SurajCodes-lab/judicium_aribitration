@@ -243,7 +243,12 @@
 
   /* Focus Ring */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark;
+    @apply focus:outline-none focus:ring-2 focus:ring-gold-primary/70 focus:ring-offset-2 focus:ring-offset-bg-dark;
+  }
+
+  /* Focus visible for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-primary/70 ring-offset-2 ring-offset-bg-dark;
   }
 
   /* Section Spacing */

@@ -5,7 +5,24 @@ import Section from "@/components/Section";
 export const metadata: Metadata = {
   title: "Terms of Service | Judicium Arbitration",
   description: "Terms of Service for Judicium Arbitration. Read our terms and conditions for using our website and legal services.",
-  robots: "noindex, nofollow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.judiciumarbitration.com/terms-of-service",
+  },
+  openGraph: {
+    title: "Terms of Service | Judicium Arbitration",
+    description: "Terms of Service for Judicium Arbitration. Read our terms and conditions for using our website and legal services.",
+    type: "website",
+    url: "https://www.judiciumarbitration.com/terms-of-service",
+  },
 };
 
 export default function TermsOfServicePage() {
@@ -60,7 +77,7 @@ export default function TermsOfServicePage() {
             <section>
               <h2 className="text-2xl font-bold text-gold-primary mb-4">1. Acceptance of Terms</h2>
               <p className="leading-relaxed">
-                By accessing our website (judicium-arbitration.com) or engaging our legal services, you acknowledge
+                By accessing our website (www.judiciumarbitration.com) or engaging our legal services, you acknowledge
                 that you have read, understood, and agree to be bound by these Terms of Service, our Privacy Policy,
                 and all applicable laws and regulations. If you do not agree with any of these terms, you are
                 prohibited from using or accessing this site and our services.

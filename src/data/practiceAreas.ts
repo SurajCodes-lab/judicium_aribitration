@@ -23,7 +23,26 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Arbitration & ADR",
     description: "Expert arbitration and ADR services in India, specializing in domestic and international commercial disputes under the Arbitration and Conciliation Act, 1996.",
     metaDescription: "Leading arbitration & ADR services in Delhi, NCR & Chandigarh. Expert resolution of commercial disputes under Indian arbitration laws with 20+ years experience.",
-    keywords: ["arbitration India", "ADR services Delhi", "commercial arbitration", "international arbitration India", "DIAC arbitration", "arbitration lawyers Delhi"],
+    keywords: [
+      // Tier 1 — head terms
+      "arbitration India",
+      "ADR services Delhi",
+      "commercial arbitration",
+      "international arbitration India",
+      "arbitration lawyers Delhi",
+      // Tier 2 — commercial intent
+      "DIAC arbitration counsel",
+      "MCIA arbitration India",
+      "institutional arbitration lawyers",
+      "arbitration firm Delhi NCR",
+      "arbitrator appointment lawyers",
+      // Tier 3 — long-tail
+      "Section 9 Arbitration Act India",
+      "emergency arbitrator India",
+      "NN Global stamping arbitration counsel",
+      "foreign award enforcement India",
+      "SIAC ICC LCIA counsel India",
+    ],
     icon: "⚖️",
     content: {
       overview: "Judicium Arbitration is a premier arbitration and alternative dispute resolution firm in North India, with offices strategically located in New Delhi, NCR, and Chandigarh. We specialize in resolving complex commercial disputes through arbitration, mediation, and conciliation under the Arbitration and Conciliation Act, 1996, as amended in 2015, 2019, and 2021.",
@@ -90,7 +109,26 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Banking & Finance",
     description: "Comprehensive banking and finance legal services covering regulatory compliance, NPA resolution, loan recovery, and financial transactions under RBI guidelines.",
     metaDescription: "Expert banking & finance lawyers in Delhi NCR. Specializing in NPA resolution, SARFAESI, DRT proceedings, loan restructuring & RBI compliance.",
-    keywords: ["banking lawyers India", "finance law Delhi", "NPA resolution", "SARFAESI Act", "DRT lawyers", "loan recovery India", "RBI compliance"],
+    keywords: [
+      // Tier 1
+      "banking lawyers India",
+      "finance law Delhi",
+      "NPA resolution",
+      "SARFAESI Act lawyers",
+      "loan recovery India",
+      "RBI compliance",
+      // Tier 2
+      "DRT DRAT lawyers Delhi",
+      "SARFAESI possession lawyer",
+      "IBC financial creditor counsel",
+      "banking arbitration India",
+      "corporate debt restructuring lawyers",
+      // Tier 3
+      "digital lending RBI compliance",
+      "fintech regulatory advisory India",
+      "OTS settlement lawyers India",
+      "wilful defaulter proceedings counsel",
+    ],
     icon: "🏦",
     content: {
       overview: "Our Banking & Finance practice provides comprehensive legal services to banks, NBFCs, fintech companies, and borrowers across India. With deep expertise in regulatory frameworks including RBI guidelines, SARFAESI Act, and IBC, we handle complex financial disputes and transactions.",
@@ -151,7 +189,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Capital Markets",
     description: "Capital markets advisory covering securities laws, SEBI regulations, IPOs, private placements, and corporate governance compliance.",
     metaDescription: "Capital markets lawyers in Delhi NCR. Expert advice on SEBI regulations, IPOs, securities compliance, takeovers & corporate governance.",
-    keywords: ["capital markets India", "SEBI lawyers Delhi", "IPO advisors", "securities law India", "takeover code", "corporate governance"],
+    keywords: [
+      // Tier 1
+      "capital markets India",
+      "SEBI lawyers Delhi",
+      "IPO advisors India",
+      "securities law India",
+      "takeover code lawyers",
+      "corporate governance counsel",
+      // Tier 2
+      "ICDR Regulations IPO counsel",
+      "SEBI investigation defense",
+      "listing obligations LODR advisory",
+      "mutual fund regulatory India",
+      // Tier 3
+      "SEBI insider trading defense lawyer",
+      "AIF Regulations counsel India",
+      "REIT InvIT structuring lawyers",
+      "FPI compliance India",
+    ],
     icon: "📈",
     content: {
       overview: "Our Capital Markets practice advises corporates, financial institutions, investment banks, and investors on regulatory compliance, securities offerings, and corporate governance under SEBI regulations and Companies Act, 2013.",
@@ -200,7 +256,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Competition & Anti-Trust",
     description: "Competition law advisory covering CCI compliance, anti-competitive practices, merger control, and cartel investigations.",
     metaDescription: "Competition law experts in India. CCI compliance, merger notifications, anti-trust advisory, cartel defense & competition litigation.",
-    keywords: ["competition law India", "CCI lawyers", "antitrust India", "merger control", "cartel defense", "competition commission"],
+    keywords: [
+      // Tier 1
+      "competition law India",
+      "CCI lawyers",
+      "antitrust India",
+      "merger control lawyers",
+      "cartel defense India",
+      "competition commission counsel",
+      // Tier 2
+      "CCI merger filing advisor",
+      "abuse of dominance defense",
+      "leniency application India",
+      "anti-competitive agreements counsel",
+      // Tier 3
+      "Combination Regulations Section 6 advisor",
+      "NCLAT antitrust appeals India",
+      "gun jumping defense India",
+      "Big Tech antitrust lawyer Delhi",
+    ],
     icon: "🎯",
     content: {
       overview: "Our Competition Law practice advises clients on compliance with the Competition Act, 2002, merger notifications, anti-competitive investigations, and strategic competition issues before the Competition Commission of India (CCI).",
@@ -242,7 +316,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "M&A",
     description: "End-to-end M&A advisory including deal structuring, due diligence, regulatory approvals, and transaction documentation.",
     metaDescription: "M&A lawyers in Delhi NCR. Expert advisory on mergers, acquisitions, deal structuring, due diligence & regulatory approvals in India.",
-    keywords: ["M&A lawyers India", "merger advisory Delhi", "acquisition lawyers", "due diligence India", "corporate restructuring"],
+    keywords: [
+      // Tier 1
+      "M&A lawyers India",
+      "merger advisory Delhi",
+      "acquisition lawyers India",
+      "due diligence India",
+      "corporate restructuring counsel",
+      // Tier 2
+      "cross border M&A counsel India",
+      "share purchase agreement lawyers",
+      "scheme of arrangement NCLT",
+      "slump sale advisory Delhi",
+      // Tier 3
+      "SPA SHA negotiation lawyers India",
+      "Companies Act 230-232 scheme counsel",
+      "FEMA M&A advisory India",
+      "ODI compliance lawyers Delhi",
+    ],
     icon: "🤝",
     content: {
       overview: "Our M&A practice provides comprehensive advisory on domestic and cross-border mergers, acquisitions, joint ventures, and corporate restructuring under the Companies Act, 2013, and SEBI regulations.",
@@ -288,7 +379,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Corporate & Commercial",
     description: "General corporate and commercial law services including company incorporation, contracts, corporate governance, and regulatory compliance.",
     metaDescription: "Corporate lawyers in Delhi NCR. Company incorporation, commercial contracts, corporate governance, compliance & secretarial services.",
-    keywords: ["corporate lawyers Delhi", "company law India", "commercial contracts", "corporate governance", "company secretary services"],
+    keywords: [
+      // Tier 1
+      "corporate lawyers Delhi",
+      "company law India",
+      "commercial contracts lawyers",
+      "corporate governance India",
+      "company secretary services",
+      // Tier 2
+      "Companies Act 2013 advisory",
+      "contract drafting lawyers Delhi",
+      "corporate compliance India",
+      "board governance counsel",
+      // Tier 3
+      "shareholder agreement drafting India",
+      "MSME contract lawyer Delhi",
+      "corporate secretarial Delhi NCR",
+      "joint venture agreement lawyers India",
+    ],
     icon: "🏢",
     content: {
       overview: "Our Corporate and Commercial practice offers a full range of legal services to startups, SMEs, and large corporations, including incorporation, governance, contracts, and day-to-day legal advisory.",
@@ -334,7 +442,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Data Privacy & Cybersecurity",
     description: "Data protection and cybersecurity advisory covering DPDP Act compliance, CERT-In regulations, cyber incident response, and digital compliance.",
     metaDescription: "Data privacy & cybersecurity lawyers in India. DPDP Act compliance, CERT-In advisory, data breach response & IT Act compliance.",
-    keywords: ["data privacy India", "DPDP Act lawyers", "cybersecurity legal", "IT Act compliance", "data protection India", "cyber law Delhi"],
+    keywords: [
+      // Tier 1
+      "data privacy India",
+      "DPDP Act lawyers",
+      "cybersecurity legal",
+      "IT Act compliance",
+      "data protection India",
+      "cyber law Delhi",
+      // Tier 2
+      "DPDP Act 2023 compliance counsel",
+      "GDPR India advisory",
+      "data breach response lawyers",
+      "CERT-In compliance India",
+      // Tier 3
+      "cross border data transfer lawyer India",
+      "consent manager DPDP advisor",
+      "data fiduciary obligations counsel",
+      "ransomware incident response lawyers",
+    ],
     icon: "🔒",
     content: {
       overview: "Our Data Privacy and Cybersecurity practice helps organizations navigate India's evolving data protection landscape, including the Digital Personal Data Protection Act, 2023, IT Act, and CERT-In regulations.",
@@ -391,7 +517,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Real Estate",
     description: "Real estate legal services covering RERA compliance, property transactions, title due diligence, construction disputes, and urban development projects.",
     metaDescription: "Real estate lawyers in Delhi NCR. RERA compliance, property transactions, title verification, construction disputes & real estate litigation.",
-    keywords: ["real estate lawyers Delhi", "RERA lawyers India", "property dispute lawyers", "real estate transactions", "construction law India"],
+    keywords: [
+      // Tier 1
+      "real estate lawyers Delhi",
+      "RERA lawyers India",
+      "property dispute lawyers",
+      "real estate transactions India",
+      "construction law India",
+      // Tier 2
+      "RERA complaint lawyer Delhi NCR",
+      "property due diligence counsel",
+      "lease deed drafting India",
+      "builder buyer dispute lawyers",
+      // Tier 3
+      "RERA NCDRC remedies counsel",
+      "society redevelopment lawyers India",
+      "slum rehabilitation legal advisory",
+      "DDA land disputes lawyer Delhi",
+    ],
     icon: "🏗️",
     content: {
       overview: "Our Real Estate practice serves developers, investors, buyers, and financial institutions with comprehensive legal services covering property transactions, RERA compliance, construction disputes, and urban development projects across North India.",
@@ -450,7 +593,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Intellectual Property",
     description: "IP law services including trademark, patent, copyright, design registration, IP litigation, licensing, and enforcement.",
     metaDescription: "IP lawyers in Delhi NCR. Trademark registration, patent filing, copyright protection, IP litigation & licensing in India.",
-    keywords: ["IP lawyers Delhi", "trademark registration India", "patent attorneys", "copyright lawyers", "IP litigation India"],
+    keywords: [
+      // Tier 1
+      "IP lawyers Delhi",
+      "trademark registration India",
+      "patent attorneys India",
+      "copyright lawyers Delhi",
+      "IP litigation India",
+      // Tier 2
+      "trademark opposition counsel India",
+      "patent prosecution Delhi",
+      "design registration lawyers India",
+      "copyright infringement litigation Delhi",
+      // Tier 3
+      "standard essential patents SEP lawyer India",
+      "trade secret protection India",
+      "GI registration counsel India",
+      "IP arbitration counsel Delhi",
+    ],
     icon: "©️",
     content: {
       overview: "Our Intellectual Property practice provides end-to-end IP services including registration, prosecution, licensing, enforcement, and litigation for trademarks, patents, copyrights, designs, and trade secrets.",
@@ -498,7 +658,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Insolvency & Bankruptcy",
     description: "IBC advisory covering CIRP, liquidation, NCLT proceedings, creditor rights, and corporate insolvency resolution.",
     metaDescription: "Insolvency lawyers in Delhi. IBC advisory, CIRP, NCLT litigation, creditor representation & bankruptcy resolution in India.",
-    keywords: ["IBC lawyers India", "insolvency lawyers Delhi", "NCLT lawyers", "CIRP advisory", "bankruptcy India", "creditor rights"],
+    keywords: [
+      // Tier 1
+      "IBC lawyers India",
+      "insolvency lawyers Delhi",
+      "NCLT lawyers India",
+      "CIRP advisory",
+      "bankruptcy India",
+      "creditor rights counsel",
+      // Tier 2
+      "Section 7 9 IBC lawyer",
+      "resolution professional advisory",
+      "IBC liquidation counsel",
+      "NCLAT appeals India",
+      // Tier 3
+      "cross border insolvency lawyer India",
+      "personal guarantor IBC counsel",
+      "pre-pack insolvency counsel India",
+      "operational creditor application IBC",
+    ],
     icon: "⚖️",
     content: {
       overview: "Our Insolvency and Bankruptcy practice advises financial creditors, operational creditors, corporate debtors, resolution applicants, and insolvency professionals on all aspects of the Insolvency and Bankruptcy Code, 2016.",
@@ -555,7 +733,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Labour & Employment",
     description: "Employment law services covering labour compliance, industrial disputes, employment contracts, terminations, and workplace policies.",
     metaDescription: "Labour & employment lawyers in Delhi NCR. Compliance, industrial disputes, employment contracts, termination & workplace law advisory.",
-    keywords: ["labour lawyers Delhi", "employment law India", "industrial disputes", "HR legal compliance", "termination laws India"],
+    keywords: [
+      // Tier 1
+      "labour lawyers Delhi",
+      "employment law India",
+      "industrial disputes counsel",
+      "HR legal compliance",
+      "termination laws India",
+      // Tier 2
+      "POSH Act compliance counsel",
+      "ID Act tribunal lawyer Delhi",
+      "employment contract drafting Delhi",
+      "gratuity bonus advisory India",
+      // Tier 3
+      "Code on Wages compliance India",
+      "OSH Code advisory counsel",
+      "contract labour CLRA lawyer India",
+      "EPF ESIC litigation counsel",
+    ],
     icon: "👥",
     content: {
       overview: "Our Labour and Employment practice advises employers and employees on all aspects of Indian labour laws, including compliance, contracts, disputes, and workplace policies under central and state labour legislations.",
@@ -606,7 +801,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Litigation",
     description: "Comprehensive litigation services across civil, commercial, constitutional, and regulatory matters before all courts and tribunals in India.",
     metaDescription: "Litigation lawyers in Delhi NCR. Expert representation in Supreme Court, High Courts & tribunals. Commercial, civil & constitutional litigation.",
-    keywords: ["litigation lawyers Delhi", "Supreme Court lawyers", "High Court lawyers", "civil litigation India", "commercial litigation"],
+    keywords: [
+      // Tier 1
+      "litigation lawyers Delhi",
+      "Supreme Court lawyers India",
+      "High Court lawyers Delhi",
+      "civil litigation India",
+      "commercial litigation Delhi",
+      // Tier 2
+      "Commercial Courts Act lawyer",
+      "SLP drafting Supreme Court India",
+      "writ petition lawyer Delhi HC",
+      "recovery suit counsel India",
+      // Tier 3
+      "original side commercial division lawyer",
+      "CPC Order 7 11 application counsel",
+      "Section 482 quashing counsel Delhi",
+      "Article 32 226 writ petition lawyer",
+    ],
     icon: "⚖️",
     content: {
       overview: "Our Litigation practice provides strategic representation across all courts and tribunals in India, with particular strength in Delhi High Court and Supreme Court matters. We handle complex commercial, civil, constitutional, and regulatory disputes.",
@@ -654,7 +866,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "TMT",
     description: "TMT legal services covering technology transactions, media law, telecom regulations, digital content, and IT contracts.",
     metaDescription: "TMT lawyers in India. Technology contracts, media law, telecom regulations, SaaS agreements, licensing & IT legal advisory.",
-    keywords: ["TMT lawyers India", "technology law Delhi", "media law India", "telecom regulations", "IT contracts", "SaaS legal"],
+    keywords: [
+      // Tier 1
+      "TMT lawyers India",
+      "technology law Delhi",
+      "media law India",
+      "telecom regulations counsel",
+      "IT contracts lawyers",
+      "SaaS legal counsel",
+      // Tier 2
+      "TRAI compliance counsel",
+      "OTT regulation advisory India",
+      "telecom licensing lawyer",
+      "online content takedown counsel",
+      // Tier 3
+      "Telecommunications Act 2023 advisor",
+      "gaming law India counsel",
+      "cloud services contracts lawyer",
+      "defamation media litigation Delhi",
+    ],
     icon: "📡",
     content: {
       overview: "Our Technology, Media & Telecommunication practice serves tech companies, media houses, telecom operators, and digital platforms with comprehensive legal advisory on transactions, regulations, and disputes in the TMT sector.",
@@ -702,7 +932,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Projects & Infrastructure",
     description: "Infrastructure and project finance legal services covering PPP, EPC contracts, project development, and regulatory approvals.",
     metaDescription: "Infrastructure lawyers in India. PPP projects, EPC contracts, project finance, regulatory clearances & infrastructure development.",
-    keywords: ["infrastructure lawyers India", "PPP projects", "EPC contracts", "project finance", "infrastructure development Delhi"],
+    keywords: [
+      // Tier 1
+      "infrastructure lawyers India",
+      "PPP projects counsel",
+      "EPC contracts lawyers",
+      "project finance India",
+      "infrastructure development Delhi",
+      // Tier 2
+      "PPP concession agreement lawyer",
+      "FIDIC contracts counsel India",
+      "road highways infrastructure advisory",
+      "energy projects legal counsel",
+      // Tier 3
+      "hybrid annuity model HAM counsel",
+      "model concession agreement advisor",
+      "smart cities mission legal counsel",
+      "infrastructure arbitration India lawyer",
+    ],
     icon: "🏗️",
     content: {
       overview: "Our Projects & Infrastructure practice advises developers, contractors, lenders, and government entities on large-scale infrastructure projects including roads, airports, power, renewable energy, and smart cities.",
@@ -750,7 +997,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "PE & Investment Funds",
     description: "Private equity and fund advisory covering fund formation, investments, exits, SEBI compliance, and portfolio management.",
     metaDescription: "PE lawyers in India. Fund formation, venture capital, SEBI AIF compliance, investment structuring & exit advisory.",
-    keywords: ["private equity lawyers India", "venture capital Delhi", "fund formation India", "AIF regulations", "startup investments"],
+    keywords: [
+      // Tier 1
+      "private equity lawyers India",
+      "venture capital Delhi",
+      "fund formation India",
+      "AIF regulations counsel",
+      "startup investments counsel",
+      // Tier 2
+      "AIF Category I II III counsel",
+      "PE term sheet drafting lawyer",
+      "fund structuring Delhi",
+      "GIFT IFSC fund counsel",
+      // Tier 3
+      "SAFE convertible notes lawyer India",
+      "ESOP structuring counsel",
+      "secondary buyout advisory India",
+      "distressed asset fund counsel",
+    ],
     icon: "💼",
     content: {
       overview: "Our Private Equity and Investment Funds practice advises fund managers, investors, and portfolio companies on fund formation, investments, regulatory compliance, and exits under Indian and foreign regulations.",
@@ -797,7 +1061,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "White Collar Crime",
     description: "White collar crime defense covering fraud, corruption, financial crimes, regulatory investigations, and enforcement actions.",
     metaDescription: "White collar crime lawyers in Delhi. Defense against fraud, PMLA, corruption, SEBI/RBI investigations & economic offenses.",
-    keywords: ["white collar crime lawyers Delhi", "fraud defense India", "PMLA lawyers", "SEBI investigation", "economic offenses India"],
+    keywords: [
+      // Tier 1
+      "white collar crime lawyers Delhi",
+      "fraud defense India",
+      "PMLA lawyers Delhi",
+      "SEBI investigation counsel",
+      "economic offenses India",
+      // Tier 2
+      "PMLA bail lawyer Delhi",
+      "ED investigation defense counsel",
+      "CBI lawyer Delhi",
+      "corporate fraud defense India",
+      // Tier 3
+      "PMLA Section 50 statement counsel",
+      "fugitive economic offender defense",
+      "FCRA defense lawyer India",
+      "benami transactions defense counsel",
+    ],
     icon: "🔍",
     content: {
       overview: "Our White Collar Crime practice defends individuals and corporations in criminal investigations, prosecutions, and regulatory enforcement actions involving economic offenses, fraud, corruption, and financial crimes.",
@@ -846,7 +1127,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Healthcare",
     description: "Healthcare legal services covering pharma regulations, clinical trials, hospital advisory, medical devices, and health insurance.",
     metaDescription: "Healthcare lawyers in India. Pharma regulations, clinical trials, hospital compliance, medical devices & healthcare advisory.",
-    keywords: ["healthcare lawyers India", "pharma regulations", "clinical trials India", "hospital legal advisory", "medical device regulations"],
+    keywords: [
+      // Tier 1
+      "healthcare lawyers India",
+      "pharma regulations counsel",
+      "clinical trials India",
+      "hospital legal advisory",
+      "medical device regulations India",
+      // Tier 2
+      "CDSCO drug approval counsel",
+      "NMC compliance advisory",
+      "clinical trial CDSCO lawyer",
+      "pharma marketing code counsel",
+      // Tier 3
+      "ART surrogacy law counsel India",
+      "Mental Healthcare Act advisor",
+      "telemedicine practice guidelines lawyer",
+      "drug pricing DPCO counsel India",
+    ],
     icon: "🏥",
     content: {
       overview: "Our Healthcare & Lifesciences practice advises pharmaceutical companies, hospitals, medical device manufacturers, healthcare providers, and insurers on regulatory compliance, transactions, and disputes in the healthcare sector.",
@@ -895,7 +1193,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "International Trade",
     description: "International trade advisory covering customs, export-import regulations, trade remedies, WTO compliance, and cross-border transactions.",
     metaDescription: "International trade lawyers in India. Customs, export-import, anti-dumping, trade remedies, WTO compliance & DGFT regulations.",
-    keywords: ["international trade lawyers India", "customs lawyers Delhi", "export import law", "anti-dumping India", "WTO compliance"],
+    keywords: [
+      // Tier 1
+      "international trade lawyers India",
+      "customs lawyers Delhi",
+      "export import law counsel",
+      "anti-dumping India",
+      "WTO compliance India",
+      // Tier 2
+      "DGFT export incentive counsel",
+      "customs valuation lawyer Delhi",
+      "BIS standards compliance India",
+      "FTA RoO advisory counsel",
+      // Tier 3
+      "anti-subsidy CVD investigation lawyer",
+      "GSP RCEP trade counsel India",
+      "sanctions OFAC India advisor",
+      "SCOMET export control counsel",
+    ],
     icon: "🌐",
     content: {
       overview: "Our International Trade practice advises exporters, importers, manufacturers, and traders on customs, trade remedies, export-import regulations, and WTO compliance under Indian and international trade laws.",
@@ -943,7 +1258,24 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Insurance",
     description: "Insurance law services covering regulatory compliance, policy drafting, claims disputes, reinsurance, and insurance litigation.",
     metaDescription: "Insurance lawyers in India. IRDAI compliance, insurance claims, policy disputes, reinsurance & insurance regulatory advisory.",
-    keywords: ["insurance lawyers India", "IRDAI compliance", "insurance claims disputes", "insurance litigation Delhi", "reinsurance law"],
+    keywords: [
+      // Tier 1
+      "insurance lawyers India",
+      "IRDAI compliance counsel",
+      "insurance claims disputes",
+      "insurance litigation Delhi",
+      "reinsurance law India",
+      // Tier 2
+      "IRDAI penalty defense counsel",
+      "marine cargo insurance lawyer",
+      "motor insurance MACT counsel",
+      "health insurance disputes lawyer",
+      // Tier 3
+      "cyber insurance claims counsel",
+      "parametric insurance advisory India",
+      "surety bond regulations lawyer",
+      "ombudsman insurance complaint counsel",
+    ],
     icon: "🛡️",
     content: {
       overview: "Our Insurance practice advises insurance and reinsurance companies, brokers, TPAs, and policyholders on regulatory compliance, transactions, policy matters, and disputes under IRDAI regulations and Insurance Acts.",
@@ -991,7 +1323,25 @@ export const practiceAreasData: PracticeArea[] = [
     shortTitle: "Defence, Aviation & Space",
     description: "Specialized legal services for defense, aviation, and space sectors covering procurement, regulations, licensing, and operations.",
     metaDescription: "Defence & aviation lawyers in India. Defense procurement, aircraft leasing, DGCA compliance, space law & aerospace advisory.",
-    keywords: ["defence lawyers India", "aviation lawyers Delhi", "DGCA compliance", "aircraft leasing", "space law India", "aerospace legal"],
+    keywords: [
+      // Tier 1
+      "defence lawyers India",
+      "aviation lawyers Delhi",
+      "DGCA compliance counsel",
+      "aircraft leasing India",
+      "space law India",
+      "aerospace legal counsel",
+      // Tier 2
+      "DGCA aircraft registration counsel",
+      "Cape Town Convention lawyer India",
+      "defence procurement DPP counsel",
+      "MRO regulatory advisory India",
+      // Tier 3
+      "drone UAS regulations India lawyer",
+      "Space Activities Bill counsel",
+      "Bharat Drone Rules advisor",
+      "satellite communications licensing counsel",
+    ],
     icon: "✈️",
     content: {
       overview: "Our Defence, Aviation & Space practice serves defense contractors, airlines, aircraft lessors, aerospace companies, and space technology firms with specialized legal advisory on regulations, transactions, and operations.",
@@ -1042,4 +1392,20 @@ export const getPracticeAreaBySlug = (slug: string): PracticeArea | undefined =>
 
 export const getAllPracticeAreaSlugs = (): string[] => {
   return practiceAreasData.map((area) => area.slug);
+};
+
+export const getRelatedPracticeAreas = (currentSlug: string, count: number = 4): PracticeArea[] => {
+  const currentIndex = practiceAreasData.findIndex((area) => area.slug === currentSlug);
+  if (currentIndex === -1) return [];
+
+  const related: PracticeArea[] = [];
+  const totalAreas = practiceAreasData.length;
+
+  // Pick areas near the current one (wrapping around), skipping itself
+  for (let offset = 1; related.length < count && offset < totalAreas; offset++) {
+    const idx = (currentIndex + offset) % totalAreas;
+    related.push(practiceAreasData[idx]);
+  }
+
+  return related;
 };

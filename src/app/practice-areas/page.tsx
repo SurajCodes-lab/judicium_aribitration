@@ -5,22 +5,118 @@ import Button from "@/components/Button";
 import { practiceAreasData } from "@/data/practiceAreas";
 import { LawIcons } from "@/components/Icons";
 
+const BASE_URL = "https://www.judiciumarbitration.com";
+
 export const metadata: Metadata = {
   title: "Practice Areas | Judicium Arbitration - Expert Legal Services in North India",
   description: "Comprehensive legal services across 20+ practice areas including Arbitration, Banking, Corporate Law, IP, Real Estate, and more. Serving Delhi, Gurgaon, Noida, Chandigarh, Jaipur.",
   keywords: [
+    // Tier 1 — head terms
     "legal practice areas India",
     "law firm services Delhi",
     "arbitration lawyers",
     "corporate lawyers NCR",
     "legal services Chandigarh",
-    "comprehensive legal advisory"
+    "comprehensive legal advisory",
+    // Tier 2 — practice-area commercial
+    "banking finance lawyer Delhi",
+    "real estate arbitration India",
+    "intellectual property lawyer NCR",
+    "insolvency bankruptcy lawyer",
+    "labour employment law firm",
+    "data privacy cybersecurity law",
+    "dispute resolution services India",
+    // Tier 3 — long-tail / informational
+    "full service law firm Delhi NCR",
+    "top legal practice areas India 2026",
+    "20 practice areas law firm North India",
+    "expert arbitration practice areas India",
+    "Delhi NCR law firm services list",
+    "comprehensive legal services North India"
   ].join(", "),
   openGraph: {
     title: "Practice Areas | Judicium Arbitration",
-    description: "Expert legal services across 20+ practice areas in North India",
+    description: "Expert legal services across 20+ practice areas — arbitration, banking, corporate, IP, real estate — in Delhi NCR, Chandigarh, Jaipur and across North India.",
     type: "website",
+    locale: "en_IN",
+    siteName: "Judicium Arbitration",
+    url: "https://www.judiciumarbitration.com/practice-areas",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Judicium Arbitration Practice Areas — 20+ Legal Services in North India",
+      },
+      {
+        url: "/logo.jpeg",
+        width: 800,
+        height: 600,
+        alt: "Judicium Arbitration logo",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Practice Areas | Judicium Arbitration",
+    description: "Expert legal services across 20+ practice areas in North India.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.judiciumarbitration.com/practice-areas",
+    languages: {
+      "en-IN": "https://www.judiciumarbitration.com/practice-areas",
+      "x-default": "https://www.judiciumarbitration.com/practice-areas",
+    },
+  },
+};
+
+// ItemList — tells SERPs and AI engines the catalogue size & ordering signal
+const practiceAreaItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${BASE_URL}/practice-areas#itemlist`,
+  name: "Judicium Arbitration — Practice Areas",
+  description:
+    "Comprehensive list of 20+ legal practice areas covered by Judicium Arbitration across North India.",
+  numberOfItems: practiceAreasData.length,
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  itemListElement: practiceAreasData.map((area, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: area.title,
+    url: `${BASE_URL}/practice-areas/${area.slug}`,
+    description: area.description,
+  })),
+};
+
+const practiceAreasBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${BASE_URL}/practice-areas#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Practice Areas",
+      item: `${BASE_URL}/practice-areas`,
+    },
+  ],
+};
+
+const practiceAreasCollectionPage = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${BASE_URL}/practice-areas#collectionpage`,
+  url: `${BASE_URL}/practice-areas`,
+  name: "Practice Areas | Judicium Arbitration",
+  description:
+    "Comprehensive legal services across 20+ practice areas including arbitration, banking, corporate, IP, real estate, and more.",
+  inLanguage: "en-IN",
+  isPartOf: { "@type": "WebSite", "@id": `${BASE_URL}/#website` },
+  about: { "@type": "LegalService", "@id": `${BASE_URL}/#organization` },
+  mainEntity: { "@id": `${BASE_URL}/practice-areas#itemlist` },
 };
 
 export default function PracticeAreasPage() {
@@ -66,6 +162,19 @@ export default function PracticeAreasPage() {
 
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
+      {/* Structured data — ItemList, Breadcrumb, CollectionPage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceAreasCollectionPage) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceAreaItemList) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceAreasBreadcrumb) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
@@ -125,8 +234,9 @@ export default function PracticeAreasPage() {
               Practice Areas
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
-              Comprehensive legal expertise across diverse sectors, delivering strategic solutions
-              tailored to your unique needs
+              Comprehensive legal expertise across 20+ practice areas — arbitration, banking & finance,
+              corporate law, intellectual property, real estate and more — serving Delhi NCR, Chandigarh,
+              Jaipur and across North India.
             </p>
           </div>
 
@@ -337,12 +447,12 @@ export default function PracticeAreasPage() {
               {
                 Icon: LawIcons.Handshake,
                 title: "Client-Centric Approach",
-                description: "Tailored legal solutions aligned with your business objectives and commercial realities"
+                description: "Tailored arbitration and legal solutions aligned with your business objectives, commercial realities and Indian regulatory requirements"
               },
               {
                 Icon: LawIcons.Lightning,
                 title: "Efficient Resolution",
-                description: "Strategic approach focused on timely and cost-effective dispute resolution"
+                description: "Strategic ADR-first approach focused on timely, cost-effective resolution under the Arbitration and Conciliation Act, 1996"
               },
               {
                 Icon: LawIcons.Globe,

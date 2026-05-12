@@ -4,13 +4,14 @@ import { notFound } from "next/navigation";
 import {
   getPracticeAreaBySlug,
   getAllPracticeAreaSlugs,
+  getRelatedPracticeAreas,
   PracticeArea,
 } from "@/data/practiceAreas";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import { LawIcons } from "@/components/Icons";
 
-const BASE_URL = "https://judicium-arbitration.com";
+const BASE_URL = "https://www.judiciumarbitration.com";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -43,8 +44,16 @@ export async function generateMetadata({
       title: `${practiceArea.title} | Judicium Arbitration`,
       description: practiceArea.metaDescription,
       type: "article",
+      locale: "en_IN",
+      siteName: "Judicium Arbitration",
       url: `${BASE_URL}/practice-areas/${slug}`,
       images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${practiceArea.title} — Judicium Arbitration`,
+        },
         {
           url: "/logo.jpeg",
           width: 800,
@@ -57,10 +66,14 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${practiceArea.title} | Judicium Arbitration`,
       description: practiceArea.metaDescription,
-      images: ["/logo.jpeg"],
+      images: ["/og-image.jpg"],
     },
     alternates: {
       canonical: `${BASE_URL}/practice-areas/${slug}`,
+      languages: {
+        "en-IN": `${BASE_URL}/practice-areas/${slug}`,
+        "x-default": `${BASE_URL}/practice-areas/${slug}`,
+      },
     },
   };
 }
@@ -68,17 +81,20 @@ export async function generateMetadata({
 function generateStructuredData(practiceArea: PracticeArea, slug: string) {
   const pageUrl = `${BASE_URL}/practice-areas/${slug}`;
 
-  // Service schema
+  // Service schema — what the firm offers in this practice area
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": "LegalService",
+    "@id": `${pageUrl}#service`,
     name: practiceArea.title,
     description: practiceArea.metaDescription,
     provider: {
       "@type": "LegalService",
+      "@id": `${BASE_URL}/#organization`,
       name: "Judicium Arbitration",
       url: BASE_URL,
     },
+    serviceType: practiceArea.shortTitle,
     areaServed: [
       { "@type": "City", name: "New Delhi" },
       { "@type": "City", name: "Gurgaon" },
@@ -89,13 +105,88 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
       { "@type": "City", name: "Prayagraj" },
       { "@type": "City", name: "Lucknow" },
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${practiceArea.shortTitle} Services`,
+      itemListElement: practiceArea.content.services.map((svc, idx) => ({
+        "@type": "Offer",
+        position: idx + 1,
+        itemOffered: { "@type": "Service", name: svc },
+      })),
+    },
     url: pageUrl,
+  };
+
+  // LegalArticle schema — flags this page as authoritative legal content for AI/citation systems.
+  // Without this, answer engines treat the page as a product/service listing rather than reference content.
+  const legalArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: practiceArea.title,
+    description: practiceArea.metaDescription,
+    articleSection: practiceArea.shortTitle,
+    inLanguage: "en-IN",
+    url: pageUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    isPartOf: { "@type": "WebSite", "@id": `${BASE_URL}/#website` },
+    about: practiceArea.content.relatedActs
+      ? practiceArea.content.relatedActs.map((act) => ({
+          "@type": "Legislation",
+          name: act,
+          legislationJurisdiction: "IN",
+        }))
+      : undefined,
+    keywords: practiceArea.keywords.join(", "),
+    author: {
+      "@type": "LegalService",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Judicium Arbitration",
+      url: BASE_URL,
+    },
+    publisher: {
+      "@type": "LegalService",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Judicium Arbitration",
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/logo.jpeg`,
+      },
+    },
+    datePublished: "2026-01-01",
+    dateModified: new Date().toISOString().split("T")[0],
+    image: `${BASE_URL}/logo.jpeg`,
+  };
+
+  // Speakable schema — voice/AEO optimisation, marks the key answer regions
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: practiceArea.title,
+    description: practiceArea.metaDescription,
+    inLanguage: "en-IN",
+    isPartOf: { "@type": "WebSite", "@id": `${BASE_URL}/#website` },
+    primaryImageOfPage: { "@type": "ImageObject", url: `${BASE_URL}/logo.jpeg` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [
+        "h1",
+        ".practice-area-tldr",
+        ".faq-question",
+        ".faq-answer",
+      ],
+      xpath: ["/html/head/title"],
+    },
+    breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
   };
 
   // BreadcrumbList schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
@@ -119,13 +210,19 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const schemas: Record<string, any>[] = [serviceSchema, breadcrumbSchema];
+  const schemas: Record<string, any>[] = [
+    serviceSchema,
+    legalArticleSchema,
+    speakableSchema,
+    breadcrumbSchema,
+  ];
 
-  // FAQ schema (if FAQs exist)
+  // FAQ schema (if FAQs exist) — Q&A pairs are the #1 source of AI answer citations
   if (practiceArea.content.faqs && practiceArea.content.faqs.length > 0) {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
       mainEntity: practiceArea.content.faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -230,9 +327,35 @@ export default async function PracticeAreaPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Overview Section */}
+      {/* Quick Answer / TL;DR — citation-ready block for AI answer engines (AEO) */}
       <Section>
         <div className="max-w-4xl mx-auto">
+          <div className="practice-area-tldr relative bg-linear-to-br from-gold-primary/10 via-gold-primary/5 to-transparent border-l-4 border-gold-primary p-6 sm:p-8 rounded-r-2xl mb-10">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-gold-primary">
+                Quick Answer
+              </span>
+              <span className="text-foreground/40 text-xs">·</span>
+              <span className="text-xs text-foreground/60">
+                Judicium Arbitration — {practiceArea.shortTitle}
+              </span>
+            </div>
+            <p className="text-base sm:text-lg text-foreground/90 leading-relaxed font-medium">
+              {practiceArea.metaDescription}
+            </p>
+            <p className="mt-3 text-sm text-foreground/65 leading-relaxed">
+              Available across New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat,
+              Prayagraj and Lucknow.{" "}
+              <Link
+                href="/contact"
+                className="text-gold-primary hover:underline font-semibold"
+              >
+                Book a consultation
+              </Link>{" "}
+              or call <span className="text-gold-primary font-semibold">+91-9899686394</span>.
+            </p>
+          </div>
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary mb-6">
             Overview
           </h2>
@@ -425,16 +548,55 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                   key={index}
                   className="bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 sm:p-8 rounded-xl border border-gold-primary/20"
                 >
-                  <h3 className="text-lg sm:text-xl font-semibold text-gold-secondary mb-3">
+                  <h3 className="faq-question text-lg sm:text-xl font-semibold text-gold-secondary mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">{faq.answer}</p>
+                  <p className="faq-answer text-sm sm:text-base text-foreground/80 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
           </div>
         </Section>
       )}
+
+      {/* Related Practice Areas */}
+      <Section>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+              <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                Explore More
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
+              Related Practice Areas
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {getRelatedPracticeAreas(slug, 4).map((related) => (
+              <Link
+                key={related.slug}
+                href={`/practice-areas/${related.slug}`}
+                className="group block relative bg-bg-alt-dark p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-primary/10"
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-gold-primary/0 to-gold-primary/0 group-hover:from-gold-primary/10 group-hover:to-transparent transition-all rounded-xl" />
+                <div className="relative">
+                  <div className="w-12 h-12 bg-gold-primary/10 border border-gold-primary/20 rounded-lg flex items-center justify-center group-hover:bg-gold-primary/20 group-hover:border-gold-primary/40 transition-all mb-4">
+                    <span className="text-2xl">{related.icon}</span>
+                  </div>
+                  <h3 className="text-white/90 group-hover:text-gold-primary font-semibold text-sm transition-colors leading-tight mb-2">
+                    {related.shortTitle}
+                  </h3>
+                  <p className="text-white/50 text-xs line-clamp-2">
+                    {related.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Section>
 
       {/* CTA Section */}
       <Section variant="gold">

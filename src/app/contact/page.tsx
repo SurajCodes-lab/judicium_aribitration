@@ -8,22 +8,168 @@ export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
   description: "Contact Judicium Arbitration for expert legal consultation across New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, Lucknow. Schedule a consultation with our arbitration experts today.",
   keywords: [
-    "contact Judicium",
+    // Tier 1 — high intent
+    "contact Judicium Arbitration",
     "legal consultation Delhi",
     "arbitration lawyers contact",
     "law firm offices NCR",
-    "schedule legal consultation"
+    "schedule legal consultation",
+    // Tier 2 — commercial / location
+    "arbitration consultation North India",
+    "ADR consultation Delhi NCR",
+    "legal consultation Gurgaon Noida",
+    "law firm contact Delhi",
+    "arbitration lawyer Chandigarh contact",
+    // Tier 3 — long-tail / informational intent
+    "book arbitration lawyer consultation Delhi",
+    "virtual arbitration consultation India",
+    "arbitration lawyer phone number Delhi",
+    "schedule legal advice North India",
+    "arbitration office Delhi NCR address",
+    "free arbitration case evaluation India"
   ].join(", "),
   openGraph: {
     title: "Contact Us | Judicium Arbitration",
-    description: "Get in touch for expert legal consultation across North India",
+    description: "Get in touch for expert legal consultation across North India — Delhi NCR, Chandigarh, Jaipur and beyond.",
     type: "website",
+    locale: "en_IN",
+    siteName: "Judicium Arbitration",
+    url: "https://www.judiciumarbitration.com/contact",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Judicium Arbitration — Schedule a Consultation",
+      },
+      {
+        url: "/logo.jpeg",
+        width: 800,
+        height: 600,
+        alt: "Judicium Arbitration logo",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Judicium Arbitration",
+    description: "Schedule an arbitration consultation with North India's trusted ADR lawyers.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: "https://www.judiciumarbitration.com/contact",
+    languages: {
+      "en-IN": "https://www.judiciumarbitration.com/contact",
+      "x-default": "https://www.judiciumarbitration.com/contact",
+    },
+  },
+};
+
+const contactFaqs = [
+  {
+    question: "How can I schedule a consultation?",
+    answer: "You can schedule a consultation by filling out the contact form above, calling us directly, or emailing us. Our team typically responds within 24 hours to arrange a convenient time for your consultation."
+  },
+  {
+    question: "What should I bring to the first consultation?",
+    answer: "Please bring any relevant documents related to your case, including contracts, agreements, correspondence, and any legal notices. This will help us better understand your situation and provide accurate advice."
+  },
+  {
+    question: "Do you offer consultations in all cities you serve?",
+    answer: "Yes, we offer consultations across all 8 cities we serve: New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. We can also arrange virtual consultations if preferred."
+  },
+  {
+    question: "What are your consultation fees?",
+    answer: "Consultation fees vary depending on the complexity of the matter and the practice area. Please contact us directly to discuss fees for your specific situation. We offer transparent pricing with no hidden costs."
+  },
+  {
+    question: "How long does the arbitration process typically take?",
+    answer: "Under the amended Arbitration Act, arbitral tribunals are mandated to complete proceedings within 12 months from the date of completion of pleadings, with a possible 6-month extension. We work efficiently to resolve matters within statutory timelines."
+  }
+];
+
+const contactFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: contactFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const contactPointSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://www.judiciumarbitration.com/contact#contactpage",
+  name: "Contact Judicium Arbitration",
+  description:
+    "Get in touch with Judicium Arbitration for expert legal consultation across North India",
+  url: "https://www.judiciumarbitration.com/contact",
+  inLanguage: "en-IN",
+  isPartOf: { "@type": "WebSite", "@id": "https://www.judiciumarbitration.com/#website" },
+  mainEntity: {
+    "@type": "LegalService",
+    "@id": "https://www.judiciumarbitration.com/#organization",
+    name: "Judicium Arbitration",
+    telephone: "+91-9899686394",
+    email: "Judiciumarbitration@gmail.com",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+91-9899686394",
+        email: "Judiciumarbitration@gmail.com",
+        contactType: "customer service",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: "IN",
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+91-9899686394",
+        email: "Judiciumarbitration@gmail.com",
+        contactType: "legal consultation",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: ["IN-DL", "IN-HR", "IN-UP", "IN-CH", "IN-RJ"],
+      },
+    ],
+  },
+};
+
+// BreadcrumbList for SERP hierarchy
+const contactBreadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.judiciumarbitration.com/contact#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.judiciumarbitration.com" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: "https://www.judiciumarbitration.com/contact",
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
+      {/* Structured data for contact page */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactFaqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPointSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
         {/* Premium gradient overlays */}
@@ -83,8 +229,9 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Ready to resolve your dispute? Let our experienced team guide you with
-              professional legal expertise
+              Ready to resolve your commercial dispute through arbitration or ADR? Connect with
+              North India&apos;s trusted arbitration lawyers for expert legal consultation across
+              Delhi NCR, Chandigarh and Jaipur.
             </p>
           </div>
 
@@ -162,7 +309,8 @@ export default function ContactPage() {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors"
+                    aria-required="true"
+                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
                     placeholder="Your full name"
                   />
                 </div>
@@ -177,7 +325,8 @@ export default function ContactPage() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors"
+                    aria-required="true"
+                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -192,8 +341,10 @@ export default function ContactPage() {
                     id="phone"
                     name="phone"
                     required
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors"
-                    placeholder="+91-9899686394"
+                    aria-required="true"
+                    pattern="[+]?[0-9\s\-]{10,15}"
+                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
+                    placeholder="+91-XXXXXXXXXX"
                   />
                 </div>
 
@@ -205,7 +356,9 @@ export default function ContactPage() {
                   <select
                     id="practice-area"
                     name="practice-area"
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors"
+                    aria-label="Select a practice area of interest"
+                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all appearance-none cursor-pointer"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F0C246' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
                   >
                     <option value="">Select a practice area</option>
                     <option value="arbitration">Arbitration & ADR</option>
@@ -227,8 +380,9 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     required
+                    aria-required="true"
                     rows={6}
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:border-gold-primary/50 text-foreground transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all resize-none"
                     placeholder="Please describe your legal matter and how we can assist you..."
                   ></textarea>
                 </div>
@@ -236,7 +390,7 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gold-primary text-bg-dark font-semibold rounded-lg hover:bg-gold-secondary transition-all duration-300 hover:shadow-lg hover:shadow-gold-primary/20"
+                  className="w-full px-8 py-4 bg-linear-to-r from-gold-primary to-gold-secondary text-bg-dark font-semibold rounded-lg hover:shadow-xl hover:shadow-gold-primary/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark uppercase tracking-wider text-sm"
                 >
                   Send Message
                 </button>
@@ -460,28 +614,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-6">
-            {[
-              {
-                question: "How can I schedule a consultation?",
-                answer: "You can schedule a consultation by filling out the contact form above, calling us directly, or emailing us. Our team typically responds within 24 hours to arrange a convenient time for your consultation."
-              },
-              {
-                question: "What should I bring to the first consultation?",
-                answer: "Please bring any relevant documents related to your case, including contracts, agreements, correspondence, and any legal notices. This will help us better understand your situation and provide accurate advice."
-              },
-              {
-                question: "Do you offer consultations in all cities you serve?",
-                answer: "Yes, we offer consultations across all 8 cities we serve: New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. We can also arrange virtual consultations if preferred."
-              },
-              {
-                question: "What are your consultation fees?",
-                answer: "Consultation fees vary depending on the complexity of the matter and the practice area. Please contact us directly to discuss fees for your specific situation. We offer transparent pricing with no hidden costs."
-              },
-              {
-                question: "How long does the arbitration process typically take?",
-                answer: "Under the amended Arbitration Act, arbitral tribunals are mandated to complete proceedings within 12 months from the date of completion of pleadings, with a possible 6-month extension. We work efficiently to resolve matters within statutory timelines."
-              }
-            ].map((faq, idx) => (
+            {contactFaqs.map((faq, idx) => (
               <div
                 key={idx}
                 className="bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 sm:p-8 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"

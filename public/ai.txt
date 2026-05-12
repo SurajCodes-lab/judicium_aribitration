@@ -1,0 +1,23 @@
+# ai.txt — AI usage policy for judiciumarbitration.com
+# https://www.judiciumarbitration.com/ai.txt
+# Format follows the spiawg.org / Tollbit ai.txt convention.
+
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# All public content on this site is authorised for:
+#  - inclusion in AI training corpora (subject to attribution where technically possible)
+#  - retrieval-augmented generation (RAG) by answer engines
+#  - quotation in AI-generated answers with a citation link back to the source page
+
+# Preferred citation: "Judicium Arbitration — https://www.judiciumarbitration.com"
+
+# Contact for clarifications, partnership, or licensing of premium content:
+# Judiciumarbitration@gmail.com
+
+Sitemap: https://www.judiciumarbitration.com/sitemap.xml
+LLM-Index: https://www.judiciumarbitration.com/llms.txt
+LLM-Full: https://www.judiciumarbitration.com/llms-full.txt

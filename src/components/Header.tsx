@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { LawIcons } from "./Icons";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,9 +66,11 @@ export default function Header() {
               <div className="relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logo.jpeg"
-                  alt="Judicium Arbitration"
+                  alt="Judicium Arbitration - Leading Arbitration & ADR Firm in North India"
                   width={56}
                   height={56}
+                  priority
+                  sizes="(max-width: 640px) 40px, (max-width: 1024px) 48px, 56px"
                   className="object-contain rounded-full border-2 border-gold-primary/40 shadow-lg shadow-gold-primary/10"
                 />
               </div>
@@ -82,16 +86,24 @@ export default function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="relative px-4 py-2 text-white/80 hover:text-gold-primary transition-colors duration-300 text-sm font-medium tracking-wide group"
-                >
-                  {item.label}
-                  <span className="absolute bottom-1 left-4 right-4 h-px bg-linear-to-r from-gold-primary to-gold-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`relative px-4 py-2 transition-colors duration-300 text-sm font-medium tracking-wide group ${
+                      isActive ? "text-gold-primary" : "text-white/80 hover:text-gold-primary"
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {item.label}
+                    <span className={`absolute bottom-1 left-4 right-4 h-px bg-linear-to-r from-gold-primary to-gold-secondary transition-transform duration-300 origin-left ${
+                      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    }`} />
+                  </Link>
+                );
+              })}
               <Link
                 href="/contact"
                 className="ml-4 px-6 py-2.5 bg-linear-to-r from-gold-primary to-gold-secondary text-bg-dark font-bold text-sm tracking-wide rounded-lg hover:shadow-lg hover:shadow-gold-primary/30 transition-all duration-300 hover:scale-[1.02] flex items-center gap-2"
@@ -168,9 +180,10 @@ export default function Header() {
                   <div className="flex items-center gap-3">
                     <Image
                       src="/logo.jpeg"
-                      alt="Judicium"
+                      alt="Judicium Arbitration Logo"
                       width={40}
                       height={40}
+                      sizes="40px"
                       className="rounded-full border-2 border-gold-primary/40"
                     />
                     <div>

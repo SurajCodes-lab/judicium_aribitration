@@ -1,0 +1,41 @@
+# Judicium Arbitration
+
+> Premier arbitration and Alternative Dispute Resolution (ADR) law firm in North India. 20+ years of experience, 500+ commercial disputes resolved across 20+ practice areas. Offices in New Delhi (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow.
+
+Judicium Arbitration represents clients in domestic and international commercial arbitration under the Arbitration and Conciliation Act, 1996 (as amended in 2015, 2019, and 2021). The firm handles institutional arbitration before DIAC, MCIA, ICC, SIAC, and LCIA; ad-hoc arbitration; mediation and conciliation; Section 9 and Section 17 interim relief applications; emergency arbitrator proceedings; setting aside and enforcement proceedings; and foreign award enforcement under the New York Convention.
+
+Practice areas span dispute resolution, banking and finance, corporate and commercial, capital markets, private equity, intellectual property, real estate and urban development, projects and infrastructure, insolvency and bankruptcy, competition and antitrust, labour and employment, data privacy and cybersecurity, insurance, technology / media / telecommunications, healthcare and life sciences, international trade and WTO, white collar crime, and defence / aviation / space.
+
+Contact: Judiciumarbitration@gmail.com | +91-9899686394
+
+## Core pages
+
+- [Home](https://www.judiciumarbitration.com/): Firm overview, practice areas, cities served, and consultation booking.
+- [About](https://www.judiciumarbitration.com/about): Leadership team, founder Nadeem Qureshi, Dr. Ravikant Bhardwaj (PhD IIT Kharagpur, LL.M NALSAR), Advocate Suryakant Bhardwaj, and the full advocate roster with credentials and specialisations.
+- [Practice Areas Index](https://www.judiciumarbitration.com/practice-areas): Browseable list of 20+ legal practice areas grouped by category.
+- [Contact](https://www.judiciumarbitration.com/contact): Office locations across 8 cities, phone, email, and consultation form.
+
+## Practice areas (high-priority)
+
+- [Arbitration & Alternative Dispute Resolution](https://www.judiciumarbitration.com/practice-areas/arbitration-alternative-dispute-resolution): Flagship practice covering domestic, international commercial, and investment treaty arbitration; DIAC/MCIA/ICC/SIAC/LCIA proceedings; Section 9 and Section 17 emergency relief; award enforcement.
+- [Banking & Finance](https://www.judiciumarbitration.com/practice-areas/banking-finance): SARFAESI, DRT proceedings, NCLT applications, loan recovery, fraud investigations, regulatory compliance under RBI norms.
+- [Corporate & Commercial](https://www.judiciumarbitration.com/practice-areas/corporate-commercial): Companies Act 2013, contract drafting, shareholder disputes, joint ventures, corporate governance.
+- [Real Estate & Urban Development](https://www.judiciumarbitration.com/practice-areas/real-estate-urban-development): RERA proceedings, builder-buyer disputes, conveyancing, title due diligence, land acquisition.
+- [Intellectual Property Rights](https://www.judiciumarbitration.com/practice-areas/intellectual-property-rights): Patent, trademark, copyright, design; infringement litigation; IP licensing; IP-related arbitration.
+- [Insolvency & Bankruptcy](https://www.judiciumarbitration.com/practice-areas/insolvency-bankruptcy): IBC 2016 proceedings, CIRP, liquidation, NCLT and NCLAT representation.
+- [Dispute Resolution & Litigation](https://www.judiciumarbitration.com/practice-areas/dispute-resolution-litigation): Commercial court litigation, Supreme Court and High Court matters, civil and commercial disputes.
+- [Capital Markets](https://www.judiciumarbitration.com/practice-areas/capital-markets): SEBI compliance, IPO advisory, securities disputes, listing obligations.
+- [Competition & Antitrust](https://www.judiciumarbitration.com/practice-areas/competition-antitrust): CCI proceedings, merger control, abuse of dominance, cartel investigations.
+- [Data Privacy & Cybersecurity](https://www.judiciumarbitration.com/practice-areas/data-privacy-cybersecurity): DPDP Act 2023 compliance, IT Act, breach response.
+- [Labour & Employment](https://www.judiciumarbitration.com/practice-areas/labour-employment): Industrial Disputes Act, POSH compliance, employment contracts, wrongful termination.
+
+## Legal & policy
+
+- [Privacy Policy](https://www.judiciumarbitration.com/privacy-policy)
+- [Terms of Service](https://www.judiciumarbitration.com/terms-of-service)
+- [Disclaimer](https://www.judiciumarbitration.com/disclaimer)
+
+## Optional
+
+- [Sitemap (XML)](https://www.judiciumarbitration.com/sitemap.xml)
+- [llms-full.txt (comprehensive content)](https://www.judiciumarbitration.com/llms-full.txt)

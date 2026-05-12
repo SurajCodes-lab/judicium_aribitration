@@ -16,23 +16,23 @@ export default function Footer() {
   ];
 
   const practiceAreas = [
-    { name: "Arbitration & ADR", href: "/practice-areas" },
-    { name: "Corporate Law", href: "/practice-areas" },
-    { name: "Banking & Finance", href: "/practice-areas" },
-    { name: "Intellectual Property", href: "/practice-areas" },
-    { name: "Real Estate", href: "/practice-areas" },
-    { name: "Labour & Employment", href: "/practice-areas" },
+    { name: "Arbitration & ADR", href: "/practice-areas/arbitration-alternative-dispute-resolution" },
+    { name: "Corporate Law", href: "/practice-areas/corporate-commercial" },
+    { name: "Banking & Finance", href: "/practice-areas/banking-finance" },
+    { name: "Intellectual Property", href: "/practice-areas/intellectual-property-rights" },
+    { name: "Real Estate", href: "/practice-areas/real-estate-urban-development" },
+    { name: "Labour & Employment", href: "/practice-areas/labour-employment" },
   ];
 
-  const locations = [
-    "New Delhi (HQ)",
-    "Gurgaon",
-    "Noida",
-    "Chandigarh",
-    "Jaipur",
-    "Panipat",
-    "Prayagraj",
-    "Lucknow",
+  const locations: { city: string; label: string; anchor: string; href: string }[] = [
+    { city: "New Delhi (HQ)", label: "New Delhi (HQ)", anchor: "Arbitration Lawyers in Delhi", href: "/contact?city=delhi" },
+    { city: "Gurgaon", label: "Gurgaon", anchor: "Arbitration Lawyers in Gurgaon", href: "/contact?city=gurgaon" },
+    { city: "Noida", label: "Noida", anchor: "Arbitration Lawyers in Noida", href: "/contact?city=noida" },
+    { city: "Chandigarh", label: "Chandigarh", anchor: "Arbitration Lawyers in Chandigarh", href: "/contact?city=chandigarh" },
+    { city: "Jaipur", label: "Jaipur", anchor: "Arbitration Lawyers in Jaipur", href: "/contact?city=jaipur" },
+    { city: "Panipat", label: "Panipat", anchor: "Arbitration Lawyers in Panipat", href: "/contact?city=panipat" },
+    { city: "Prayagraj", label: "Prayagraj", anchor: "Arbitration Lawyers in Prayagraj", href: "/contact?city=prayagraj" },
+    { city: "Lucknow", label: "Lucknow", anchor: "Arbitration Lawyers in Lucknow", href: "/contact?city=lucknow" },
   ];
 
   return (
@@ -80,9 +80,11 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src="/logo.jpeg"
-                  alt="Judicium Arbitration"
+                  alt="Judicium Arbitration - Premier ADR Services in North India"
                   width={48}
                   height={48}
+                  sizes="48px"
+                  loading="lazy"
                   className="object-contain rounded-full border-2 border-gold-primary/30 group-hover:border-gold-primary/60 transition-colors"
                 />
               </div>
@@ -93,27 +95,18 @@ export default function Footer() {
             </Link>
 
             <p className="text-white/50 text-sm leading-relaxed mb-6">
-              Premier Arbitration & Alternative Dispute Resolution services across North India. Committed to excellence and professional dispute resolution.
+              Premier arbitration, ADR and commercial dispute resolution lawyers serving Delhi NCR, Chandigarh, Jaipur and across North India. 20+ years of expertise under the Arbitration and Conciliation Act, 1996.
             </p>
 
             {/* Social Links */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="tel:+91-9899686394"
                 className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
-                aria-label="LinkedIn"
+                aria-label="Call Judicium Arbitration"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </a>
               <a
@@ -192,12 +185,15 @@ export default function Footer() {
 
             <div className="flex flex-wrap gap-2 mb-6">
               {locations.map((location) => (
-                <span
-                  key={location}
-                  className="px-3 py-1.5 bg-bg-alt-dark border border-gold-primary/20 rounded-lg text-xs text-white/70 hover:text-gold-primary hover:border-gold-primary/40 hover:bg-gold-primary/10 transition-all cursor-default"
+                <Link
+                  key={location.city}
+                  href={location.href}
+                  title={location.anchor}
+                  aria-label={location.anchor}
+                  className="px-3 py-1.5 bg-bg-alt-dark border border-gold-primary/20 rounded-lg text-xs text-white/70 hover:text-gold-primary hover:border-gold-primary/40 hover:bg-gold-primary/10 transition-all"
                 >
-                  {location}
-                </span>
+                  {location.label}
+                </Link>
               ))}
             </div>
 

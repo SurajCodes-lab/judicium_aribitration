@@ -147,7 +147,7 @@ function PremiumLawBackground() {
 
       {/* Central large scale watermark */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.04]">
-        <LawIcons.Scales className="w-125 h-125 sm:w-175 sm:h-175 text-gold-primary" />
+        <LawIcons.Scales className="w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] text-gold-primary" />
       </div>
 
       {/* Elegant corner frames */}
@@ -262,7 +262,7 @@ export default function HeroSection() {
             Premier Arbitration & <span className="text-gold-primary">Alternative Dispute Resolution</span>
           </p>
           <p className="text-xs sm:text-sm text-white/40 mt-2 max-w-lg mx-auto font-light">
-            Strategic legal solutions across North India with precision, integrity, and excellence
+            Trusted arbitration lawyers serving Delhi NCR, Chandigarh, Jaipur and across North India with precision, integrity and excellence
           </p>
         </motion.div>
 
@@ -331,6 +331,8 @@ export default function HeroSection() {
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2 text-white/20 hover:text-gold-primary/40 transition-colors cursor-pointer"
+          role="presentation"
+          aria-hidden="true"
         >
           <span className="text-[8px] uppercase tracking-[0.3em]">Scroll</span>
           <div className="w-4 h-7 border border-current rounded-full flex justify-center pt-1.5">

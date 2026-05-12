@@ -5,7 +5,24 @@ import Section from "@/components/Section";
 export const metadata: Metadata = {
   title: "Privacy Policy | Judicium Arbitration",
   description: "Privacy Policy for Judicium Arbitration. Learn how we collect, use, and protect your personal information in compliance with Indian data protection laws.",
-  robots: "noindex, nofollow",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.judiciumarbitration.com/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Judicium Arbitration",
+    description: "Privacy Policy for Judicium Arbitration. Learn how we collect, use, and protect your personal information.",
+    type: "website",
+    url: "https://www.judiciumarbitration.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

@@ -6,26 +6,162 @@ import Button from "@/components/Button";
 import { getTeamMembers } from "@/data/teamMembers";
 import { LawIcons } from "@/components/Icons";
 
+const BASE_URL = "https://www.judiciumarbitration.com";
+
 export const metadata: Metadata = {
   title: "About Us | Judicium Arbitration - Leading Legal Experts in North India",
   description: "Learn about Judicium Arbitration's 20+ years of expertise in dispute resolution across Delhi, Gurgaon, Noida, Chandigarh, and Jaipur. Our mission, values, and commitment to excellence.",
   keywords: [
-    "about Judicium",
+    // Tier 1 — head terms
+    "about Judicium Arbitration",
     "law firm Delhi",
-    "arbitration experts",
+    "arbitration experts India",
     "legal team North India",
-    "dispute resolution specialists"
+    "dispute resolution specialists",
+    // Tier 2 — commercial / location
+    "best arbitration firm Delhi NCR",
+    "ADR law firm Gurgaon Noida",
+    "commercial arbitration experts Chandigarh",
+    "arbitration lawyers Jaipur",
+    "legal advisory North India",
+    // Tier 3 — long-tail / brand / E-E-A-T
+    "leading arbitration firm North India",
+    "expert ADR practitioners Delhi",
+    "Judicium Arbitration team profile",
+    "founder Judicium Arbitration",
+    "top arbitration lawyers India 20 years experience",
+    "arbitration law firm history Delhi"
   ].join(", "),
   openGraph: {
     title: "About Us | Judicium Arbitration",
-    description: "Leading legal experts with 20+ years of experience in North India",
+    description: "Leading legal experts with 20+ years of experience in North India — Delhi NCR, Chandigarh, Jaipur and beyond.",
     type: "website",
+    locale: "en_IN",
+    siteName: "Judicium Arbitration",
+    url: `${BASE_URL}/about`,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Judicium Arbitration — Leading Legal Experts in North India",
+      },
+      {
+        url: "/logo.jpeg",
+        width: 800,
+        height: 600,
+        alt: "Judicium Arbitration logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Judicium Arbitration",
+    description: "Leading legal experts with 20+ years of experience in arbitration & ADR across North India.",
+    images: ["/og-image.jpg"],
+  },
+  alternates: {
+    canonical: `${BASE_URL}/about`,
+    languages: {
+      "en-IN": `${BASE_URL}/about`,
+      "x-default": `${BASE_URL}/about`,
+    },
   },
 };
 
+// Generate Person schema for team members (E-E-A-T signal)
+function generateTeamSchema() {
+  const members = getTeamMembers();
+  return members.map((member, idx) => ({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BASE_URL}/about/#person-${idx + 1}`,
+    name: member.name,
+    jobTitle: member.title,
+    worksFor: {
+      "@type": "LegalService",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Judicium Arbitration",
+      url: BASE_URL,
+    },
+    description: member.bio,
+    knowsAbout: member.specializations,
+    alumniOf: member.education.map((edu) => ({
+      "@type": "EducationalOrganization",
+      name: edu,
+    })),
+    hasOccupation: {
+      "@type": "Occupation",
+      name: member.title,
+      occupationLocation: {
+        "@type": "Country",
+        name: "India",
+      },
+      experienceRequirements: member.experience,
+    },
+    ...(member.image ? { image: `${BASE_URL}${member.image}` } : {}),
+    url: `${BASE_URL}/about#${member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+  }));
+}
+
+// AboutPage schema — signals E-E-A-T (Experience, Expertise, Authoritativeness, Trust)
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${BASE_URL}/about#aboutpage`,
+  url: `${BASE_URL}/about`,
+  name: "About Judicium Arbitration",
+  description:
+    "Learn about Judicium Arbitration — leadership, 20+ years of arbitration & ADR experience, and our footprint across 8 North Indian cities.",
+  inLanguage: "en-IN",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
+  },
+  about: {
+    "@type": "LegalService",
+    "@id": `${BASE_URL}/#organization`,
+  },
+};
+
+// BreadcrumbList schema — site hierarchy signal for SERP breadcrumbs
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${BASE_URL}/about#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: `${BASE_URL}/about`,
+    },
+  ],
+};
+
 export default function AboutPage() {
+  const teamSchemas = generateTeamSchema();
+
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24 bg-bg-dark">
+      {/* AboutPage + BreadcrumbList schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {/* Person structured data for team members */}
+      {teamSchemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       {/* Hero Section with Premium Background */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-bg-dark">
         {/* Premium gradient overlays */}
@@ -85,8 +221,9 @@ export default function AboutPage() {
               About Judicium Arbitration
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
-              Your trusted partner in arbitration and alternative dispute resolution,
-              serving North India with excellence and integrity
+              Your trusted partner for arbitration, ADR and commercial dispute resolution —
+              serving Delhi NCR, Chandigarh, Jaipur and 8 cities across North India with
+              20+ years of legal excellence.
             </p>
           </div>
 
@@ -127,7 +264,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-6">
-                Building Excellence in Legal Services
+                Building Excellence in Arbitration and Legal Services
               </h2>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p className="text-base sm:text-lg">
@@ -203,8 +340,9 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-gold-secondary mb-4">Our Mission</h3>
                 <p className="text-foreground/70 leading-relaxed">
-                  To provide efficient, cost-effective, and timely dispute resolution services through
-                  arbitration and ADR, delivering justice with integrity and excellence across North India.
+                  To provide efficient, cost-effective and timely commercial dispute resolution services
+                  through arbitration, mediation and ADR under the Arbitration and Conciliation Act, 1996,
+                  delivering justice with integrity across Delhi NCR, Chandigarh, Jaipur and North India.
                 </p>
               </div>
             </div>
@@ -266,11 +404,12 @@ export default function AboutPage() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-4">
-              Expert Legal Professionals
+              Expert Arbitration Lawyers & Legal Professionals
             </h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-              Our team brings decades of experience and deep expertise in arbitration,
-              dispute resolution, and Indian legal practice
+              Our North India legal team brings decades of combined experience and deep expertise in
+              arbitration, ADR, commercial dispute resolution and Indian legal practice across
+              Delhi NCR, Chandigarh and Jaipur.
             </p>
           </div>
 
@@ -294,8 +433,10 @@ export default function AboutPage() {
                           <div className="relative w-full h-full bg-gold-primary/10 rounded-2xl border border-gold-primary/30 overflow-hidden">
                             <Image
                               src={member.image}
-                              alt={member.name}
+                              alt={`${member.name} - ${member.title} at Judicium Arbitration`}
                               fill
+                              sizes="(max-width: 1024px) 280px, 25vw"
+                              loading="lazy"
                               className="object-cover"
                             />
                           </div>
