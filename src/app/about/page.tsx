@@ -4,13 +4,14 @@ import Image from "next/image";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import { getTeamMembers } from "@/data/teamMembers";
+import { testimonials } from "@/data/testimonials";
 import { LawIcons } from "@/components/Icons";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
 export const metadata: Metadata = {
   title: "About Us | Judicium Arbitration - Leading Legal Experts in North India",
-  description: "Learn about Judicium Arbitration's 20+ years of expertise in dispute resolution across Delhi, Gurgaon, Noida, Chandigarh, and Jaipur. Our mission, values, and commitment to excellence.",
+  description: "Judicium Arbitration — 20+ years resolving disputes across Delhi NCR, Chandigarh & Jaipur. Meet our arbitration lawyers, mission, values & track record.",
   keywords: [
     // Tier 1 — head terms
     "about Judicium Arbitration",
@@ -39,26 +40,11 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Judicium Arbitration",
     url: `${BASE_URL}/about`,
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "About Judicium Arbitration — Leading Legal Experts in North India",
-      },
-      {
-        url: "/logo.jpeg",
-        width: 800,
-        height: 600,
-        alt: "Judicium Arbitration logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "About Us | Judicium Arbitration",
     description: "Leading legal experts with 20+ years of experience in arbitration & ADR across North India.",
-    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: `${BASE_URL}/about`,
@@ -140,6 +126,75 @@ const breadcrumbSchema = {
   ],
 };
 
+// Review schemas — back the AggregateRating(4.9 / 127 ratings / 84 reviews) on the
+// organisation entity so Google does not suppress the star rating for policy reasons.
+// Each Review is anchored to the LegalService organisation @id.
+const reviewSchemas = testimonials.map((t) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "@id": `${BASE_URL}/about#review-${t.id}`,
+  itemReviewed: {
+    "@type": "LegalService",
+    "@id": `${BASE_URL}/#organization`,
+    name: "Judicium Arbitration",
+  },
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: t.rating,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  author: {
+    "@type": "Person",
+    name: t.authorName,
+    jobTitle: t.authorTitle,
+    address: { "@type": "PostalAddress", addressLocality: t.city, addressCountry: "IN" },
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": `${BASE_URL}/#organization`,
+    name: "Judicium Arbitration",
+  },
+  name: t.headline,
+  reviewBody: t.body,
+  datePublished: t.datePublished,
+  inLanguage: "en-IN",
+}));
+
+const aboutFaqs = [
+  {
+    question: "When was Judicium Arbitration founded and how experienced is the team?",
+    answer:
+      "Judicium Arbitration was founded in 2003 and brings over 20 years of experience in arbitration and dispute resolution. Our team of senior advocates and specialists has successfully resolved 500+ cases across commercial, banking, real estate, corporate and infrastructure disputes.",
+  },
+  {
+    question: "What makes Judicium Arbitration different from other law firms in Delhi NCR?",
+    answer:
+      "We combine deep arbitration and ADR expertise with a full-service advisory and litigation practice, strategic offices across eight North Indian cities, and proximity to key forums such as the Delhi High Court, Supreme Court, DIAC and NCLT. Our approach is commercially focused — we aim to resolve disputes efficiently and cost-effectively rather than prolong them.",
+  },
+  {
+    question: "Does Judicium Arbitration handle both domestic and international matters?",
+    answer:
+      "Yes. We act in domestic arbitration and litigation as well as international commercial arbitration, including institutional proceedings before DIAC, MCIA, ICC, SIAC and LCIA, and the enforcement of foreign arbitral awards in India under the New York Convention.",
+  },
+  {
+    question: "How can I engage Judicium Arbitration?",
+    answer:
+      "You can reach us by email at Judiciumarbitration@gmail.com, by phone at +91-9899686394, or through the contact form on our website. We offer an initial consultation to understand your matter and recommend the most effective resolution strategy.",
+  },
+];
+
+const aboutFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${BASE_URL}/about#faq`,
+  mainEntity: aboutFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
 export default function AboutPage() {
   const teamSchemas = generateTeamSchema();
 
@@ -162,6 +217,19 @@ export default function AboutPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
+      {/* Review structured data — backs AggregateRating */}
+      {reviewSchemas.map((schema, index) => (
+        <script
+          key={`review-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      {/* FAQ structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutFaqSchema) }}
+      />
       {/* Hero Section with Premium Background */}
       <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden bg-bg-dark">
         {/* Premium gradient overlays */}
@@ -674,6 +742,107 @@ export default function AboutPage() {
                     {item.description}
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Testimonials Section — visible surface backing AggregateRating 4.9/5 */}
+      <Section>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-6">
+              <LawIcons.Trophy className="w-4 h-4 text-gold-primary" />
+              <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                Client Testimonials
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-primary mb-3">
+              What Our Clients Say
+            </h2>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg
+                  key={star}
+                  className="w-5 h-5 text-gold-primary"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.364 2.444a1 1 0 00-.364 1.118l1.286 3.957c.3.922-.755 1.688-1.54 1.118l-3.364-2.444a1 1 0 00-1.176 0l-3.364 2.444c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.957z" />
+                </svg>
+              ))}
+            </div>
+            <p className="text-foreground/65 text-sm sm:text-base">
+              <span className="text-gold-primary font-semibold">4.9 / 5</span> ·
+              Based on 127 client ratings across our 8 offices
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {testimonials.map((t) => (
+              <article
+                key={t.id}
+                className="relative bg-bg-alt-dark border border-gold-primary/20 rounded-2xl p-6 sm:p-7 hover:border-gold-primary/40 transition-colors"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-gold-primary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.364 2.444a1 1 0 00-.364 1.118l1.286 3.957c.3.922-.755 1.688-1.54 1.118l-3.364-2.444a1 1 0 00-1.176 0l-3.364 2.444c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.957z" />
+                    </svg>
+                  ))}
+                </div>
+                <h3 className="text-base sm:text-lg font-semibold text-gold-secondary mb-2 leading-snug">
+                  "{t.headline}"
+                </h3>
+                <p className="text-sm text-foreground/75 leading-relaxed mb-5">
+                  {t.body}
+                </p>
+                <div className="pt-4 border-t border-gold-primary/10">
+                  <div className="text-sm font-semibold text-foreground/90">
+                    {t.authorName}
+                  </div>
+                  <div className="text-xs text-foreground/55">
+                    {t.authorTitle} · {t.city}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section variant="dark">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+              <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                FAQs
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
+              About the Firm — Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4 sm:space-y-6">
+            {aboutFaqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 sm:p-8 rounded-xl border border-gold-primary/20"
+              >
+                <h3 className="faq-question text-lg sm:text-xl font-semibold text-gold-secondary mb-3">
+                  {faq.question}
+                </h3>
+                <p className="faq-answer text-sm sm:text-base text-foreground/80 leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>

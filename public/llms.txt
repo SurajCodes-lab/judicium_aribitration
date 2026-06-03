@@ -11,9 +11,32 @@ Contact: Judiciumarbitration@gmail.com | +91-9899686394
 ## Core pages
 
 - [Home](https://www.judiciumarbitration.com/): Firm overview, practice areas, cities served, and consultation booking.
-- [About](https://www.judiciumarbitration.com/about): Leadership team, founder Nadeem Qureshi, Dr. Ravikant Bhardwaj (PhD IIT Kharagpur, LL.M NALSAR), Advocate Suryakant Bhardwaj, and the full advocate roster with credentials and specialisations.
+- [About](https://www.judiciumarbitration.com/about): Leadership team, founder Nadeem Qureshi, Dr. Ravikant Bhardwaj (PhD IIT Kharagpur, LL.M NALSAR), Advocate Suryakant Bhardwaj, the full advocate roster with credentials, and client testimonials.
 - [Practice Areas Index](https://www.judiciumarbitration.com/practice-areas): Browseable list of 20+ legal practice areas grouped by category.
-- [Contact](https://www.judiciumarbitration.com/contact): Office locations across 8 cities, phone, email, and consultation form.
+- [Locations Index](https://www.judiciumarbitration.com/locations): Office addresses, hours, and courts covered across all 8 cities.
+- [Insights](https://www.judiciumarbitration.com/insights): Long-form analysis of Indian arbitration & ADR by senior counsel — dated, founder-attributed articles.
+- [Contact](https://www.judiciumarbitration.com/contact): Phone, email, and consultation form.
+
+## City location pages
+
+- [Arbitration Lawyers in Delhi](https://www.judiciumarbitration.com/locations/delhi): Connaught Place HQ; serves Supreme Court of India, Delhi High Court, DIAC.
+- [Arbitration Lawyers in Gurgaon](https://www.judiciumarbitration.com/locations/gurgaon): DLF Cyber City; corporate, real-estate (RERA), and IT/BPO disputes.
+- [Arbitration Lawyers in Noida](https://www.judiciumarbitration.com/locations/noida): Sector 18; UP RERA, tech-services, data-privacy matters.
+- [Arbitration Lawyers in Chandigarh](https://www.judiciumarbitration.com/locations/chandigarh): Sector 17; Punjab & Haryana High Court, NCLT Chandigarh.
+- [Arbitration Lawyers in Jaipur](https://www.judiciumarbitration.com/locations/jaipur): C-Scheme; Rajasthan High Court Jaipur Bench, NCLT Jaipur.
+- [Arbitration Lawyers in Panipat](https://www.judiciumarbitration.com/locations/panipat): GT Road; MSMED Act recovery, textile-industry disputes.
+- [Arbitration Lawyers in Prayagraj](https://www.judiciumarbitration.com/locations/prayagraj): Civil Lines; Allahabad High Court Principal Seat litigation.
+- [Arbitration Lawyers in Lucknow](https://www.judiciumarbitration.com/locations/lucknow): Hazratganj; Allahabad High Court Lucknow Bench, UP REAT appeals.
+
+## Cornerstone insights articles
+
+- [Section 9 vs Section 17 of the Arbitration Act](https://www.judiciumarbitration.com/insights/section-9-vs-section-17-arbitration-act): When to approach a court vs the tribunal for interim relief.
+- [What NN Global Means for Arbitration Agreements in India](https://www.judiciumarbitration.com/insights/nn-global-stamping-arbitration-agreements): Stamping and enforceability of arbitration clauses, 2024–2026.
+- [Enforcing Foreign Arbitral Awards in India under the New York Convention](https://www.judiciumarbitration.com/insights/foreign-award-enforcement-india-new-york-convention): Part II Arbitration Act procedure, Section 48 grounds, and timelines.
+- [DIAC vs MCIA vs IAMC](https://www.judiciumarbitration.com/insights/diac-vs-mcia-choosing-arbitral-institution-india): Choosing between India's leading arbitral institutions.
+- [RERA and Arbitration: Builder-Buyer Disputes](https://www.judiciumarbitration.com/insights/rera-arbitration-builder-buyer-disputes-india): Why builder-buyer disputes are non-arbitrable, and where arbitration still applies in real estate.
+- [Emergency Arbitrator Orders in India after Amazon v. Future Retail](https://www.judiciumarbitration.com/insights/emergency-arbitrator-india-amazon-future-retail): How emergency arbitrator awards became enforceable in India-seated arbitration via Section 17.
+- [Section 11 Arbitrator Appointment after In Re Interplay (2023)](https://www.judiciumarbitration.com/insights/section-11-arbitrator-appointment-in-re-interplay): The narrowed scope of judicial scrutiny at the appointment stage and the stamping question.
 
 ## Practice areas (high-priority)
 

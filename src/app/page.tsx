@@ -1,7 +1,21 @@
 import { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
+import { insightsData } from "@/data/insights";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
+
+// Slim list of the 3 most recent insights for the homepage teaser (keeps the
+// large article bodies out of the client bundle).
+const latestInsights = [...insightsData]
+  .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1))
+  .slice(0, 3)
+  .map((a) => ({
+    slug: a.slug,
+    title: a.title,
+    subtitle: a.subtitle,
+    category: a.category,
+    readingTime: a.readingTime,
+  }));
 
 const homepageFaqs = [
   {
@@ -167,7 +181,7 @@ const serviceCatalogueSchema = {
 export const metadata: Metadata = {
   title: "Judicium Arbitration | Leading Arbitration Services in North India",
   description:
-    "Premier arbitration and alternative dispute resolution services serving New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. Expert legal solutions with 20+ years experience and 500+ cases resolved.",
+    "Premier arbitration & dispute resolution lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. 20+ years' experience, 500+ commercial cases resolved.",
   keywords: [
     // Tier 1 — head terms
     "Judicium Arbitration",
@@ -208,27 +222,12 @@ export const metadata: Metadata = {
     title: "Judicium Arbitration | Leading Arbitration Services in North India",
     description:
       "Premier arbitration and ADR services across Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. 20+ years experience, 500+ cases resolved.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Judicium Arbitration — Leading Arbitration & ADR Lawyers in North India",
-      },
-      {
-        url: "/logo.jpeg",
-        width: 800,
-        height: 600,
-        alt: "Judicium Arbitration logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Judicium Arbitration | Leading Arbitration Services in North India",
     description:
       "Premier arbitration and ADR services across North India. 20+ years experience, 500+ cases resolved.",
-    images: ["/og-image.jpg"],
   },
 };
 
@@ -277,7 +276,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(qaPageSchema) }}
       />
-      <HomeContent faqs={homepageFaqs} />
+      <HomeContent faqs={homepageFaqs} insights={latestInsights} />
     </>
   );
 }

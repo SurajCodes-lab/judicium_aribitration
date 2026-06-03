@@ -47,6 +47,8 @@ export default function Header() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Practice Areas", href: "/practice-areas" },
+    { label: "Locations", href: "/locations" },
+    { label: "Insights", href: "/insights" },
     { label: "Contact", href: "/contact" },
   ];
 

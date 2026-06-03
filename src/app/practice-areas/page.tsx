@@ -9,7 +9,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 
 export const metadata: Metadata = {
   title: "Practice Areas | Judicium Arbitration - Expert Legal Services in North India",
-  description: "Comprehensive legal services across 20+ practice areas including Arbitration, Banking, Corporate Law, IP, Real Estate, and more. Serving Delhi, Gurgaon, Noida, Chandigarh, Jaipur.",
+  description: "Expert arbitration & legal services across 20 practice areas — banking, corporate, IP, real estate & more — in Delhi NCR, Chandigarh, Jaipur & across North India.",
   keywords: [
     // Tier 1 — head terms
     "legal practice areas India",
@@ -41,26 +41,11 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Judicium Arbitration",
     url: "https://www.judiciumarbitration.com/practice-areas",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Judicium Arbitration Practice Areas — 20+ Legal Services in North India",
-      },
-      {
-        url: "/logo.jpeg",
-        width: 800,
-        height: 600,
-        alt: "Judicium Arbitration logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Practice Areas | Judicium Arbitration",
     description: "Expert legal services across 20+ practice areas in North India.",
-    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "https://www.judiciumarbitration.com/practice-areas",
@@ -119,6 +104,40 @@ const practiceAreasCollectionPage = {
   mainEntity: { "@id": `${BASE_URL}/practice-areas#itemlist` },
 };
 
+const practiceAreasFaqs = [
+  {
+    question: "What practice areas does Judicium Arbitration handle?",
+    answer:
+      "Judicium Arbitration covers 20 practice areas across six broad groups — Dispute Resolution (arbitration & ADR, litigation, insolvency), Corporate & Commercial (M&A, banking & finance, capital markets, private equity), Regulatory & Compliance (competition, data privacy, labour, insurance), Intellectual Property & Technology, Infrastructure & Real Estate, and specialised sectors such as healthcare, international trade, white-collar crime and defence/aviation. We serve clients across Delhi NCR, Chandigarh, Jaipur and North India.",
+  },
+  {
+    question: "Is Judicium Arbitration only an arbitration firm, or does it handle court litigation too?",
+    answer:
+      "While arbitration and alternative dispute resolution are our core strength, we are a full-service disputes and advisory practice. We represent clients in court litigation before the Delhi High Court, other High Courts, the Supreme Court of India, and specialised tribunals such as the NCLT, DRT, RERA and CCI, in addition to ad-hoc and institutional arbitration.",
+  },
+  {
+    question: "Which cities and courts does the firm cover?",
+    answer:
+      "We operate across eight cities in North India — New Delhi (headquarters), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj and Lucknow — with proximity to key forums including the Delhi High Court, Supreme Court, DIAC, NCLT Delhi, the Punjab & Haryana High Court and the Allahabad High Court.",
+  },
+  {
+    question: "How do I choose the right practice area for my legal issue?",
+    answer:
+      "If you are unsure which practice area fits your matter, contact us for an initial consultation. Many commercial disputes span several areas — for example a stalled real-estate project may involve RERA, arbitration and insolvency simultaneously — and our team will identify the most effective combination of remedies and forums for your situation.",
+  },
+];
+
+const practiceAreasFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${BASE_URL}/practice-areas#faq`,
+  mainEntity: practiceAreasFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
 export default function PracticeAreasPage() {
   // Group practice areas by category for better organization
   const categories = {
@@ -174,6 +193,10 @@ export default function PracticeAreasPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceAreasBreadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(practiceAreasFaqSchema) }}
       />
       {/* Hero Section */}
       <section className="relative bg-bg-dark py-16 sm:py-20 lg:py-24 overflow-hidden">
@@ -231,7 +254,7 @@ export default function PracticeAreasPage() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gold-primary tracking-tight">
-              Practice Areas
+              Arbitration &amp; Legal Practice Areas in North India
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
               Comprehensive legal expertise across 20+ practice areas — arbitration, banking & finance,
@@ -476,6 +499,38 @@ export default function PracticeAreasPage() {
                     {item.description}
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* FAQ Section */}
+      <Section variant="dark">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+              <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                FAQs
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
+              Practice Areas — Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4 sm:space-y-6">
+            {practiceAreasFaqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 sm:p-8 rounded-xl border border-gold-primary/20"
+              >
+                <h3 className="faq-question text-lg sm:text-xl font-semibold text-gold-secondary mb-3">
+                  {faq.question}
+                </h3>
+                <p className="faq-answer text-sm sm:text-base text-foreground/80 leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             ))}
           </div>

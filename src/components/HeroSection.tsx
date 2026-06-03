@@ -231,7 +231,10 @@ export default function HeroSection() {
               textShadow: '0 0 60px rgba(212, 175, 55, 0.4), 0 0 120px rgba(212, 175, 55, 0.2)',
             }}
           >
-            JUDICIUM
+            <span aria-hidden="true">JUDICIUM</span>
+            <span className="sr-only">
+              Judicium Arbitration — Arbitration &amp; Dispute Resolution Lawyers in Delhi NCR and North India
+            </span>
           </h1>
         </motion.div>
 

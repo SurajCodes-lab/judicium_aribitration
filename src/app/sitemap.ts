@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllPracticeAreaSlugs } from "@/data/practiceAreas";
+import { cityOffices } from "@/data/localBusinessSchemas";
+import { insightsData } from "@/data/insights";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -15,12 +17,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
       alternates: {
-        languages: {
-          "en-IN": `${BASE_URL}/practice-areas/${slug}`,
-        },
+        languages: { "en-IN": `${BASE_URL}/practice-areas/${slug}` },
       },
     })
   );
+
+  // City location pages — local pack ranking targets, monthly refresh, priority 0.85
+  const cityLocationPages: MetadataRoute.Sitemap = cityOffices.map((office) => ({
+    url: `${BASE_URL}/locations/${office.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: office.isHeadquarters ? 0.9 : 0.85,
+    alternates: {
+      languages: { "en-IN": `${BASE_URL}/locations/${office.slug}` },
+    },
+  }));
+
+  // Insight articles — dated, authored content, priority 0.75
+  const insightPages: MetadataRoute.Sitemap = insightsData.map((article) => ({
+    url: `${BASE_URL}/insights/${article.slug}`,
+    lastModified: new Date(article.dateModified),
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+    alternates: {
+      languages: { "en-IN": `${BASE_URL}/insights/${article.slug}` },
+    },
+  }));
 
   return [
     // Homepage — top priority, weekly refresh
@@ -29,11 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
-      alternates: {
-        languages: {
-          "en-IN": BASE_URL,
-        },
-      },
+      alternates: { languages: { "en-IN": BASE_URL } },
     },
     // Practice areas listing — main service page
     {
@@ -41,11 +59,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,
-      alternates: {
-        languages: {
-          "en-IN": `${BASE_URL}/practice-areas`,
-        },
-      },
+      alternates: { languages: { "en-IN": `${BASE_URL}/practice-areas` } },
+    },
+    // Locations listing
+    {
+      url: `${BASE_URL}/locations`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: { "en-IN": `${BASE_URL}/locations` } },
+    },
+    // Insights listing — blog index
+    {
+      url: `${BASE_URL}/insights`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { "en-IN": `${BASE_URL}/insights` } },
     },
     // About — E-E-A-T page
     {
@@ -53,11 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
-      alternates: {
-        languages: {
-          "en-IN": `${BASE_URL}/about`,
-        },
-      },
+      alternates: { languages: { "en-IN": `${BASE_URL}/about` } },
     },
     // Contact — conversion target
     {
@@ -65,15 +91,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
-      alternates: {
-        languages: {
-          "en-IN": `${BASE_URL}/contact`,
-        },
-      },
+      alternates: { languages: { "en-IN": `${BASE_URL}/contact` } },
     },
-    // All practice area detail pages
+    // City location detail pages (×8)
+    ...cityLocationPages,
+    // Insight article detail pages
+    ...insightPages,
+    // All practice area detail pages (×20)
     ...practiceAreaPages,
-    // AI / answer-engine discovery files — surface llms.txt to crawlers via sitemap
+    // AI / answer-engine discovery files
     {
       url: `${BASE_URL}/llms.txt`,
       lastModified: now,
@@ -86,7 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
-    // Legal pages — yearly refresh, lower priority but still indexable
+    // Legal pages
     {
       url: `${BASE_URL}/privacy-policy`,
       lastModified: now,

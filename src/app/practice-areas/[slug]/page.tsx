@@ -7,11 +7,28 @@ import {
   getRelatedPracticeAreas,
   PracticeArea,
 } from "@/data/practiceAreas";
+import { getHowToForPractice } from "@/data/practiceAreaHowTos";
+import {
+  getInsightsByCategory,
+  InsightCategory,
+} from "@/data/insights";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import { LawIcons } from "@/components/Icons";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
+
+// Maps a practice-area slug to the insights category whose articles are most relevant,
+// so each service page can surface related editorial content (topical internal linking).
+const practiceInsightCategory: Record<string, InsightCategory> = {
+  "arbitration-alternative-dispute-resolution": "Arbitration & ADR",
+  "dispute-resolution-litigation": "Arbitration & ADR",
+  "banking-finance": "Banking & Finance",
+  "insolvency-bankruptcy": "Insolvency",
+  "real-estate-urban-development": "Real Estate",
+  "corporate-commercial": "Corporate",
+  "corporate-mergers-acquisitions": "Corporate",
+};
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -47,26 +64,11 @@ export async function generateMetadata({
       locale: "en_IN",
       siteName: "Judicium Arbitration",
       url: `${BASE_URL}/practice-areas/${slug}`,
-      images: [
-        {
-          url: "/og-image.jpg",
-          width: 1200,
-          height: 630,
-          alt: `${practiceArea.title} — Judicium Arbitration`,
-        },
-        {
-          url: "/logo.jpeg",
-          width: 800,
-          height: 600,
-          alt: `${practiceArea.title} - Judicium Arbitration`,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${practiceArea.title} | Judicium Arbitration`,
       description: practiceArea.metaDescription,
-      images: ["/og-image.jpg"],
     },
     alternates: {
       canonical: `${BASE_URL}/practice-areas/${slug}`,
@@ -235,6 +237,31 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
     schemas.push(faqSchema);
   }
 
+  // HowTo schema (if a process-specific HowTo is defined for this area)
+  // — drives voice / AEO "how to X" query inclusion.
+  const howTo = getHowToForPractice(slug);
+  if (howTo) {
+    const howToSchema = {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "@id": `${pageUrl}#howto`,
+      name: howTo.name,
+      description: howTo.description,
+      totalTime: howTo.totalTime,
+      estimatedCost: { "@type": "MonetaryAmount", currency: "INR", value: "0" },
+      tool: [],
+      supply: [],
+      step: howTo.steps.map((s, idx) => ({
+        "@type": "HowToStep",
+        position: idx + 1,
+        name: s.name,
+        text: s.text,
+        ...(s.url ? { url: s.url } : {}),
+      })),
+    };
+    schemas.push(howToSchema);
+  }
+
   return schemas;
 }
 
@@ -247,6 +274,11 @@ export default async function PracticeAreaPage({ params }: PageProps) {
   }
 
   const structuredData = generateStructuredData(practiceArea, slug);
+  const howTo = getHowToForPractice(slug);
+  const insightCategory = practiceInsightCategory[slug];
+  const relatedInsights = insightCategory
+    ? getInsightsByCategory(insightCategory, 3)
+    : [];
 
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
@@ -344,8 +376,14 @@ export default async function PracticeAreaPage({ params }: PageProps) {
               {practiceArea.metaDescription}
             </p>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed">
-              Available across New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat,
-              Prayagraj and Lucknow.{" "}
+              Available across{" "}
+              <Link
+                href="/locations"
+                className="text-gold-primary hover:underline font-semibold"
+              >
+                New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj and Lucknow
+              </Link>
+              .{" "}
               <Link
                 href="/contact"
                 className="text-gold-primary hover:underline font-semibold"
@@ -527,6 +565,56 @@ export default async function PracticeAreaPage({ params }: PageProps) {
         </Section>
       )}
 
+      {/* Process / How It Works Section (if a HowTo is defined for this area) */}
+      {howTo && (
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10 sm:mb-12">
+              <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+                <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                  The Process
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary mb-4">
+                {howTo.name}
+              </h2>
+              <p className="text-base sm:text-lg text-foreground/70 max-w-3xl mx-auto">
+                {howTo.description}
+              </p>
+            </div>
+
+            <ol className="relative space-y-5 sm:space-y-6">
+              {howTo.steps.map((step, index) => (
+                <li
+                  key={index}
+                  className="relative flex items-start gap-4 sm:gap-6 bg-linear-to-br from-bg-alt-dark to-bg-dark p-5 sm:p-6 rounded-xl border border-gold-primary/15 hover:border-gold-primary/30 transition-all duration-300"
+                >
+                  <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-gold-primary to-gold-secondary rounded-full flex items-center justify-center font-bold text-black text-lg sm:text-xl shadow-lg shadow-gold-primary/20">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-semibold text-gold-secondary mb-1.5">
+                      {step.name}
+                    </h3>
+                    <p className="text-sm sm:text-base text-foreground/80 leading-relaxed">
+                      {step.text}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-8 text-center text-sm text-foreground/60">
+              This is a general guide. For advice on your specific matter,{" "}
+              <Link href="/contact" className="text-gold-primary hover:underline font-semibold">
+                speak to our {practiceArea.shortTitle} team
+              </Link>
+              .
+            </p>
+          </div>
+        </Section>
+      )}
+
       {/* FAQs Section (if available) */}
       {practiceArea.content.faqs && practiceArea.content.faqs.length > 0 && (
         <Section variant="dark">
@@ -554,6 +642,56 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                   <p className="faq-answer text-sm sm:text-base text-foreground/80 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {/* Related Insights (if relevant articles exist) */}
+      {relatedInsights.length > 0 && (
+        <Section variant="dark">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 sm:mb-12">
+              <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+                <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                  From Our Insights
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
+                Related Articles &amp; Legal Insights
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+              {relatedInsights.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/insights/${article.slug}`}
+                  className="group block bg-linear-to-br from-bg-alt-dark to-bg-dark p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gold-secondary">
+                    {article.category}
+                  </span>
+                  <h3 className="mt-3 text-white/90 group-hover:text-gold-primary font-semibold text-base leading-snug transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-white/55 line-clamp-3 leading-relaxed">
+                    {article.subtitle}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-gold-primary">
+                    Read article
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link href="/insights" className="text-gold-primary hover:underline font-semibold text-sm">
+                View all legal insights →
+              </Link>
             </div>
           </div>
         </Section>

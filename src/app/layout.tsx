@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Judicium Arbitration",
   },
   description:
-    "Premier arbitration and alternative dispute resolution services serving New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. Expert legal solutions in commercial disputes, banking, real estate, and more.",
+    "Premier arbitration & dispute resolution lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. 20+ years' experience, 500+ commercial cases resolved.",
   keywords: [
     // Tier 1 — High traffic / head terms
     "arbitration",
@@ -95,21 +95,12 @@ export const metadata: Metadata = {
     title: "Judicium Arbitration | Leading Arbitration Services in North India",
     description:
       "Premier arbitration and ADR services across Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. 20+ years experience, 500+ cases resolved.",
-    images: [
-      {
-        url: "/logo.jpeg",
-        width: 800,
-        height: 600,
-        alt: "Judicium Arbitration - Leading Arbitration Services in North India",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Judicium Arbitration | Leading Arbitration Services in North India",
     description:
       "Premier arbitration and ADR services across North India. 20+ years experience, 500+ cases resolved.",
-    images: ["/logo.jpeg"],
   },
   alternates: {
     canonical: BASE_URL,
@@ -124,10 +115,8 @@ export const metadata: Metadata = {
   other: {
     "format-detection": "telephone=no",
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+  // Favicon + apple touch icon are generated via the Next.js file conventions
+  // src/app/icon.tsx and src/app/apple-icon.tsx (no static /favicon.ico needed).
   manifest: "/manifest.json",
 };
 
@@ -205,7 +194,7 @@ const organizationSchema = {
   knowsLanguage: ["en", "hi"],
   telephone: "+91-9899686394",
   email: "Judiciumarbitration@gmail.com",
-  foundingDate: "2004",
+  foundingDate: "2003",
   numberOfEmployees: {
     "@type": "QuantitativeValue",
     minValue: 8,

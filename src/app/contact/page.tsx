@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
 import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
-  description: "Contact Judicium Arbitration for expert legal consultation across New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, Lucknow. Schedule a consultation with our arbitration experts today.",
+  description: "Contact Judicium Arbitration's expert arbitration lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. Book a consultation — we reply within 24 hours.",
   keywords: [
     // Tier 1 — high intent
     "contact Judicium Arbitration",
@@ -35,26 +36,11 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "Judicium Arbitration",
     url: "https://www.judiciumarbitration.com/contact",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Contact Judicium Arbitration — Schedule a Consultation",
-      },
-      {
-        url: "/logo.jpeg",
-        width: 800,
-        height: 600,
-        alt: "Judicium Arbitration logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | Judicium Arbitration",
     description: "Schedule an arbitration consultation with North India's trusted ADR lawyers.",
-    images: ["/og-image.jpg"],
   },
   alternates: {
     canonical: "https://www.judiciumarbitration.com/contact",
@@ -226,7 +212,7 @@ export default function ContactPage() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gold-primary tracking-tight">
-              Contact Us
+              Contact Our Arbitration Lawyers in Delhi NCR
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Ready to resolve your commercial dispute through arbitration or ADR? Connect with
@@ -298,107 +284,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <form className="space-y-6">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gold-secondary mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    aria-required="true"
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gold-secondary mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    aria-required="true"
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gold-secondary mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    aria-required="true"
-                    pattern="[+]?[0-9\s\-]{10,15}"
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all"
-                    placeholder="+91-XXXXXXXXXX"
-                  />
-                </div>
-
-                {/* Practice Area */}
-                <div>
-                  <label htmlFor="practice-area" className="block text-sm font-semibold text-gold-secondary mb-2">
-                    Practice Area of Interest
-                  </label>
-                  <select
-                    id="practice-area"
-                    name="practice-area"
-                    aria-label="Select a practice area of interest"
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all appearance-none cursor-pointer"
-                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23F0C246' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 16px center' }}
-                  >
-                    <option value="">Select a practice area</option>
-                    <option value="arbitration">Arbitration & ADR</option>
-                    <option value="banking">Banking & Finance</option>
-                    <option value="corporate">Corporate & Commercial</option>
-                    <option value="real-estate">Real Estate</option>
-                    <option value="ip">Intellectual Property</option>
-                    <option value="litigation">Litigation</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gold-secondary mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    aria-required="true"
-                    rows={6}
-                    className="w-full px-4 py-3 bg-bg-alt-dark border border-gold-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:border-gold-primary/50 text-foreground transition-all resize-none"
-                    placeholder="Please describe your legal matter and how we can assist you..."
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-linear-to-r from-gold-primary to-gold-secondary text-bg-dark font-semibold rounded-lg hover:shadow-xl hover:shadow-gold-primary/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold-primary/50 focus:ring-offset-2 focus:ring-offset-bg-dark uppercase tracking-wider text-sm"
-                >
-                  Send Message
-                </button>
-
-                <p className="text-xs text-foreground/50 text-center">
-                  By submitting this form, you agree to our privacy policy and terms of service.
-                </p>
-              </form>
+              <ContactForm />
             </div>
 
             {/* Contact Information */}

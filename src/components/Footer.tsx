@@ -12,6 +12,8 @@ export default function Footer() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Practice Areas", href: "/practice-areas" },
+    { label: "Locations", href: "/locations" },
+    { label: "Insights", href: "/insights" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -25,14 +27,14 @@ export default function Footer() {
   ];
 
   const locations: { city: string; label: string; anchor: string; href: string }[] = [
-    { city: "New Delhi (HQ)", label: "New Delhi (HQ)", anchor: "Arbitration Lawyers in Delhi", href: "/contact?city=delhi" },
-    { city: "Gurgaon", label: "Gurgaon", anchor: "Arbitration Lawyers in Gurgaon", href: "/contact?city=gurgaon" },
-    { city: "Noida", label: "Noida", anchor: "Arbitration Lawyers in Noida", href: "/contact?city=noida" },
-    { city: "Chandigarh", label: "Chandigarh", anchor: "Arbitration Lawyers in Chandigarh", href: "/contact?city=chandigarh" },
-    { city: "Jaipur", label: "Jaipur", anchor: "Arbitration Lawyers in Jaipur", href: "/contact?city=jaipur" },
-    { city: "Panipat", label: "Panipat", anchor: "Arbitration Lawyers in Panipat", href: "/contact?city=panipat" },
-    { city: "Prayagraj", label: "Prayagraj", anchor: "Arbitration Lawyers in Prayagraj", href: "/contact?city=prayagraj" },
-    { city: "Lucknow", label: "Lucknow", anchor: "Arbitration Lawyers in Lucknow", href: "/contact?city=lucknow" },
+    { city: "New Delhi (HQ)", label: "New Delhi (HQ)", anchor: "Arbitration Lawyers in Delhi", href: "/locations/delhi" },
+    { city: "Gurgaon", label: "Gurgaon", anchor: "Arbitration Lawyers in Gurgaon", href: "/locations/gurgaon" },
+    { city: "Noida", label: "Noida", anchor: "Arbitration Lawyers in Noida", href: "/locations/noida" },
+    { city: "Chandigarh", label: "Chandigarh", anchor: "Arbitration Lawyers in Chandigarh", href: "/locations/chandigarh" },
+    { city: "Jaipur", label: "Jaipur", anchor: "Arbitration Lawyers in Jaipur", href: "/locations/jaipur" },
+    { city: "Panipat", label: "Panipat", anchor: "Arbitration Lawyers in Panipat", href: "/locations/panipat" },
+    { city: "Prayagraj", label: "Prayagraj", anchor: "Arbitration Lawyers in Prayagraj", href: "/locations/prayagraj" },
+    { city: "Lucknow", label: "Lucknow", anchor: "Arbitration Lawyers in Lucknow", href: "/locations/lucknow" },
   ];
 
   return (
