@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { buildAllCitySchemas } from "@/data/localBusinessSchemas";
 
@@ -29,50 +30,10 @@ export const metadata: Metadata = {
   },
   description:
     "Premier arbitration & dispute resolution lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. 20+ years' experience, 500+ commercial cases resolved.",
-  keywords: [
-    // Tier 1 — High traffic / head terms
-    "arbitration",
-    "ADR",
-    "alternative dispute resolution",
-    "arbitration India",
-    "arbitration lawyers Delhi",
-    "commercial arbitration",
-    "international arbitration",
-    "dispute resolution",
-    "legal services Delhi",
-    "law firm North India",
-    "law firm Delhi NCR",
-    "top law firm North India",
-    // Tier 2 — Medium / commercial intent
-    "arbitration firm Delhi NCR",
-    "best arbitration lawyer India",
-    "corporate dispute resolution",
-    "banking arbitration India",
-    "real estate dispute lawyer",
-    "intellectual property arbitration",
-    "insolvency lawyer Delhi",
-    "DIAC arbitration",
-    "Arbitration and Conciliation Act",
-    "mediation services India",
-    "commercial litigation Delhi",
-    "legal consultation North India",
-    // Tier 3 — Long-tail / informational
-    "best arbitration firm India 2026",
-    "Section 9 Arbitration Act India",
-    "arbitration vs litigation India",
-    "Delhi High Court arbitration lawyer",
-    "how long does arbitration take in India",
-    "Judicium Arbitration",
-    // Geographic long-tail (cities served)
-    "Delhi",
-    "Gurgaon",
-    "Noida",
-    "Chandigarh",
-    "Jaipur",
-    "Panipat",
-    "Prayagraj",
-    "Lucknow",
-  ],
+  // NOTE (Week 10): the meta `keywords` tag is deliberately omitted. Google has
+  // ignored it since 2009 and an over-stuffed list adds no value while reading as
+  // spam to other engines. Keyword targeting now lives in visible on-page content
+  // (headings, body copy, FAQs, location/topic sections) where it actually ranks.
   authors: [{ name: "Judicium Arbitration" }],
   creator: "Judicium Arbitration",
   publisher: "Judicium Arbitration",
@@ -344,6 +305,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <FloatingContact />
+        {/* Spacer so the mobile sticky contact bar never hides footer content. */}
+        <div className="h-14 sm:hidden" aria-hidden="true" />
       </body>
     </html>
   );

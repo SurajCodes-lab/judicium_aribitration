@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { LawIcons } from "@/components/Icons";
 import {
   cityOffices,
@@ -38,21 +39,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title,
     description,
-    keywords: [
-      `arbitration lawyers ${office.city}`,
-      `ADR lawyer ${office.city}`,
-      `commercial arbitration ${office.city}`,
-      `arbitration firm ${office.city}`,
-      `dispute resolution ${office.city}`,
-      `arbitration counsel ${office.city}`,
-      `${office.region} arbitration lawyers`,
-      `best arbitration lawyer ${office.city}`,
-      `Judicium Arbitration ${office.city} office`,
-      `arbitration consultation ${office.city}`,
-      `Section 9 lawyer ${office.city}`,
-      `Section 17 arbitration ${office.city}`,
-      `law firm ${office.city}`,
-    ].join(", "),
+    // Week 10: meta keywords removed — the same city terms are targeted in the
+    // visible H1, overview, local-expertise and FAQ copy, plus the LegalService schema.
     alternates: {
       canonical: pageUrl,
       languages: { "en-IN": pageUrl, "x-default": pageUrl },
@@ -258,27 +246,16 @@ export default async function CityLocationPage({ params }: PageProps) {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-6 text-sm">
-            <ol className="flex items-center gap-2 text-foreground/60">
-              <li>
-                <Link href="/" className="hover:text-gold-primary transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li className="text-gold-primary/50">/</li>
-              <li>
-                <Link
-                  href="/locations"
-                  className="hover:text-gold-primary transition-colors"
-                >
-                  Locations
-                </Link>
-              </li>
-              <li className="text-gold-primary/50">/</li>
-              <li className="text-gold-primary font-medium">{office.city}</li>
-            </ol>
-          </nav>
+          {/* Breadcrumb (shared component — matches BreadcrumbList schema) */}
+          <div className="mb-6">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Locations", href: "/locations" },
+                { label: office.city },
+              ]}
+            />
+          </div>
 
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold-primary/10 border border-gold-primary/30 rounded-full mb-5">

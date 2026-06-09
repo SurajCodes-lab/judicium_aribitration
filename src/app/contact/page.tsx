@@ -8,27 +8,7 @@ import { LawIcons } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
   description: "Contact Judicium Arbitration's expert arbitration lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. Book a consultation — we reply within 24 hours.",
-  keywords: [
-    // Tier 1 — high intent
-    "contact Judicium Arbitration",
-    "legal consultation Delhi",
-    "arbitration lawyers contact",
-    "law firm offices NCR",
-    "schedule legal consultation",
-    // Tier 2 — commercial / location
-    "arbitration consultation North India",
-    "ADR consultation Delhi NCR",
-    "legal consultation Gurgaon Noida",
-    "law firm contact Delhi",
-    "arbitration lawyer Chandigarh contact",
-    // Tier 3 — long-tail / informational intent
-    "book arbitration lawyer consultation Delhi",
-    "virtual arbitration consultation India",
-    "arbitration lawyer phone number Delhi",
-    "schedule legal advice North India",
-    "arbitration office Delhi NCR address",
-    "free arbitration case evaluation India"
-  ].join(", "),
+  // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "Contact Us | Judicium Arbitration",
     description: "Get in touch for expert legal consultation across North India — Delhi NCR, Chandigarh, Jaipur and beyond.",

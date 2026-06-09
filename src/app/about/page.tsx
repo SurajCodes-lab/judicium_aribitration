@@ -12,27 +12,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 export const metadata: Metadata = {
   title: "About Us | Judicium Arbitration - Leading Legal Experts in North India",
   description: "Judicium Arbitration — 20+ years resolving disputes across Delhi NCR, Chandigarh & Jaipur. Meet our arbitration lawyers, mission, values & track record.",
-  keywords: [
-    // Tier 1 — head terms
-    "about Judicium Arbitration",
-    "law firm Delhi",
-    "arbitration experts India",
-    "legal team North India",
-    "dispute resolution specialists",
-    // Tier 2 — commercial / location
-    "best arbitration firm Delhi NCR",
-    "ADR law firm Gurgaon Noida",
-    "commercial arbitration experts Chandigarh",
-    "arbitration lawyers Jaipur",
-    "legal advisory North India",
-    // Tier 3 — long-tail / brand / E-E-A-T
-    "leading arbitration firm North India",
-    "expert ADR practitioners Delhi",
-    "Judicium Arbitration team profile",
-    "founder Judicium Arbitration",
-    "top arbitration lawyers India 20 years experience",
-    "arbitration law firm history Delhi"
-  ].join(", "),
+  // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "About Us | Judicium Arbitration",
     description: "Leading legal experts with 20+ years of experience in North India — Delhi NCR, Chandigarh, Jaipur and beyond.",

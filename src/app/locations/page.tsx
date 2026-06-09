@@ -10,14 +10,7 @@ export const metadata: Metadata = {
   title: "Our Locations | Judicium Arbitration — 8 Offices Across North India",
   description:
     "Judicium Arbitration offices in New Delhi (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. Address, hours, courts covered, and consultation booking for each city.",
-  keywords: [
-    "Judicium Arbitration offices",
-    "arbitration law firm North India locations",
-    "arbitration lawyers Delhi NCR offices",
-    "law firm offices Chandigarh Jaipur Lucknow",
-    "arbitration counsel near me Delhi",
-    "ADR law firm branches India",
-  ].join(", "),
+  // Week 10: meta keywords removed — targeting handled in visible content.
   alternates: {
     canonical: `${BASE_URL}/locations`,
     languages: {

@@ -14,6 +14,7 @@ import {
 } from "@/data/insights";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { LawIcons } from "@/components/Icons";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
@@ -56,7 +57,8 @@ export async function generateMetadata({
   return {
     title: `${practiceArea.title}`,
     description: practiceArea.metaDescription,
-    keywords: practiceArea.keywords.join(", "),
+    // Week 10: meta keywords removed; practiceArea.keywords are now surfaced as a
+    // visible "Common searches" topic section on the page and in the schema.
     openGraph: {
       title: `${practiceArea.title} | Judicium Arbitration`,
       description: practiceArea.metaDescription,
@@ -323,24 +325,16 @@ export default async function PracticeAreaPage({ params }: PageProps) {
         <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-gold-primary/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-6 sm:mb-8 text-sm">
-            <ol className="flex items-center gap-2 text-foreground/60">
-              <li>
-                <Link href="/" className="hover:text-gold-primary transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li className="text-gold-primary/50">/</li>
-              <li>
-                <Link href="/practice-areas" className="hover:text-gold-primary transition-colors">
-                  Practice Areas
-                </Link>
-              </li>
-              <li className="text-gold-primary/50">/</li>
-              <li className="text-gold-primary font-medium">{practiceArea.shortTitle}</li>
-            </ol>
-          </nav>
+          {/* Breadcrumb (shared component — matches BreadcrumbList schema above) */}
+          <div className="mb-6 sm:mb-8">
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Practice Areas", href: "/practice-areas" },
+                { label: practiceArea.shortTitle },
+              ]}
+            />
+          </div>
 
           {/* Title */}
           <div className="max-w-4xl">
@@ -643,6 +637,45 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+          </div>
+        </Section>
+      )}
+
+      {/* Common Searches / Topics — surfaces the curated keyword set as VISIBLE,
+          crawlable on-page content (Week 10) rather than an ignored meta tag. */}
+      {practiceArea.keywords && practiceArea.keywords.length > 0 && (
+        <Section>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+              <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                Common Searches
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary mb-4">
+              Topics We Advise On — {practiceArea.shortTitle}
+            </h2>
+            <p className="text-sm sm:text-base text-foreground/70 max-w-2xl mx-auto mb-8">
+              Clients across Delhi NCR, Chandigarh, Jaipur and North India approach
+              Judicium Arbitration on matters such as these. If your question is
+              below, our {practiceArea.shortTitle.toLowerCase()} counsel can help.
+            </p>
+            <ul className="flex flex-wrap justify-center gap-2.5">
+              {practiceArea.keywords.map((kw, i) => (
+                <li
+                  key={i}
+                  className="px-4 py-2 bg-bg-alt-dark border border-gold-primary/20 rounded-full text-xs sm:text-sm text-foreground/75 capitalize"
+                >
+                  {kw}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-sm text-foreground/60">
+              Not seeing your exact issue?{" "}
+              <Link href="/contact" className="text-gold-primary hover:underline font-semibold">
+                Describe your dispute
+              </Link>{" "}
+              and we&apos;ll tell you how {practiceArea.shortTitle} law applies.
+            </p>
           </div>
         </Section>
       )}

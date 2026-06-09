@@ -182,31 +182,8 @@ export const metadata: Metadata = {
   title: "Judicium Arbitration | Leading Arbitration Services in North India",
   description:
     "Premier arbitration & dispute resolution lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. 20+ years' experience, 500+ commercial cases resolved.",
-  keywords: [
-    // Tier 1 — head terms
-    "Judicium Arbitration",
-    "arbitration India",
-    "arbitration lawyers Delhi",
-    "best arbitration lawyer Delhi",
-    "top law firm North India",
-    "ADR services India",
-    // Tier 2 — commercial intent
-    "commercial arbitration India",
-    "dispute resolution lawyers Delhi",
-    "alternative dispute resolution India",
-    "arbitration firm Delhi NCR",
-    "Section 9 lawyer Delhi",
-    "DIAC arbitration counsel",
-    // Tier 3 — long-tail
-    "leading arbitration firm North India",
-    "expert arbitration consultation Delhi NCR",
-    "top rated arbitration lawyers India",
-    "Delhi arbitration law firm 2026",
-    "arbitration and conciliation act lawyers India",
-    "emergency arbitrator India",
-    "stamping arbitration agreement India",
-    "NN Global arbitration lawyer",
-  ].join(", "),
+  // Week 10: meta `keywords` removed site-wide — keyword targeting is handled in
+  // visible page content, not in an ignored (and spammy-looking) meta tag.
   alternates: {
     canonical: BASE_URL,
     languages: {

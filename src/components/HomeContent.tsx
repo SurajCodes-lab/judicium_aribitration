@@ -5,7 +5,31 @@ import Button from "@/components/Button";
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import { practiceAreasData } from "@/data/practiceAreas";
+import { testimonials } from "@/data/testimonials";
 import { LawIcons } from "@/components/Icons";
+import {
+  WHATSAPP_LINK,
+  TEL_LINK,
+  PHONE_DISPLAY,
+  MAILTO_LINK,
+  EMAIL,
+} from "@/data/contactInfo";
+
+// Cities served — surfaced as a visible, internally-linked content block so the
+// city/keyword targeting lives in on-page content (and feeds local SEO), not in meta.
+const SERVED_CITIES: { city: string; slug: string; note: string }[] = [
+  { city: "Delhi", slug: "delhi", note: "HQ near DIAC, Supreme Court & Delhi High Court" },
+  { city: "Gurgaon", slug: "gurgaon", note: "Corporate & commercial arbitration in Gurugram" },
+  { city: "Noida", slug: "noida", note: "Real estate & construction disputes across NCR" },
+  { city: "Chandigarh", slug: "chandigarh", note: "Arbitration before the Punjab & Haryana High Court" },
+  { city: "Jaipur", slug: "jaipur", note: "Commercial & MSME dispute resolution in Rajasthan" },
+  { city: "Panipat", slug: "panipat", note: "Textile & manufacturing contract disputes" },
+  { city: "Prayagraj", slug: "prayagraj", note: "Civil & arbitration matters before the Allahabad High Court" },
+  { city: "Lucknow", slug: "lucknow", note: "RERA & commercial arbitration across Uttar Pradesh" },
+];
+
+// Three representative testimonials for the homepage social-proof strip.
+const homeTestimonials = testimonials.slice(0, 3);
 
 interface FAQ {
   question: string;
@@ -191,6 +215,53 @@ export default function HomeContent({
         </div>
       </Section>
 
+      {/* Cities We Serve — keyword-rich, internally-linked local content block */}
+      <Section variant="gradient">
+        <div className="relative z-10">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full text-gold-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+              <LawIcons.Location className="w-4 h-4" />
+              Where We Practice
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+              Arbitration Lawyers Across <span className="text-gold-primary">North India</span>
+            </h2>
+            <p className="text-white/60 max-w-3xl mx-auto text-base sm:text-lg">
+              From our New Delhi headquarters, Judicium Arbitration represents
+              clients in commercial arbitration, mediation and dispute-resolution
+              matters across eight cities — appearing before the Delhi High Court,
+              DIAC, the Punjab &amp; Haryana High Court, RERA authorities and MSME
+              Facilitation Councils throughout the region.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {SERVED_CITIES.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/locations/${c.slug}`}
+                title={`Arbitration lawyers in ${c.city}`}
+                className="group block bg-bg-alt-dark p-5 rounded-xl border border-gold-primary/15 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <LawIcons.Location className="w-4 h-4 text-gold-primary/70" />
+                  <span className="text-white/90 group-hover:text-gold-primary font-semibold transition-colors">
+                    Arbitration Lawyers in {c.city}
+                  </span>
+                </div>
+                <p className="text-white/50 text-sm leading-relaxed">{c.note}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button variant="secondary" size="lg" href="/locations">
+              View All Locations
+            </Button>
+          </div>
+        </div>
+      </Section>
+
       {/* Insights / Blog Teaser Section */}
       {insights.length > 0 && (
         <Section variant="gradient">
@@ -247,6 +318,62 @@ export default function HomeContent({
           </div>
         </Section>
       )}
+
+      {/* Testimonials / Social Proof — visibly backs the 4.9★ AggregateRating */}
+      <Section variant="dark">
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-5 py-2 bg-gold-primary/10 border border-gold-primary/30 rounded-full text-gold-primary text-xs font-semibold tracking-[0.2em] uppercase mb-6">
+              <LawIcons.Trophy className="w-4 h-4" />
+              Client Results
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+              Trusted by <span className="text-gold-primary">Businesses &amp; Individuals</span>
+            </h2>
+            <div className="flex items-center justify-center gap-2 mb-3">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg key={star} className="w-5 h-5 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.364 2.444a1 1 0 00-.364 1.118l1.286 3.957c.3.922-.755 1.688-1.54 1.118l-3.364-2.444a1 1 0 00-1.176 0l-3.364 2.444c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.957z" />
+                </svg>
+              ))}
+            </div>
+            <p className="text-white/60 text-base sm:text-lg">
+              <span className="text-gold-primary font-semibold">4.9 / 5</span> from 127 client ratings across Delhi NCR, Chandigarh, Jaipur &amp; North India
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
+            {homeTestimonials.map((t) => (
+              <article
+                key={t.id}
+                className="flex flex-col bg-bg-alt-dark border border-gold-primary/20 rounded-2xl p-6 sm:p-7 hover:border-gold-primary/40 transition-colors"
+              >
+                <div className="flex items-center gap-1 mb-4">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.158c.969 0 1.371 1.24.588 1.81l-3.364 2.444a1 1 0 00-.364 1.118l1.286 3.957c.3.922-.755 1.688-1.54 1.118l-3.364-2.444a1 1 0 00-1.176 0l-3.364 2.444c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.158a1 1 0 00.95-.69l1.286-3.957z" />
+                    </svg>
+                  ))}
+                </div>
+                <h3 className="text-base sm:text-lg font-semibold text-gold-secondary mb-2 leading-snug">
+                  &ldquo;{t.headline}&rdquo;
+                </h3>
+                <p className="text-sm text-white/70 leading-relaxed mb-5 grow">{t.body}</p>
+                <div className="pt-4 border-t border-gold-primary/10">
+                  <div className="text-sm font-semibold text-white/90">{t.authorName}</div>
+                  <div className="text-xs text-white/55">{t.authorTitle} · {t.city}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Button variant="secondary" size="lg" href="/about">
+              Read More Client Stories
+            </Button>
+          </div>
+        </div>
+      </Section>
 
       {/* FAQ Section */}
       <Section variant="gradient">
@@ -309,9 +436,9 @@ export default function HomeContent({
           {/* Contact Cards */}
           <div className="grid sm:grid-cols-3 gap-5 mb-10">
             {[
-              { Icon: LawIcons.Location, title: "Locations", value: "Delhi NCR, Chandigarh, Jaipur", color: "from-gold-primary to-gold-secondary" },
-              { Icon: LawIcons.Mail, title: "Email", value: "Judiciumarbitration@gmail.com", href: "mailto:Judiciumarbitration@gmail.com", color: "from-gold-secondary to-gold-primary" },
-              { Icon: LawIcons.Clock, title: "Hours", value: "Mon-Fri: 9AM - 6PM IST", color: "from-gold-primary to-gold-secondary" },
+              { Icon: LawIcons.Phone, title: "Call Us", value: PHONE_DISPLAY, href: TEL_LINK, color: "from-gold-primary to-gold-secondary" },
+              { Icon: LawIcons.WhatsApp, title: "WhatsApp", value: "Chat with our team", href: WHATSAPP_LINK, color: "from-gold-secondary to-gold-primary" },
+              { Icon: LawIcons.Mail, title: "Email", value: EMAIL, href: MAILTO_LINK, color: "from-gold-primary to-gold-secondary" },
             ].map((item, i) => (
               <div key={i} className="group">
                 {item.href ? (
@@ -346,13 +473,20 @@ export default function HomeContent({
                 Take the first step toward resolving your commercial dispute through arbitration, mediation or ADR with expert guidance from Judicium Arbitration.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="lg" href="mailto:Judiciumarbitration@gmail.com">
-                  Email Us Now
+                <Button variant="primary" size="lg" href={TEL_LINK}>
+                  Call {PHONE_DISPLAY}
                 </Button>
-                <Button variant="secondary" size="lg" href="/contact">
-                  Contact Page
+                <Button variant="secondary" size="lg" href={WHATSAPP_LINK}>
+                  Message on WhatsApp
                 </Button>
               </div>
+              <p className="mt-5 text-sm text-white/50">
+                Prefer to write?{" "}
+                <Link href="/contact" className="text-gold-primary hover:underline font-semibold">
+                  Use our contact form
+                </Link>{" "}
+                — we reply within 24 hours.
+              </p>
             </div>
           </div>
         </div>

@@ -10,30 +10,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 export const metadata: Metadata = {
   title: "Practice Areas | Judicium Arbitration - Expert Legal Services in North India",
   description: "Expert arbitration & legal services across 20 practice areas — banking, corporate, IP, real estate & more — in Delhi NCR, Chandigarh, Jaipur & across North India.",
-  keywords: [
-    // Tier 1 — head terms
-    "legal practice areas India",
-    "law firm services Delhi",
-    "arbitration lawyers",
-    "corporate lawyers NCR",
-    "legal services Chandigarh",
-    "comprehensive legal advisory",
-    // Tier 2 — practice-area commercial
-    "banking finance lawyer Delhi",
-    "real estate arbitration India",
-    "intellectual property lawyer NCR",
-    "insolvency bankruptcy lawyer",
-    "labour employment law firm",
-    "data privacy cybersecurity law",
-    "dispute resolution services India",
-    // Tier 3 — long-tail / informational
-    "full service law firm Delhi NCR",
-    "top legal practice areas India 2026",
-    "20 practice areas law firm North India",
-    "expert arbitration practice areas India",
-    "Delhi NCR law firm services list",
-    "comprehensive legal services North India"
-  ].join(", "),
+  // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "Practice Areas | Judicium Arbitration",
     description: "Expert legal services across 20+ practice areas — arbitration, banking, corporate, IP, real estate — in Delhi NCR, Chandigarh, Jaipur and across North India.",

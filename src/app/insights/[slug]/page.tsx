@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { LawIcons } from "@/components/Icons";
 import {
   getInsightBySlug,
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: article.title,
     description: article.metaDescription,
-    keywords: article.keywords.join(", "),
+    // Week 10: meta keywords removed; article.keywords now feed OG article tags
+    // and the BlogPosting schema `keywords` (legitimate), not a meta tag.
     authors: [{ name: article.authorName }],
     alternates: {
       canonical: pageUrl,
@@ -189,31 +191,15 @@ export default async function InsightArticlePage({ params }: PageProps) {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-            <nav className="mb-6 text-sm">
-              <ol className="flex items-center gap-2 text-foreground/60 flex-wrap">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-gold-primary transition-colors"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li className="text-gold-primary/50">/</li>
-                <li>
-                  <Link
-                    href="/insights"
-                    className="hover:text-gold-primary transition-colors"
-                  >
-                    Insights
-                  </Link>
-                </li>
-                <li className="text-gold-primary/50">/</li>
-                <li className="text-gold-primary font-medium line-clamp-1">
-                  {article.category}
-                </li>
-              </ol>
-            </nav>
+            <div className="mb-6">
+              <Breadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Insights", href: "/insights" },
+                  { label: article.category },
+                ]}
+              />
+            </div>
 
             <div className="flex items-center gap-3 mb-5 flex-wrap">
               <span className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-gold-primary bg-gold-primary/10 border border-gold-primary/30 rounded-full">

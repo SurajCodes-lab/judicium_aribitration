@@ -11,17 +11,7 @@ export const metadata: Metadata = {
     "Insights | Judicium Arbitration — Indian Arbitration & ADR Analysis",
   description:
     "Long-form analysis on Indian arbitration and dispute resolution by Judicium Arbitration's senior counsel. Section 9 vs Section 17, NN Global stamping, foreign award enforcement, RERA, and more.",
-  keywords: [
-    "Indian arbitration insights",
-    "arbitration analysis India",
-    "Section 9 Section 17 explained",
-    "NN Global commentary",
-    "foreign award enforcement India guide",
-    "RERA arbitration analysis",
-    "DIAC MCIA comparison",
-    "arbitration blog India",
-    "Judicium Arbitration insights",
-  ].join(", "),
+  // Week 10: meta keywords removed — targeting handled in visible content.
   alternates: {
     canonical: `${BASE_URL}/insights`,
     languages: {
