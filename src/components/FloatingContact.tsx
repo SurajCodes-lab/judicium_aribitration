@@ -9,6 +9,7 @@ import {
   MAILTO_LINK,
   PHONE_DISPLAY,
 } from "@/data/contactInfo";
+import { trackContact } from "@/lib/analytics";
 
 /**
  * Site-wide lead-capture surface (Week 10).
@@ -48,6 +49,7 @@ export default function FloatingContact() {
             >
               <a
                 href={TEL_LINK}
+                onClick={() => trackContact("phone", "floating_widget")}
                 className="group flex items-center gap-3 pl-4 pr-2 py-2 bg-bg-alt-dark border border-gold-primary/30 rounded-full shadow-lg hover:border-gold-primary/60 transition-colors"
                 aria-label={`Call Judicium Arbitration on ${PHONE_DISPLAY}`}
               >
@@ -60,6 +62,7 @@ export default function FloatingContact() {
               </a>
               <a
                 href={MAILTO_LINK}
+                onClick={() => trackContact("email", "floating_widget")}
                 className="group flex items-center gap-3 pl-4 pr-2 py-2 bg-bg-alt-dark border border-gold-primary/30 rounded-full shadow-lg hover:border-gold-primary/60 transition-colors"
                 aria-label="Email Judicium Arbitration"
               >
@@ -93,6 +96,7 @@ export default function FloatingContact() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContact("whatsapp", "floating_widget")}
             aria-label="Chat with Judicium Arbitration on WhatsApp"
             className="relative w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xl shadow-[#25D366]/30 hover:scale-105 transition-transform"
           >
@@ -109,6 +113,7 @@ export default function FloatingContact() {
       >
         <a
           href={TEL_LINK}
+          onClick={() => trackContact("phone", "mobile_bar")}
           className="flex flex-col items-center justify-center gap-1 py-2.5 text-gold-primary active:bg-gold-primary/10 transition-colors"
           aria-label={`Call ${PHONE_DISPLAY}`}
         >
@@ -119,6 +124,7 @@ export default function FloatingContact() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContact("whatsapp", "mobile_bar")}
           className="flex flex-col items-center justify-center gap-1 py-2.5 text-[#25D366] border-x border-gold-primary/15 active:bg-[#25D366]/10 transition-colors"
           aria-label="Chat on WhatsApp"
         >
@@ -127,6 +133,7 @@ export default function FloatingContact() {
         </a>
         <a
           href={MAILTO_LINK}
+          onClick={() => trackContact("email", "mobile_bar")}
           className="flex flex-col items-center justify-center gap-1 py-2.5 text-white/80 active:bg-white/5 transition-colors"
           aria-label="Email us"
         >
