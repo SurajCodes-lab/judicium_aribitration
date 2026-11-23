@@ -12,10 +12,14 @@ import {
   getInsightsByCategory,
   InsightCategory,
 } from "@/data/insights";
+import { getCitiesForPractice } from "@/data/cityPracticeContent";
+import { getCityBySlug } from "@/data/localBusinessSchemas";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { LawIcons } from "@/components/Icons";
+
+import { clampDescription } from "@/lib/seoText";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -55,13 +59,15 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${practiceArea.title}`,
-    description: practiceArea.metaDescription,
+    // W1-06: demand-led title. `title` stays the canonical service name for
+    // schema and breadcrumbs; `seoTitle` is what searchers actually type.
+    title: practiceArea.seoTitle,
+    description: clampDescription(practiceArea.metaDescription),
     // Week 10: meta keywords removed; practiceArea.keywords are now surfaced as a
     // visible "Common searches" topic section on the page and in the schema.
     openGraph: {
-      title: `${practiceArea.title} | Judicium Arbitration`,
-      description: practiceArea.metaDescription,
+      title: `${practiceArea.seoTitle} | Judicium Arbitration`,
+      description: clampDescription(practiceArea.metaDescription),
       type: "article",
       locale: "en_IN",
       siteName: "Judicium Arbitration",
@@ -69,8 +75,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${practiceArea.title} | Judicium Arbitration`,
-      description: practiceArea.metaDescription,
+      title: `${practiceArea.seoTitle} | Judicium Arbitration`,
+      description: clampDescription(practiceArea.metaDescription),
     },
     alternates: {
       canonical: `${BASE_URL}/practice-areas/${slug}`,
@@ -91,7 +97,7 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
     "@type": "LegalService",
     "@id": `${pageUrl}#service`,
     name: practiceArea.title,
-    description: practiceArea.metaDescription,
+    description: clampDescription(practiceArea.metaDescription),
     provider: {
       "@type": "LegalService",
       "@id": `${BASE_URL}/#organization`,
@@ -128,7 +134,7 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
     "@type": "Article",
     "@id": `${pageUrl}#article`,
     headline: practiceArea.title,
-    description: practiceArea.metaDescription,
+    description: clampDescription(practiceArea.metaDescription),
     articleSection: practiceArea.shortTitle,
     inLanguage: "en-IN",
     url: pageUrl,
@@ -169,7 +175,7 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
     "@id": `${pageUrl}#webpage`,
     url: pageUrl,
     name: practiceArea.title,
-    description: practiceArea.metaDescription,
+    description: clampDescription(practiceArea.metaDescription),
     inLanguage: "en-IN",
     isPartOf: { "@type": "WebSite", "@id": `${BASE_URL}/#website` },
     primaryImageOfPage: { "@type": "ImageObject", url: `${BASE_URL}/logo.jpeg` },
@@ -281,6 +287,10 @@ export default async function PracticeAreaPage({ params }: PageProps) {
   const relatedInsights = insightCategory
     ? getInsightsByCategory(insightCategory, 3)
     : [];
+  // Cities with a dedicated local landing page for this practice (internal linking)
+  const practiceCities = getCitiesForPractice(slug)
+    .map((citySlug) => getCityBySlug(citySlug))
+    .filter((o): o is NonNullable<typeof o> => Boolean(o));
 
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24">
@@ -343,7 +353,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
                 <span className="text-3xl sm:text-4xl">{practiceArea.icon}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gold-primary">
-                {practiceArea.title}
+                {practiceArea.h1}
               </h1>
             </div>
             <p className="text-lg sm:text-xl md:text-2xl text-white/80 leading-relaxed">
@@ -367,7 +377,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
               </span>
             </div>
             <p className="text-base sm:text-lg text-foreground/90 leading-relaxed font-medium">
-              {practiceArea.metaDescription}
+              {clampDescription(practiceArea.metaDescription)}
             </p>
             <p className="mt-3 text-sm text-foreground/65 leading-relaxed">
               Available across{" "}
@@ -725,6 +735,41 @@ export default async function PracticeAreaPage({ params }: PageProps) {
               <Link href="/insights" className="text-gold-primary hover:underline font-semibold text-sm">
                 View all legal insights →
               </Link>
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {/* This practice, city by city — internal links to local landing pages */}
+      {practiceCities.length > 0 && (
+        <Section variant="dark">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 sm:mb-12">
+              <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-4">
+                <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
+                  Near You
+                </span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold-primary">
+                {practiceArea.shortTitle} lawyers, city by city
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-foreground/70 max-w-2xl mx-auto">
+                Choose your city for local courts, forums and {practiceArea.shortTitle.toLowerCase()} FAQs specific to that jurisdiction.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+              {practiceCities.map((office) => (
+                <Link
+                  key={office.slug}
+                  href={`/locations/${office.slug}/${slug}`}
+                  className="group flex items-center gap-3 p-4 bg-bg-alt-dark border border-gold-primary/20 rounded-xl hover:border-gold-primary/50 hover:-translate-y-0.5 transition-all"
+                >
+                  <LawIcons.Location className="w-5 h-5 text-gold-primary/70 group-hover:text-gold-primary transition-colors shrink-0" />
+                  <span className="text-sm sm:text-base text-white/85 group-hover:text-gold-primary transition-colors leading-tight">
+                    {practiceArea.shortTitle} in {office.city}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </Section>

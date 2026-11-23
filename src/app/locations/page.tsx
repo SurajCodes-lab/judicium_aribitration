@@ -9,7 +9,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 export const metadata: Metadata = {
   title: "Our Locations | Judicium Arbitration — 8 Offices Across North India",
   description:
-    "Judicium Arbitration offices in New Delhi (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, and Lucknow. Address, hours, courts covered, and consultation booking for each city.",
+    "Arbitration lawyers across 8 cities: New Delhi, Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj, Lucknow. Addresses, courts covered, booking.",
   // Week 10: meta keywords removed — targeting handled in visible content.
   alternates: {
     canonical: `${BASE_URL}/locations`,

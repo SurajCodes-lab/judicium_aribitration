@@ -11,11 +11,62 @@ Contact: Judiciumarbitration@gmail.com | +91-9899686394
 ## Core pages
 
 - [Home](https://www.judiciumarbitration.com/): Firm overview, practice areas, cities served, and consultation booking.
-- [About](https://www.judiciumarbitration.com/about): Leadership team, founder Nadeem Qureshi, Dr. Ravikant Bhardwaj (PhD IIT Kharagpur, LL.M NALSAR), Advocate Suryakant Bhardwaj, the full advocate roster with credentials, and client testimonials.
+- [About](https://www.judiciumarbitration.com/about): Leadership team, founder Nadeem Qureshi, Dr. Ravikant Bhardwaj (PhD IIT Kharagpur, LL.M NALSAR), Advocate Suryakant Bhardwaj, firm history, values and client testimonials (individual advocate profiles live under /team/).
 - [Practice Areas Index](https://www.judiciumarbitration.com/practice-areas): Browseable list of 20+ legal practice areas grouped by category.
 - [Locations Index](https://www.judiciumarbitration.com/locations): Office addresses, hours, and courts covered across all 8 cities.
-- [Insights](https://www.judiciumarbitration.com/insights): Long-form analysis of Indian arbitration & ADR by senior counsel — dated, founder-attributed articles.
+- [Insights](https://www.judiciumarbitration.com/insights): Long-form analysis of Indian arbitration & ADR — dated articles published by Team Judicium Arbitration.
 - [Contact](https://www.judiciumarbitration.com/contact): Phone, email, and consultation form.
+
+## Services (notice, recovery and compliance work)
+
+- [Legal Services](https://www.judiciumarbitration.com/services): Hub for the firm's service lines - what to do when a notice, a dishonoured cheque or an unpaid invoice has already landed.
+
+- [GST Notice Reply and Litigation](https://www.judiciumarbitration.com/services/gst-notice-reply): A GST notice that goes unanswered becomes an ex parte order, and the demand then has to be challenged on appeal with a pre-deposit instead of answered on the merits.
+- [Income Tax Notice Reply and Representation](https://www.judiciumarbitration.com/services/income-tax-notice-reply): Under faceless assessment the reply you upload is largely the case on record — there is no later hearing at which to repair a thin response.
+- [Cheque Bounce and Section 138 Proceedings](https://www.judiciumarbitration.com/services/cheque-bounce-section-138): The thirty-day notice window runs from the bank return memo, not from when you noticed. It cannot be extended, and once it closes the Section 138 remedy is lost for that cheque.
+- [Money Recovery and MSME Samadhaan](https://www.judiciumarbitration.com/services/money-recovery-msme-samadhaan): Recovery claims are subject to a three-year limitation period. Part payments and written acknowledgements reset it, but silence does not — and a time-barred claim cannot be revived.
+- [Legal Notice — Drafting and Reply](https://www.judiciumarbitration.com/services/legal-notice-drafting-reply): A reply is not optional in substance. Silence is routinely pleaded as acquiescence, and an unanswered allegation is harder to dispute later than one denied at the time.
+- [Labour Court and Employment Disputes](https://www.judiciumarbitration.com/services/labour-court-employment-disputes): A reference of an individual termination under Section 2A must ordinarily be made within three years of the date of discharge. Conciliation should be initiated well before that.
+- [Company Registration and ROC Compliance](https://www.judiciumarbitration.com/services/company-registration-roc-compliance): Late filing fees under Section 403 accrue at a fixed amount per day with no cap, and continued default can disqualify directors under Section 164(2) for five years across every company they hold office in.
+- [Trade Licence and Business Registrations](https://www.judiciumarbitration.com/services/trade-licence-business-registration): Operating without a required licence, or on a lapsed one, exposes the business to sealing, penalty and prosecution under the relevant municipal or sectoral statute.
+
+Each service page carries Service + FAQPage + HowTo schema with the governing statutes, the forums the matter is heard in, the step-by-step process and the statutory deadline that applies.
+## Notice types (what to do about a specific notice)
+
+Pages for the exact notice a client has received, each stating the statutory deadline, the consequence of missing it, and what the reply must address.
+
+- [GST DRC-01 Show Cause Notice](https://www.judiciumarbitration.com/services/gst-notice-reply/drc-01-show-cause-notice) - Form DRC-01 · Section 73 / 74, CGST Act. The reply is due within the period stated in the notice, ordinarily 30 days. The adjudication order must then be passed within three years of the annual return due date under Section 73, or five years under Section 74.
+- [GST DRC-01A Intimation of Liability](https://www.judiciumarbitration.com/services/gst-notice-reply/drc-01a-intimation) - Form DRC-01A · Rule 142(1A), CGST Rules. Part B of Form DRC-01A — the reply — is ordinarily due within 15 days, or such period as the intimation states.
+- [GST ASMT-10 Scrutiny Notice](https://www.judiciumarbitration.com/services/gst-notice-reply/asmt-10-scrutiny-notice) - Form ASMT-10 · Section 61, CGST Act. The explanation is due in Form ASMT-11 within 30 days of service, or such further period as the officer permits.
+- [GST REG-17 Registration Cancellation Notice](https://www.judiciumarbitration.com/services/gst-notice-reply/reg-17-cancellation-notice) - Form REG-17 · Section 29, CGST Act. The reply in Form REG-18 is due within seven working days of service. If cancellation has already been ordered, revocation is applied for in Form REG-21, ordinarily within 30 days of the order.
+- [GST Appeal in Form APL-01](https://www.judiciumarbitration.com/services/gst-notice-reply/apl-01-gst-appeal) - Form APL-01 · Section 107, CGST Act. Three months from communication of the order, extendable by one further month on sufficient cause shown. The limitation is strict and the Supreme Court has held that the Limitation Act does not extend it beyond that further month.
+- [Income Tax Notice under Section 143(2)](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-143-2-scrutiny-notice) - Section 143(2), Income-tax Act. The notice must be served within three months from the end of the financial year in which the return was filed. Your responses are due by the dates specified on the portal, usually 15 days per notice.
+- [Income Tax Notice under Section 148](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-148-reassessment-notice) - Section 148, Income-tax Act. The return in response is due within the period stated in the notice. More importantly, the notice itself must be within the Section 149 limitation: ordinarily three years from the end of the relevant assessment year, extending to ten where escaped income represented as an asset or expenditure exceeds fifty lakh rupees.
+- [Income Tax Notice under Section 148A(b)](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-148a-b-show-cause) - Section 148A(b), Income-tax Act. Not less than seven days and not more than thirty days from service, or such further period as allowed on application. The officer must then pass an order under Section 148A(d) deciding whether it is a fit case to issue a notice.
+- [Income Tax Notice under Section 139(9)](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-139-9-defective-return) - Section 139(9), Income-tax Act. Fifteen days from intimation, extendable on application to the assessing officer.
+- [Income Tax Intimation under Section 245](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-245-refund-adjustment) - Section 245, Income-tax Act. Ordinarily thirty days from the intimation to respond on the portal, agreeing or disagreeing with the demand and stating reasons.
+- [Income Tax Demand Notice under Section 156](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-156-demand-notice) - Section 156, Income-tax Act. Thirty days from service, unless a shorter period is permitted. An appeal to the Commissioner (Appeals) must be filed within thirty days of the order.
+- [Income Tax Penalty Notice under Section 271](https://www.judiciumarbitration.com/services/income-tax-notice-reply/section-271-penalty-notice) - Sections 270A / 271, Income-tax Act. The reply is due within the period stated, commonly 15 to 30 days. The penalty order itself is subject to limitation under Section 275.
+- [Employer Show Cause and Termination Letter — Reply](https://www.judiciumarbitration.com/services/labour-court-employment-disputes/termination-show-cause-reply) - Industrial Disputes Act, 1947. The period stated in the notice, commonly 48 hours to 7 days. A reference of an individual termination under Section 2A must ordinarily be raised within three years of discharge.
+- [Labour Commissioner Conciliation Notice](https://www.judiciumarbitration.com/services/labour-court-employment-disputes/labour-commissioner-conciliation-notice) - Section 12, Industrial Disputes Act. The date fixed in the notice. Conciliation proceedings are expected to conclude within fourteen days of commencement, though extensions are common in practice.
+- [Section 138 Demand Notice](https://www.judiciumarbitration.com/services/cheque-bounce-section-138/section-138-demand-notice) - Section 138(b), Negotiable Instruments Act. Within thirty days of receiving the bank's return memo. The drawer then has fifteen days from receipt to pay. The complaint must be filed within one month of that fifteen-day period expiring.
+- [Reply to a Legal Notice Received](https://www.judiciumarbitration.com/services/legal-notice-drafting-reply/reply-to-legal-notice) - Pre-litigation correspondence. The period stated in the notice, commonly fifteen to thirty days. Statutory notices have fixed periods — a Section 138 demand gives fifteen days to pay, a Section 8 IBC notice ten days to respond.
+- [MSME Samadhaan Reference — Delayed Payment](https://www.judiciumarbitration.com/services/money-recovery-msme-samadhaan/msme-samadhaan-reference) - Section 18, MSMED Act, 2006. The reference may be filed once payment is overdue beyond the appointed day. The Council is required to conclude within ninety days of the reference, though in practice it often runs longer. The underlying claim remains subject to the three-year limitation period.
+- [Summary Suit Demand under Order XXXVII](https://www.judiciumarbitration.com/services/money-recovery-msme-samadhaan/order-37-summary-suit) - Order XXXVII, Code of Civil Procedure. The defendant has ten days from service of summons to enter appearance, and then ten days from service of the summons for judgment to apply for leave to defend. Missing either is decisive. The claim itself is subject to the three-year limitation.
+## Advocates (individual profiles)
+
+- [Our Advocates](https://www.judiciumarbitration.com/team): The full roster of partners, senior advocates and associates, with years of practice, practice areas and the courts each appears before.
+
+- [Nadeem Qureshi — Founder & CEO](https://www.judiciumarbitration.com/team/nadeem-qureshi): Founder of Judicium Arbitration, with two decades of dispute-lifecycle experience across the Delhi district courts and commercial arbitration. 20+ years; practising across Delhi NCR & North India.
+- [Dr. Ravikant Bhardwaj — Senior Advocate](https://www.judiciumarbitration.com/team/dr-ravikant-bhardwaj): Partner advising on arbitration, competition law and sectoral regulation, with a doctorate from IIT Kharagpur and teaching experience at NLU Jodhpur. 10+ years; practising across Pan India.
+- [Suryakant Bhardwaj — Senior Advocate](https://www.judiciumarbitration.com/team/suryakant-bhardwaj): Partner guiding clients through the full arbitration process — from drafting the clause to enforcing the award — with nine years of court practice in Panipat. 9+ years; practising across Haryana & Delhi NCR.
+- [Rishika Chaudhary — Advocate](https://www.judiciumarbitration.com/team/rishika-chaudhary): Associate with practical experience across arbitration, court-annexed mediation at the Punjab & Haryana High Court, and independent civil and criminal trial work. 3+ years; practising across Haryana, Punjab & Chandigarh.
+- [Kshitij Chauhan — Senior Advocate](https://www.judiciumarbitration.com/team/kshitij-chauhan): Partner with over two decades in arbitration and banking disputes, including panel advocate work for Punjab National Bank. 20+ years; practising across Pan India.
+- [Satya Prakash Shukla — Senior Advocate](https://www.judiciumarbitration.com/team/satya-prakash-shukla): Partner with nearly two decades in arbitration law, land acquisition and sectoral regulation, and a research background at NLU Jodhpur and IICA. 18+ years; practising across Pan India.
+- [Pankaj Kumar — Advocate](https://www.judiciumarbitration.com/team/pankaj-kumar): Associate practising before the Delhi High Court, with a focused track record in commercial litigation and arbitration procedure. 5+ years; practising across Delhi NCR.
+- [Parul Garg — Advocate](https://www.judiciumarbitration.com/team/parul-garg): Partner with twelve years across arbitration, civil and criminal matters, focused on resolving disputes early in a project's life. 12+ years; practising across Punjab, Haryana & Delhi NCR.
+
+Each advocate profile carries Person + ProfilePage schema with their education, ten core competencies, areas of practice, advisory and documentation work, and the courts and tribunals they appear before — the citable source for "who is {name}" and "which lawyer handles {practice} in {city}" questions.
 
 ## City location pages
 
@@ -37,6 +88,23 @@ Contact: Judiciumarbitration@gmail.com | +91-9899686394
 - [RERA and Arbitration: Builder-Buyer Disputes](https://www.judiciumarbitration.com/insights/rera-arbitration-builder-buyer-disputes-india): Why builder-buyer disputes are non-arbitrable, and where arbitration still applies in real estate.
 - [Emergency Arbitrator Orders in India after Amazon v. Future Retail](https://www.judiciumarbitration.com/insights/emergency-arbitrator-india-amazon-future-retail): How emergency arbitrator awards became enforceable in India-seated arbitration via Section 17.
 - [Section 11 Arbitrator Appointment after In Re Interplay (2023)](https://www.judiciumarbitration.com/insights/section-11-arbitrator-appointment-in-re-interplay): The narrowed scope of judicial scrutiny at the appointment stage and the stamping question.
+- [The Cost of Arbitration in India (2026)](https://www.judiciumarbitration.com/insights/cost-of-arbitration-in-india): Arbitrator fees under the Fourth Schedule, institutional charges, and who pays under Section 31A.
+- [How to Enforce an Arbitral Award in India](https://www.judiciumarbitration.com/insights/how-to-enforce-arbitral-award-india): Step-by-step enforcement under Section 36, the no-automatic-stay rule, and Order XXI execution.
+- [Setting Aside an Arbitral Award under Section 34](https://www.judiciumarbitration.com/insights/section-34-challenge-arbitral-award): Grounds, the three-month timeline, patent illegality, and strategy.
+- [Seat vs Venue of Arbitration in India](https://www.judiciumarbitration.com/insights/seat-vs-venue-arbitration-india): How the seat fixes the supervisory court — the BALCO and BGS SGS SOMA tests.
+- [Drafting an Arbitration Clause for Indian Contracts](https://www.judiciumarbitration.com/insights/arbitration-clause-drafting-checklist-india): A practical checklist — seat, number of arbitrators, institution, scope, stamping.
+- [SARFAESI vs DRT vs IBC](https://www.judiciumarbitration.com/insights/sarfaesi-vs-drt-vs-ibc-recovery-route): Choosing the right lender recovery route, with a side-by-side comparison.
+- [MSME Delayed-Payment Claims under Section 18 of the MSMED Act](https://www.judiciumarbitration.com/insights/msme-delayed-payment-section-18-msmed-act): The 45-day rule, 3x bank-rate interest, and the Facilitation Council route.
+
+## Glossary
+
+- [Arbitration & Commercial Law Glossary](https://www.judiciumarbitration.com/glossary): Plain-English definitions of 30 key Indian arbitration, insolvency, banking, real-estate and corporate law terms — Section 9, Section 11, seat vs venue, CIRP, SARFAESI, RERA, Section 18 MSMED Act and more.
+
+Each glossary term also has a dedicated, citation-ready page at `/glossary/{term-slug}` (e.g. https://www.judiciumarbitration.com/glossary/section-9-arbitration-act, /glossary/seat-of-arbitration, /glossary/cirp, /glossary/sarfaesi-act, /glossary/new-york-convention) answering "what is {term}?" with a one-sentence definition, a practical explanation, and the governing statutes.
+
+## City + practice-area pages
+
+Dedicated local landing pages combine each city's courts and forums with a specific practice area — e.g. https://www.judiciumarbitration.com/locations/delhi/arbitration-alternative-dispute-resolution, /locations/gurgaon/real-estate-urban-development, /locations/noida/data-privacy-cybersecurity, /locations/chandigarh/insolvency-bankruptcy, /locations/jaipur/projects-infrastructure, /locations/panipat/arbitration-alternative-dispute-resolution. Each maps a city to the practices most relevant to its economy and jurisdiction.
 
 ## Practice areas (high-priority)
 

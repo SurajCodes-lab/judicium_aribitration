@@ -12,10 +12,12 @@ import {
   buildCityLocalBusinessSchema,
   CityOffice,
 } from "@/data/localBusinessSchemas";
-import { practiceAreasData } from "@/data/practiceAreas";
+import { getPracticeAreaBySlug } from "@/data/practiceAreas";
+import { getPracticesForCity } from "@/data/cityPracticeContent";
 import { getTestimonialsByCity } from "@/data/testimonials";
-import { insightsData } from "@/data/insights";
 import MapEmbed from "@/components/MapEmbed";
+
+import { composeDescription } from "@/lib/seoText";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -34,7 +36,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const pageUrl = `${BASE_URL}/locations/${office.slug}`;
   const title = `Arbitration Lawyers in ${office.city} | Judicium Arbitration`;
-  const description = `Expert arbitration, ADR and commercial dispute resolution lawyers in ${office.city}, ${office.region}. Office at ${office.streetAddress}. 20+ years experience under the Arbitration and Conciliation Act, 1996. Call +91-9899686394.`;
+  // W1-08: was 216-220 chars. Lead with the demand term and the city, keep
+  // the address only if it fits.
+  const description = composeDescription([
+    `Arbitration & ADR lawyers in ${office.city}, ${office.region}.`,
+    "20+ years in commercial dispute resolution under the Arbitration and Conciliation Act, 1996.",
+    "Call +91-9899686394.",
+  ]);
 
   return {
     title,
@@ -190,8 +198,8 @@ function generateSchemas(office: CityOffice) {
   ];
 }
 
-// Top 6 practice areas to highlight on city pages
-const FEATURED_PRACTICE_SLUGS = [
+// Fallback set if a city has no curated city × practice entries yet.
+const FALLBACK_PRACTICE_SLUGS = [
   "arbitration-alternative-dispute-resolution",
   "banking-finance",
   "corporate-commercial",
@@ -208,13 +216,16 @@ export default async function CityLocationPage({ params }: PageProps) {
 
   const schemas = generateSchemas(office);
   const cityTestimonials = getTestimonialsByCity(office.city);
-  const featuredAreas = practiceAreasData.filter((a) =>
-    FEATURED_PRACTICE_SLUGS.includes(a.slug)
-  );
+  // Prefer the curated city × practice areas (each links to a dedicated local
+  // landing page). Fall back to a default set if none are curated for this city.
+  const localPracticeSlugs = getPracticesForCity(city).map((e) => e.practiceSlug);
+  const hasLocalPractices = localPracticeSlugs.length > 0;
+  const featuredAreas = (
+    hasLocalPractices ? localPracticeSlugs : FALLBACK_PRACTICE_SLUGS
+  )
+    .map((slug) => getPracticeAreaBySlug(slug))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
   const otherOffices = cityOffices.filter((o) => o.slug !== office.slug);
-  const latestInsights = [...insightsData]
-    .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1))
-    .slice(0, 3);
   const mapsQuery = encodeURIComponent(
     `${office.streetAddress}, ${office.city}, ${office.region}, India`
   );
@@ -472,7 +483,11 @@ export default async function CityLocationPage({ params }: PageProps) {
             {featuredAreas.map((area) => (
               <Link
                 key={area.slug}
-                href={`/practice-areas/${area.slug}`}
+                href={
+                  hasLocalPractices
+                    ? `/locations/${office.slug}/${area.slug}`
+                    : `/practice-areas/${area.slug}`
+                }
                 className="group relative bg-bg-alt-dark p-6 rounded-xl border border-gold-primary/20 hover:border-gold-primary/50 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="w-12 h-12 mb-4 bg-gold-primary/10 border border-gold-primary/20 rounded-lg flex items-center justify-center">

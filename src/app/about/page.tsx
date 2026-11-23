@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
-import { getTeamMembers } from "@/data/teamMembers";
+import { getTeamMembers, getTeamMembersPhotoFirst } from "@/data/teamMembers";
+import AdvocateGrid from "@/components/AdvocateGrid";
 import { testimonials } from "@/data/testimonials";
 import { LawIcons } from "@/components/Icons";
 
@@ -38,10 +38,11 @@ export const metadata: Metadata = {
 // Generate Person schema for team members (E-E-A-T signal)
 function generateTeamSchema() {
   const members = getTeamMembers();
-  return members.map((member, idx) => ({
+  return members.map((member) => ({
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `${BASE_URL}/about/#person-${idx + 1}`,
+    "@id": `${BASE_URL}/team/${member.slug}#person`,
+    url: `${BASE_URL}/team/${member.slug}`,
     name: member.name,
     jobTitle: member.title,
     worksFor: {
@@ -66,7 +67,6 @@ function generateTeamSchema() {
       experienceRequirements: member.experience,
     },
     ...(member.image ? { image: `${BASE_URL}${member.image}` } : {}),
-    url: `${BASE_URL}/about#${member.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
   }));
 }
 
@@ -442,10 +442,10 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Our Team Section */}
+      {/* Our Team Section — cards linking to the per-advocate profiles */}
       <Section>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <div className="inline-block px-4 py-2 bg-gold-primary/10 border border-gold-primary/20 rounded-full mb-6">
               <span className="text-gold-secondary text-sm font-semibold uppercase tracking-wider">
                 Meet Our Team
@@ -457,125 +457,21 @@ export default function AboutPage() {
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
               Our North India legal team brings decades of combined experience and deep expertise in
               arbitration, ADR, commercial dispute resolution and Indian legal practice across
-              Delhi NCR, Chandigarh and Jaipur.
+              Delhi NCR, Chandigarh and Jaipur. Open a profile for that advocate&apos;s practice
+              areas, qualifications and the courts they appear before.
             </p>
           </div>
 
-          <div className="space-y-12">
-            {getTeamMembers().map((member, idx) => (
-              <div
-                key={member.order}
-                className={`group relative bg-linear-to-br from-bg-alt-dark to-bg-dark rounded-3xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-500 overflow-hidden ${
-                  idx % 2 === 0 ? '' : ''
-                }`}
-              >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gold-primary/5 rounded-full blur-3xl group-hover:bg-gold-primary/10 transition-all duration-500"></div>
+          <AdvocateGrid members={getTeamMembersPhotoFirst()} />
 
-                <div className="relative z-10 p-6 sm:p-8 md:p-10">
-                  <div className={`grid grid-cols-1 ${member.image ? 'lg:grid-cols-12' : ''} gap-8 items-start`}>
-                    {/* Image Section - Only show if member has image */}
-                    {member.image && (
-                      <div className="lg:col-span-3">
-                        <div className="relative aspect-square w-full max-w-xs mx-auto lg:max-w-full">
-                          <div className="absolute inset-0 bg-gold-primary/20 rounded-2xl blur-2xl group-hover:bg-gold-primary/30 transition-all duration-500"></div>
-                          <div className="relative w-full h-full bg-gold-primary/10 rounded-2xl border border-gold-primary/30 overflow-hidden">
-                            <Image
-                              src={member.image}
-                              alt={`${member.name} - ${member.title} at Judicium Arbitration`}
-                              fill
-                              sizes="(max-width: 1024px) 280px, 25vw"
-                              loading="lazy"
-                              className="object-cover"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Content Section */}
-                    <div className={`${member.image ? 'lg:col-span-9' : ''} space-y-6`}>
-                      {/* Header */}
-                      <div>
-                        <div className="flex flex-wrap items-center gap-3 mb-2">
-                          <h3 className="text-2xl sm:text-3xl font-bold text-gold-primary">
-                            {member.name}
-                          </h3>
-                          {member.role === "Co-Founder" && (
-                            <span className="px-3 py-1 bg-gold-secondary/10 border border-gold-secondary/30 rounded-full text-sm text-gold-secondary font-semibold">
-                              {member.title}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Bio */}
-                      <p className="text-foreground/80 leading-relaxed text-base">
-                        {member.bio}
-                      </p>
-
-                      {/* Experience */}
-                      <div className="bg-gold-primary/5 rounded-xl p-5 border border-gold-primary/10">
-                        <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                          </svg>
-                          Experience & Background
-                        </h4>
-                        <p className="text-foreground/70 text-sm leading-relaxed">
-                          {member.experience}
-                        </p>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Education */}
-                        <div>
-                          <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
-                            </svg>
-                            Education
-                          </h4>
-                          <ul className="space-y-2">
-                            {member.education.map((edu, eduIdx) => (
-                              <li key={eduIdx} className="flex items-start gap-2 text-foreground/70 text-sm">
-                                <svg className="w-4 h-4 text-gold-primary mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                                </svg>
-                                <span>{edu}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Specializations */}
-                        <div>
-                          <h4 className="text-gold-secondary font-semibold mb-3 flex items-center gap-2">
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                              <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                            </svg>
-                            Specializations
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {member.specializations.map((spec, specIdx) => (
-                              <span
-                                key={specIdx}
-                                className="px-3 py-1.5 bg-gold-primary/10 border border-gold-primary/20 rounded-lg text-xs text-foreground/80 hover:bg-gold-primary/20 transition-colors"
-                              >
-                                {spec}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="mt-12 text-center">
+            <Button href="/team" variant="outline">
+              View all advocate profiles
+            </Button>
           </div>
         </div>
       </Section>
+
 
       {/* Our Presence */}
       <Section variant="dark">

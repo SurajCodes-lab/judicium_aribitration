@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { LawIcons } from "./Icons";
+import { trackContact } from "@/lib/analytics";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,12 @@ export default function Footer() {
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
+    { label: "Our Advocates", href: "/team" },
+    { label: "Services", href: "/services" },
     { label: "Practice Areas", href: "/practice-areas" },
     { label: "Locations", href: "/locations" },
     { label: "Insights", href: "/insights" },
+    { label: "Glossary", href: "/glossary" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -104,6 +108,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <a
                 href="tel:+91-9899686394"
+                onClick={() => trackContact("phone", "footer")}
                 className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
                 aria-label="Call Judicium Arbitration"
               >
@@ -113,6 +118,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:Judiciumarbitration@gmail.com"
+                onClick={() => trackContact("email", "footer")}
                 className="w-10 h-10 rounded-lg bg-bg-alt-dark hover:bg-gold-primary/20 border border-gold-primary/20 hover:border-gold-primary/40 flex items-center justify-center text-gold-primary/60 hover:text-gold-primary transition-all duration-300"
                 aria-label="Email"
               >
@@ -202,6 +208,7 @@ export default function Footer() {
             <div className="space-y-4 pt-4 border-t border-gold-primary/10">
               <a
                 href="mailto:Judiciumarbitration@gmail.com"
+                onClick={() => trackContact("email", "footer")}
                 className="flex items-center gap-3 text-white/60 hover:text-gold-primary transition-colors text-sm group"
               >
                 <div className="w-10 h-10 rounded-lg bg-linear-to-br from-gold-primary/20 to-gold-secondary/10 flex items-center justify-center text-gold-primary group-hover:from-gold-primary/30 group-hover:to-gold-secondary/20 transition-all border border-gold-primary/20">

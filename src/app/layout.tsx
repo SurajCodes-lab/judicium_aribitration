@@ -22,6 +22,14 @@ const inter = Inter({
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
+// Only emit the Google site-verification meta tag when a real token is present.
+// The repo previously shipped a placeholder ("your-verification-code-here"),
+// which renders an invalid <meta> tag. If the site is verified via DNS or the
+// HTML-file method instead, leaving this unset is correct.
+const rawGsc = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const googleSiteVerification =
+  rawGsc && rawGsc !== "your-verification-code-here" ? rawGsc : undefined;
+
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
@@ -29,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | Judicium Arbitration",
   },
   description:
-    "Premier arbitration & dispute resolution lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. 20+ years' experience, 500+ commercial cases resolved.",
+    "Arbitration and dispute resolution lawyers in Delhi NCR, Chandigarh and Jaipur. 20+ years' experience, 500+ commercial cases resolved.",
   // NOTE (Week 10): the meta `keywords` tag is deliberately omitted. Google has
   // ignored it since 2009 and an over-stuffed list adds no value while reading as
   // spam to other engines. Keyword targeting now lives in visible on-page content
@@ -71,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    google: googleSiteVerification,
   },
   other: {
     "format-detection": "telephone=no",

@@ -7,7 +7,7 @@ import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
-  description: "Contact Judicium Arbitration's expert arbitration lawyers in Delhi NCR, Chandigarh, Jaipur & across North India. Book a consultation — we reply within 24 hours.",
+  description: "Contact arbitration lawyers in Delhi NCR, Chandigarh and Jaipur. Book a consultation — we reply within 24 hours. Call +91-9899686394.",
   // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "Contact Us | Judicium Arbitration",

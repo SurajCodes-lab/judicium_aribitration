@@ -9,7 +9,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 
 export const metadata: Metadata = {
   title: "Practice Areas | Judicium Arbitration - Expert Legal Services in North India",
-  description: "Expert arbitration & legal services across 20 practice areas — banking, corporate, IP, real estate & more — in Delhi NCR, Chandigarh, Jaipur & across North India.",
+  description: "20 practice areas — arbitration, banking, corporate, IBC, IP, RERA and more — across Delhi NCR, Chandigarh and Jaipur. 20+ years of practice.",
   // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "Practice Areas | Judicium Arbitration",

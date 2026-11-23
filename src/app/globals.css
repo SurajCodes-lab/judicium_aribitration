@@ -16,6 +16,11 @@
 
   --color-foreground: #FFFFFF;
   --color-foreground-muted: #8B949E;
+
+  /* Playfair Display is loaded in layout.tsx but had no Tailwind token, so the
+     site never used its display face. `font-display` is the editorial serif for
+     names and headings; body copy stays on Inter. */
+  --font-display: var(--font-geist-sans), "Playfair Display", Georgia, serif;
 }
 
 @layer base {

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title:
     "Insights | Judicium Arbitration — Indian Arbitration & ADR Analysis",
   description:
-    "Long-form analysis on Indian arbitration and dispute resolution by Judicium Arbitration's senior counsel. Section 9 vs Section 17, NN Global stamping, foreign award enforcement, RERA, and more.",
+    "Analysis on Indian arbitration and dispute resolution: Section 9 vs 17, stamping, foreign award enforcement, RERA. By Team Judicium Arbitration.",
   // Week 10: meta keywords removed — targeting handled in visible content.
   alternates: {
     canonical: `${BASE_URL}/insights`,
@@ -107,7 +107,11 @@ const blogSchema = {
     url: `${BASE_URL}/insights/${a.slug}`,
     datePublished: a.datePublished,
     dateModified: a.dateModified,
-    author: { "@type": "Person", name: a.authorName, jobTitle: a.authorTitle },
+    author: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: a.authorName,
+    },
   })),
 };
 
@@ -221,7 +225,6 @@ export default function InsightsPage() {
                       <div className="font-semibold text-foreground/85">
                         {article.authorName}
                       </div>
-                      <div className="text-foreground/50">{article.authorTitle}</div>
                     </div>
                     <div className="text-xs text-foreground/50">
                       {formatDate(article.datePublished)}

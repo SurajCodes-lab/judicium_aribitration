@@ -1,6 +1,22 @@
 export interface PracticeArea {
   slug: string;
+  /** Canonical service name — schema, nav, breadcrumbs, card labels. */
   title: string;
+  /**
+   * The <title> tag. Leads with the head term people actually search rather
+   * than the firm's internal service label: "Insolvency & Bankruptcy" is a
+   * taxonomy name nobody types, "IBC & NCLT Lawyers in Delhi" is a query.
+   * Keep under ~60 chars — layout.tsx appends " | Judicium Arbitration".
+   */
+  seoTitle: string;
+  /** The visible H1. Same demand term, written to read naturally. */
+  h1: string;
+  /**
+   * Demand noun phrase with no geography and no "Lawyers" - the city x practice
+   * template supplies both, composing "{seoShortTitle} Lawyers in {City}".
+   * `shortTitle` stays the taxonomy label used for nav and card text.
+   */
+  seoShortTitle: string;
   shortTitle: string;
   description: string;
   metaDescription: string;
@@ -20,6 +36,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "arbitration-alternative-dispute-resolution",
     title: "Arbitration & Alternative Dispute Resolution",
+    seoTitle: "Arbitration Lawyers in Delhi",
+    h1: "Arbitration Lawyers in Delhi NCR",
+    seoShortTitle: "Arbitration & ADR",
     shortTitle: "Arbitration & ADR",
     description: "Expert arbitration and ADR services in India, specializing in domestic and international commercial disputes under the Arbitration and Conciliation Act, 1996.",
     metaDescription: "Leading arbitration & ADR services in Delhi, NCR & Chandigarh. Expert resolution of commercial disputes under Indian arbitration laws with 20+ years experience.",
@@ -106,6 +125,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "banking-finance",
     title: "Banking & Finance",
+    seoTitle: "Banking & Finance Lawyers in Delhi",
+    h1: "Banking & Finance Lawyers in Delhi",
+    seoShortTitle: "Banking & Finance",
     shortTitle: "Banking & Finance",
     description: "Comprehensive banking and finance legal services covering regulatory compliance, NPA resolution, loan recovery, and financial transactions under RBI guidelines.",
     metaDescription: "Expert banking & finance lawyers in Delhi NCR. Specializing in NPA resolution, SARFAESI, DRT proceedings, loan restructuring & RBI compliance.",
@@ -194,6 +216,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "capital-markets",
     title: "Capital Markets",
+    seoTitle: "SEBI & Capital Markets Lawyers in Delhi",
+    h1: "SEBI & Capital Markets Lawyers in Delhi",
+    seoShortTitle: "SEBI & Capital Markets",
     shortTitle: "Capital Markets",
     description: "Capital markets advisory covering securities laws, SEBI regulations, IPOs, private placements, and corporate governance compliance.",
     metaDescription: "Capital markets lawyers in Delhi NCR. Expert advice on SEBI regulations, IPOs, securities compliance, takeovers & corporate governance.",
@@ -279,6 +304,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "competition-antitrust",
     title: "Competition and Anti-Trust",
+    seoTitle: "Competition Law & CCI Lawyers in Delhi",
+    h1: "Competition Law & CCI Lawyers in Delhi",
+    seoShortTitle: "Competition & CCI",
     shortTitle: "Competition & Anti-Trust",
     description: "Competition law advisory covering CCI compliance, anti-competitive practices, merger control, and cartel investigations.",
     metaDescription: "Competition law experts in India. CCI compliance, merger notifications, anti-trust advisory, cartel defense & competition litigation.",
@@ -357,6 +385,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "corporate-mergers-acquisitions",
     title: "Corporate Mergers & Acquisitions",
+    seoTitle: "M&A Lawyers in Delhi",
+    h1: "M&A Lawyers in Delhi NCR",
+    seoShortTitle: "M&A",
     shortTitle: "M&A",
     description: "End-to-end M&A advisory including deal structuring, due diligence, regulatory approvals, and transaction documentation.",
     metaDescription: "M&A lawyers in Delhi NCR. Expert advisory on mergers, acquisitions, deal structuring, due diligence & regulatory approvals in India.",
@@ -438,6 +469,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "corporate-commercial",
     title: "Corporate and Commercial",
+    seoTitle: "Corporate Lawyers in Delhi",
+    h1: "Corporate Lawyers in Delhi NCR",
+    seoShortTitle: "Corporate",
     shortTitle: "Corporate & Commercial",
     description: "General corporate and commercial law services including company incorporation, contracts, corporate governance, and regulatory compliance.",
     metaDescription: "Corporate lawyers in Delhi NCR. Company incorporation, commercial contracts, corporate governance, compliance & secretarial services.",
@@ -519,6 +553,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "data-privacy-cybersecurity",
     title: "Data Privacy & Cybersecurity",
+    seoTitle: "Data Privacy & DPDP Lawyers in Delhi",
+    h1: "Data Privacy & DPDP Act Lawyers in Delhi",
+    seoShortTitle: "Data Privacy & DPDP",
     shortTitle: "Data Privacy & Cybersecurity",
     description: "Data protection and cybersecurity advisory covering DPDP Act compliance, CERT-In regulations, cyber incident response, and digital compliance.",
     metaDescription: "Data privacy & cybersecurity lawyers in India. DPDP Act compliance, CERT-In advisory, data breach response & IT Act compliance.",
@@ -602,6 +639,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "real-estate-urban-development",
     title: "Real Estate & Urban Development",
+    seoTitle: "RERA & Real Estate Lawyers in Delhi NCR",
+    h1: "RERA & Real Estate Lawyers in Delhi NCR",
+    seoShortTitle: "RERA & Property",
     shortTitle: "Real Estate",
     description: "Real estate legal services covering RERA compliance, property transactions, title due diligence, construction disputes, and urban development projects.",
     metaDescription: "Real estate lawyers in Delhi NCR. RERA compliance, property transactions, title verification, construction disputes & real estate litigation.",
@@ -686,6 +726,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "intellectual-property-rights",
     title: "Intellectual Property Rights",
+    seoTitle: "IP & Trademark Lawyers in Delhi",
+    h1: "IP & Trademark Lawyers in Delhi",
+    seoShortTitle: "IP & Trademark",
     shortTitle: "Intellectual Property",
     description: "IP law services including trademark, patent, copyright, design registration, IP litigation, licensing, and enforcement.",
     metaDescription: "IP lawyers in Delhi NCR. Trademark registration, patent filing, copyright protection, IP litigation & licensing in India.",
@@ -769,6 +812,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "insolvency-bankruptcy",
     title: "Insolvency & Bankruptcy",
+    seoTitle: "IBC & NCLT Lawyers in Delhi",
+    h1: "IBC & NCLT Lawyers in Delhi",
+    seoShortTitle: "IBC & NCLT",
     shortTitle: "Insolvency & Bankruptcy",
     description: "IBC advisory covering CIRP, liquidation, NCLT proceedings, creditor rights, and corporate insolvency resolution.",
     metaDescription: "Insolvency lawyers in Delhi. IBC advisory, CIRP, NCLT litigation, creditor representation & bankruptcy resolution in India.",
@@ -852,6 +898,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "labour-employment",
     title: "Labour and Employment",
+    seoTitle: "Labour & Employment Lawyers in Delhi",
+    h1: "Labour & Employment Lawyers in Delhi",
+    seoShortTitle: "Labour & Employment",
     shortTitle: "Labour & Employment",
     description: "Employment law services covering labour compliance, industrial disputes, employment contracts, terminations, and workplace policies.",
     metaDescription: "Labour & employment lawyers in Delhi NCR. Compliance, industrial disputes, employment contracts, termination & workplace law advisory.",
@@ -938,6 +987,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "dispute-resolution-litigation",
     title: "Dispute Resolution – Litigation",
+    seoTitle: "Litigation Lawyers in Delhi",
+    h1: "Litigation Lawyers in Delhi NCR",
+    seoShortTitle: "Litigation",
     shortTitle: "Litigation",
     description: "Comprehensive litigation services across civil, commercial, constitutional, and regulatory matters before all courts and tribunals in India.",
     metaDescription: "Litigation lawyers in Delhi NCR. Expert representation in Supreme Court, High Courts & tribunals. Commercial, civil & constitutional litigation.",
@@ -1021,6 +1073,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "technology-media-telecommunication",
     title: "Technology, Media & Telecommunication",
+    seoTitle: "TMT & Technology Lawyers in Delhi",
+    h1: "Technology, Media & Telecom Lawyers in Delhi",
+    seoShortTitle: "TMT & Technology",
     shortTitle: "TMT",
     description: "TMT legal services covering technology transactions, media law, telecom regulations, digital content, and IT contracts.",
     metaDescription: "TMT lawyers in India. Technology contracts, media law, telecom regulations, SaaS agreements, licensing & IT legal advisory.",
@@ -1105,6 +1160,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "projects-infrastructure",
     title: "Projects & Infrastructure",
+    seoTitle: "Infrastructure & EPC Lawyers in Delhi",
+    h1: "Infrastructure & EPC Project Lawyers in Delhi",
+    seoShortTitle: "Infrastructure & EPC",
     shortTitle: "Projects & Infrastructure",
     description: "Infrastructure and project finance legal services covering PPP, EPC contracts, project development, and regulatory approvals.",
     metaDescription: "Infrastructure lawyers in India. PPP projects, EPC contracts, project finance, regulatory clearances & infrastructure development.",
@@ -1188,6 +1246,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "private-equity-investment-funds",
     title: "Private Equity and Investment Funds",
+    seoTitle: "Private Equity & AIF Lawyers in Delhi",
+    h1: "Private Equity & AIF Lawyers in Delhi",
+    seoShortTitle: "Private Equity & AIF",
     shortTitle: "PE & Investment Funds",
     description: "Private equity and fund advisory covering fund formation, investments, exits, SEBI compliance, and portfolio management.",
     metaDescription: "PE lawyers in India. Fund formation, venture capital, SEBI AIF compliance, investment structuring & exit advisory.",
@@ -1270,6 +1331,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "white-collar-crime",
     title: "White Collar Crime",
+    seoTitle: "PMLA & White Collar Lawyers in Delhi",
+    h1: "White Collar Crime & PMLA Lawyers in Delhi",
+    seoShortTitle: "PMLA & White Collar",
     shortTitle: "White Collar Crime",
     description: "White collar crime defense covering fraud, corruption, financial crimes, regulatory investigations, and enforcement actions.",
     metaDescription: "White collar crime lawyers in Delhi. Defense against fraud, PMLA, corruption, SEBI/RBI investigations & economic offenses.",
@@ -1354,6 +1418,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "healthcare-lifesciences",
     title: "Healthcare & Lifesciences",
+    seoTitle: "Healthcare & Pharma Lawyers in Delhi",
+    h1: "Healthcare & Pharma Lawyers in Delhi",
+    seoShortTitle: "Healthcare & Pharma",
     shortTitle: "Healthcare",
     description: "Healthcare legal services covering pharma regulations, clinical trials, hospital advisory, medical devices, and health insurance.",
     metaDescription: "Healthcare lawyers in India. Pharma regulations, clinical trials, hospital compliance, medical devices & healthcare advisory.",
@@ -1438,6 +1505,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "international-trade-wto",
     title: "International Trade/WTO",
+    seoTitle: "Customs & Trade Lawyers in Delhi",
+    h1: "Customs & International Trade Lawyers in Delhi",
+    seoShortTitle: "Customs & Trade",
     shortTitle: "International Trade",
     description: "International trade advisory covering customs, export-import regulations, trade remedies, WTO compliance, and cross-border transactions.",
     metaDescription: "International trade lawyers in India. Customs, export-import, anti-dumping, trade remedies, WTO compliance & DGFT regulations.",
@@ -1521,6 +1591,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "insurance",
     title: "Insurance",
+    seoTitle: "Insurance Lawyers in Delhi",
+    h1: "Insurance Claim Lawyers in Delhi",
+    seoShortTitle: "Insurance Claim",
     shortTitle: "Insurance",
     description: "Insurance law services covering regulatory compliance, policy drafting, claims disputes, reinsurance, and insurance litigation.",
     metaDescription: "Insurance lawyers in India. IRDAI compliance, insurance claims, policy disputes, reinsurance & insurance regulatory advisory.",
@@ -1604,6 +1677,9 @@ export const practiceAreasData: PracticeArea[] = [
   {
     slug: "defence-aviation-space",
     title: "Defence, Aviation & Space",
+    seoTitle: "Aviation & Defence Lawyers in Delhi",
+    h1: "Aviation & Defence Lawyers in Delhi",
+    seoShortTitle: "Aviation & Defence",
     shortTitle: "Defence, Aviation & Space",
     description: "Specialized legal services for defense, aviation, and space sectors covering procurement, regulations, licensing, and operations.",
     metaDescription: "Defence & aviation lawyers in India. Defense procurement, aircraft leasing, DGCA compliance, space law & aerospace advisory.",

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
@@ -11,6 +12,8 @@ import {
   getRelatedInsights,
   InsightArticle,
 } from "@/data/insights";
+
+import { clampDescription } from "@/lib/seoText";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -30,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageUrl = `${BASE_URL}/insights/${slug}`;
   return {
     title: article.title,
-    description: article.metaDescription,
+    description: clampDescription(article.metaDescription),
     // Week 10: meta keywords removed; article.keywords now feed OG article tags
     // and the BlogPosting schema `keywords` (legitimate), not a meta tag.
     authors: [{ name: article.authorName }],
@@ -40,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       title: article.title,
-      description: article.metaDescription,
+      description: clampDescription(article.metaDescription),
       type: "article",
       locale: "en_IN",
       siteName: "Judicium Arbitration",
@@ -53,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     twitter: {
       card: "summary_large_image",
       title: article.title,
-      description: article.metaDescription,
+      description: clampDescription(article.metaDescription),
     },
   };
 }
@@ -68,7 +71,7 @@ function generateSchemas(article: InsightArticle) {
     "@id": `${pageUrl}#blogpost`,
     headline: article.title,
     alternativeHeadline: article.subtitle,
-    description: article.metaDescription,
+    description: clampDescription(article.metaDescription),
     articleSection: article.category,
     inLanguage: "en-IN",
     url: pageUrl,
@@ -80,17 +83,14 @@ function generateSchemas(article: InsightArticle) {
       0
     ),
     timeRequired: `PT${article.readingTime}M`,
+    // Attributed to the firm rather than an individual: a Person entity named
+    // "Team Judicium Arbitration" would be invalid, so this is an Organization
+    // pointing at the same @id the LegalService schema declares.
     author: {
-      "@type": "Person",
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
       name: article.authorName,
-      jobTitle: article.authorTitle,
-      worksFor: {
-        "@type": "LegalService",
-        "@id": `${BASE_URL}/#organization`,
-        name: "Judicium Arbitration",
-        url: BASE_URL,
-      },
-      url: `${BASE_URL}/about`,
+      url: BASE_URL,
     },
     publisher: {
       "@type": "LegalService",
@@ -222,12 +222,14 @@ export default async function InsightArticlePage({ params }: PageProps) {
 
             {/* Author byline */}
             <div className="flex items-center gap-3 pb-6 border-b border-gold-primary/15">
-              <div className="w-11 h-11 rounded-full bg-linear-to-br from-gold-primary to-gold-secondary flex items-center justify-center text-black font-bold">
-                {article.authorName
-                  .split(" ")
-                  .map((n) => n[0])
-                  .slice(0, 2)
-                  .join("")}
+              <div className="w-11 h-11 rounded-full border border-gold-primary/40 bg-gold-primary/10 flex items-center justify-center shrink-0">
+                <Image
+                  src="/logo.jpeg"
+                  alt="Judicium Arbitration"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
               <div>
                 <div className="text-sm font-semibold text-foreground/90">
@@ -281,6 +283,46 @@ export default async function InsightArticlePage({ params }: PageProps) {
                       </p>
                     ))}
                   </div>
+                  {section.table && (
+                    <div className="mt-6 overflow-x-auto rounded-xl border border-gold-primary/20">
+                      <table className="w-full text-left text-sm sm:text-base border-collapse">
+                        {section.table.caption && (
+                          <caption className="text-xs text-foreground/55 p-3 text-left">
+                            {section.table.caption}
+                          </caption>
+                        )}
+                        <thead>
+                          <tr className="bg-gold-primary/10">
+                            {section.table.headers.map((h, hIdx) => (
+                              <th
+                                key={hIdx}
+                                className="px-4 py-3 font-semibold text-gold-secondary border-b border-gold-primary/20"
+                              >
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, rIdx) => (
+                            <tr
+                              key={rIdx}
+                              className="odd:bg-bg-alt-dark/40 align-top"
+                            >
+                              {row.map((cell, cIdx) => (
+                                <td
+                                  key={cIdx}
+                                  className="px-4 py-3 text-foreground/80 border-b border-gold-primary/10"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

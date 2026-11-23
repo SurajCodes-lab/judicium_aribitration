@@ -2,6 +2,11 @@ import { MetadataRoute } from "next";
 import { getAllPracticeAreaSlugs } from "@/data/practiceAreas";
 import { cityOffices } from "@/data/localBusinessSchemas";
 import { insightsData } from "@/data/insights";
+import { getAllCityPracticePairs } from "@/data/cityPracticeContent";
+import { getAllGlossarySlugs } from "@/data/glossary";
+import { getAllTeamSlugs } from "@/data/teamMembers";
+import { getAllServiceSlugs } from "@/data/serviceLines";
+import { getAllNoticePairs } from "@/data/noticeTypes";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -32,6 +37,69 @@ export default function sitemap(): MetadataRoute.Sitemap {
       languages: { "en-IN": `${BASE_URL}/locations/${office.slug}` },
     },
   }));
+
+  // City × practice landing pages — winnable long-tail local targets, priority 0.7
+  const cityPracticePages: MetadataRoute.Sitemap = getAllCityPracticePairs().map(
+    ({ city, practice }) => ({
+      url: `${BASE_URL}/locations/${city}/${practice}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: {
+          "en-IN": `${BASE_URL}/locations/${city}/${practice}`,
+        },
+      },
+    })
+  );
+
+  // Glossary term pages — per-term AEO/definition targets, priority 0.6
+  const glossaryTermPages: MetadataRoute.Sitemap = getAllGlossarySlugs().map(
+    (slug) => ({
+      url: `${BASE_URL}/glossary/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: { "en-IN": `${BASE_URL}/glossary/${slug}` },
+      },
+    })
+  );
+
+  // Notice-type pages — fastest-ranking, highest-intent layer, priority 0.85
+  const noticePages: MetadataRoute.Sitemap = getAllNoticePairs().map(
+    ({ slug, notice }) => ({
+      url: `${BASE_URL}/services/${slug}/${notice}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+      alternates: {
+        languages: { "en-IN": `${BASE_URL}/services/${slug}/${notice}` },
+      },
+    })
+  );
+
+  // Service pillar pages — high commercial intent, priority 0.9
+  const servicePages: MetadataRoute.Sitemap = getAllServiceSlugs().map((slug) => ({
+    url: `${BASE_URL}/services/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+    alternates: { languages: { "en-IN": `${BASE_URL}/services/${slug}` } },
+  }));
+
+  // Advocate profile pages — Person/E-E-A-T entities, priority 0.65
+  const advocateProfilePages: MetadataRoute.Sitemap = getAllTeamSlugs().map(
+    (slug) => ({
+      url: `${BASE_URL}/team/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+      alternates: {
+        languages: { "en-IN": `${BASE_URL}/team/${slug}` },
+      },
+    })
+  );
 
   // Insight articles — dated, authored content, priority 0.75
   const insightPages: MetadataRoute.Sitemap = insightsData.map((article) => ({
@@ -77,6 +145,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       alternates: { languages: { "en-IN": `${BASE_URL}/insights` } },
     },
+    // Glossary — AEO/citation hub + internal-link authority page
+    {
+      url: `${BASE_URL}/glossary`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+      alternates: { languages: { "en-IN": `${BASE_URL}/glossary` } },
+    },
+    // Services hub — parent of the service pillar pages
+    {
+      url: `${BASE_URL}/services`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+      alternates: { languages: { "en-IN": `${BASE_URL}/services` } },
+    },
+    // Our Advocates hub — parent of the per-advocate Person pages
+    {
+      url: `${BASE_URL}/team`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+      alternates: { languages: { "en-IN": `${BASE_URL}/team` } },
+    },
     // About — E-E-A-T page
     {
       url: `${BASE_URL}/about`,
@@ -95,6 +187,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // City location detail pages (×8)
     ...cityLocationPages,
+    // City × practice landing pages (long-tail local)
+    ...cityPracticePages,
+    // Glossary term detail pages (per-term AEO)
+    ...glossaryTermPages,
+    // Advocate profile pages (E-E-A-T Person entities)
+    ...advocateProfilePages,
+    // Service pillar pages
+    ...servicePages,
+    // Notice-type pages beneath each pillar
+    ...noticePages,
     // Insight article detail pages
     ...insightPages,
     // All practice area detail pages (×20)
