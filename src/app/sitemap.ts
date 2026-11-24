@@ -7,6 +7,9 @@ import { getAllGlossarySlugs } from "@/data/glossary";
 import { getAllTeamSlugs } from "@/data/teamMembers";
 import { getAllServiceSlugs } from "@/data/serviceLines";
 import { getAllNoticePairs } from "@/data/noticeTypes";
+import { getAllFormatSlugs } from "@/data/formatTemplates";
+import { getAllSubServicePairs } from "@/data/subServices";
+import { getAllSupportPairs } from "@/data/practiceSupport";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -65,6 +68,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     })
   );
+
+  // Practice-area supporting pages — transactional depth beneath a practice area
+  const supportPages: MetadataRoute.Sitemap = getAllSupportPairs().map(
+    ({ slug, topic }) => ({
+      url: `${BASE_URL}/practice-areas/${slug}/${topic}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: { "en-IN": `${BASE_URL}/practice-areas/${slug}/${topic}` },
+      },
+    })
+  );
+
+  // Sub-service pages — narrower, higher-intent terms beneath each pillar
+  const subServicePages: MetadataRoute.Sitemap = getAllSubServicePairs().map(
+    ({ slug, topic }) => ({
+      url: `${BASE_URL}/services/${slug}/${topic}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      alternates: {
+        languages: { "en-IN": `${BASE_URL}/services/${slug}/${topic}` },
+      },
+    })
+  );
+
+  // Format and template pages — fastest-ranking cluster, priority 0.85
+  const formatPages: MetadataRoute.Sitemap = getAllFormatSlugs().map((slug) => ({
+    url: `${BASE_URL}/formats/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+    alternates: { languages: { "en-IN": `${BASE_URL}/formats/${slug}` } },
+  }));
 
   // Notice-type pages — fastest-ranking, highest-intent layer, priority 0.85
   const noticePages: MetadataRoute.Sitemap = getAllNoticePairs().map(
@@ -153,6 +191,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       alternates: { languages: { "en-IN": `${BASE_URL}/glossary` } },
     },
+    // Formats hub — parent of the 16 format pages
+    {
+      url: `${BASE_URL}/formats`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: { languages: { "en-IN": `${BASE_URL}/formats` } },
+    },
     // Services hub — parent of the service pillar pages
     {
       url: `${BASE_URL}/services`,
@@ -197,6 +243,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     // Notice-type pages beneath each pillar
     ...noticePages,
+    // Format and template pages
+    ...formatPages,
+    // Sub-service pages beneath each pillar
+    ...subServicePages,
+    // Practice-area supporting pages
+    ...supportPages,
     // Insight article detail pages
     ...insightPages,
     // All practice area detail pages (×20)

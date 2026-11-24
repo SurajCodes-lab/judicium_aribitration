@@ -10,14 +10,21 @@ import {
   getRelatedNotices,
   NoticeType,
 } from "@/data/noticeTypes";
+import {
+  getSubServiceBySlug,
+  getAllSubServicePairs,
+  getRelatedSubServices,
+} from "@/data/subServices";
+import SubServiceView from "@/components/SubServiceView";
 import { getServiceLineBySlug } from "@/data/serviceLines";
+import { getFormatForNotice } from "@/data/formatTemplates";
 import { clampDescription } from "@/lib/seoText";
 import { TEL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "@/data/contactInfo";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
 interface PageProps {
-  params: Promise<{ slug: string; notice: string }>;
+  params: Promise<{ slug: string; topic: string }>;
 }
 
 /**
@@ -35,17 +42,49 @@ interface PageProps {
  */
 
 export async function generateStaticParams() {
-  return getAllNoticePairs();
+  // Both page types live directly beneath their service pillar, so the one
+  // dynamic segment has to enumerate both.
+  return [
+    ...getAllNoticePairs().map(({ slug, notice }) => ({ slug, topic: notice })),
+    ...getAllSubServicePairs(),
+  ];
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug, notice } = await params;
-  const n = getNoticeBySlug(slug, notice);
-  if (!n) return { title: "Notice Not Found" };
+  const { slug, topic } = await params;
+  const sub = getSubServiceBySlug(slug, topic);
+  if (sub) {
+    const subUrl = `${BASE_URL}/services/${slug}/${topic}`;
+    const subDesc = clampDescription(sub.metaDescription);
+    return {
+      title: sub.seoTitle,
+      description: subDesc,
+      alternates: {
+        canonical: subUrl,
+        languages: { "en-IN": subUrl, "x-default": subUrl },
+      },
+      openGraph: {
+        title: `${sub.seoTitle} | Judicium Arbitration`,
+        description: subDesc,
+        type: "article",
+        locale: "en_IN",
+        siteName: "Judicium Arbitration",
+        url: subUrl,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${sub.seoTitle} | Judicium Arbitration`,
+        description: subDesc,
+      },
+    };
+  }
 
-  const pageUrl = `${BASE_URL}/services/${slug}/${notice}`;
+  const n = getNoticeBySlug(slug, topic);
+  if (!n) return { title: "Page Not Found" };
+
+  const pageUrl = `${BASE_URL}/services/${slug}/${topic}`;
   const description = clampDescription(n.metaDescription);
 
   return {
@@ -183,13 +222,29 @@ function Heading({
 }
 
 export default async function NoticePage({ params }: PageProps) {
-  const { slug, notice } = await params;
-  const n = getNoticeBySlug(slug, notice);
+  const { slug, topic } = await params;
   const parent = getServiceLineBySlug(slug);
-  if (!n || !parent) notFound();
+  if (!parent) notFound();
+
+  // Sub-service pages share this segment with notice pages; render whichever
+  // this slug resolves to.
+  const sub = getSubServiceBySlug(slug, topic);
+  if (sub) {
+    return (
+      <SubServiceView
+        sub={sub}
+        parent={parent}
+        related={getRelatedSubServices(slug, topic)}
+      />
+    );
+  }
+
+  const n = getNoticeBySlug(slug, topic);
+  if (!n) notFound();
 
   const schemas = buildSchemas(n, parent.title);
   const related = getRelatedNotices(n.parentSlug, n.slug);
+  const format = getFormatForNotice(n.slug);
 
   return (
     <main className="min-h-screen pt-20 sm:pt-22 md:pt-24 bg-bg-dark">
@@ -296,6 +351,30 @@ export default async function NoticePage({ params }: PageProps) {
           </div>
         </div>
       </Section>
+
+      {/* The matching format page */}
+      {format && (
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <Link
+              href={`/formats/${format.slug}`}
+              className="group block rounded-2xl border border-gold-primary/30 bg-gold-primary/5 p-6 hover:border-gold-primary/60 transition-colors"
+            >
+              <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-secondary mb-2">
+                Drafting it yourself?
+              </span>
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-gold-primary leading-snug group-hover:text-gold-light transition-colors">
+                {format.title}
+              </h2>
+              <p className="mt-2.5 text-sm text-foreground/70 leading-relaxed">
+                The document set out section by section — what each part must
+                establish, the statutory requirements, and the errors that make
+                one defective.
+              </p>
+            </Link>
+          </div>
+        </Section>
+      )}
 
       {/* How to reply */}
       <Section variant="gradient">

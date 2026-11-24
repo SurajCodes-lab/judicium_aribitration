@@ -20,6 +20,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { LawIcons } from "@/components/Icons";
 
 import { clampDescription } from "@/lib/seoText";
+import { getSupportFor } from "@/data/practiceSupport";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -276,6 +277,7 @@ function generateStructuredData(practiceArea: PracticeArea, slug: string) {
 export default async function PracticeAreaPage({ params }: PageProps) {
   const { slug } = await params;
   const practiceArea = getPracticeAreaBySlug(slug);
+  const supportPages = getSupportFor(slug);
 
   if (!practiceArea) {
     notFound();
@@ -406,6 +408,42 @@ export default async function PracticeAreaPage({ params }: PageProps) {
           </p>
         </div>
       </Section>
+
+      {/* Supporting pages — transactional depth beneath this practice area */}
+      {supportPages.length > 0 && (
+        <Section>
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-7">
+              <span className="block text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-secondary/70 mb-2">
+                Specific work
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold text-gold-primary tracking-tight">
+                How we run these matters
+              </h2>
+              <div className="mt-4 h-px w-24 bg-linear-to-r from-gold-primary to-transparent" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {supportPages.map((sp) => (
+                <Link
+                  key={sp.slug}
+                  href={`/practice-areas/${sp.parentSlug}/${sp.slug}`}
+                  className="group rounded-xl border border-gold-primary/15 bg-bg-alt-dark/50 p-5 hover:border-gold-primary/45 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-gold-secondary/70 mb-1.5">
+                    {sp.provision}
+                  </span>
+                  <h3 className="font-display text-base font-semibold text-gold-primary leading-snug group-hover:text-gold-light transition-colors">
+                    {sp.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-foreground/60 leading-relaxed line-clamp-2">
+                    {sp.whenToAct}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
 
       {/* Services Section */}
       <Section variant="dark">

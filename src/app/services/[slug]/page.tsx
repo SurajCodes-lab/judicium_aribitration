@@ -12,6 +12,8 @@ import {
 } from "@/data/serviceLines";
 import { getPracticeAreaBySlug } from "@/data/practiceAreas";
 import { getNoticesForService } from "@/data/noticeTypes";
+import { getSubServicesFor } from "@/data/subServices";
+import { getFormatsForService } from "@/data/formatTemplates";
 import { clampDescription } from "@/lib/seoText";
 import { TEL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "@/data/contactInfo";
 
@@ -207,6 +209,8 @@ export default async function ServicePage({ params }: PageProps) {
   const schemas = buildSchemas(service);
   const related = getRelatedServices(service.slug);
   const notices = getNoticesForService(service.slug);
+  const subs = getSubServicesFor(service.slug);
+  const formats = getFormatsForService(service.slug);
   const practices = service.relatedPracticeSlugs
     .map((s) => getPracticeAreaBySlug(s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
@@ -362,6 +366,58 @@ export default async function ServicePage({ params }: PageProps) {
                 </Link>
               ))}
             </div>
+          </div>
+        </Section>
+      )}
+
+      {/* Specific work beneath this pillar */}
+      {subs.length > 0 && (
+        <Section variant="gradient">
+          <div className="max-w-5xl mx-auto">
+            <Heading eyebrow="Specific work">
+              What we handle within {service.shortTitle}
+            </Heading>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {subs.map((sub) => (
+                <Link
+                  key={sub.slug}
+                  href={`/services/${service.slug}/${sub.slug}`}
+                  className="group rounded-xl border border-gold-primary/15 bg-bg-alt-dark/50 p-5 hover:border-gold-primary/45 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <h3 className="font-display text-base font-semibold text-gold-primary leading-snug group-hover:text-gold-light transition-colors">
+                    {sub.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-foreground/60 leading-relaxed line-clamp-2">
+                    {sub.intro}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {/* Formats under this pillar */}
+      {formats.length > 0 && (
+        <Section>
+          <div className="max-w-5xl mx-auto">
+            <Heading eyebrow="Drafting">Formats and structure</Heading>
+            <p className="text-foreground/65 mb-6 max-w-2xl">
+              How each document is put together, section by section, with the
+              statutory requirements and what makes one defective.
+            </p>
+            <ul className="flex flex-wrap gap-2.5">
+              {formats.map((f) => (
+                <li key={f.slug}>
+                  <Link
+                    href={`/formats/${f.slug}`}
+                    className="inline-block px-4 py-2 rounded-lg border border-gold-primary/25 bg-gold-primary/5 text-sm text-foreground/75 hover:border-gold-primary/60 hover:text-gold-primary transition-colors"
+                  >
+                    {f.shortTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
       )}

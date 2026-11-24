@@ -9,6 +9,7 @@ import { LawIcons } from "./Icons";
 import { practiceAreasData } from "@/data/practiceAreas";
 import { cityOffices } from "@/data/localBusinessSchemas";
 import { serviceLines } from "@/data/serviceLines";
+import { formatTemplates } from "@/data/formatTemplates";
 import { TEL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "@/data/contactInfo";
 
 /**
@@ -139,6 +140,22 @@ export default function Header() {
         href: `/services/${s.slug}`,
         detail: s.title,
       })),
+    },
+    {
+      label: "Formats",
+      href: "/formats",
+      children: [
+        {
+          label: "All formats",
+          href: "/formats",
+          detail: "16 notices and replies, section by section",
+        },
+        ...formatTemplates.slice(0, 7).map((f) => ({
+          label: f.shortTitle,
+          href: `/formats/${f.slug}`,
+          detail: f.documentType,
+        })),
+      ],
     },
     {
       label: "Locations",

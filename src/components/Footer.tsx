@@ -14,6 +14,7 @@ export default function Footer() {
     { label: "About Us", href: "/about" },
     { label: "Our Advocates", href: "/team" },
     { label: "Services", href: "/services" },
+    { label: "Formats", href: "/formats" },
     { label: "Practice Areas", href: "/practice-areas" },
     { label: "Locations", href: "/locations" },
     { label: "Insights", href: "/insights" },
