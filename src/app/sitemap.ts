@@ -10,6 +10,7 @@ import { getAllNoticePairs } from "@/data/noticeTypes";
 import { getAllFormatSlugs } from "@/data/formatTemplates";
 import { getAllSubServicePairs } from "@/data/subServices";
 import { getAllSupportPairs } from "@/data/practiceSupport";
+import { getAllAuthorityCitySlugs } from "@/data/cityAuthorities";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -67,6 +68,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: { "en-IN": `${BASE_URL}/glossary/${slug}` },
       },
     })
+  );
+
+  // Service x city pages — the local layer: each names the authority with
+  // jurisdiction in that city. Highest commercial intent on the site.
+  const serviceCityPages: MetadataRoute.Sitemap = getAllAuthorityCitySlugs().flatMap(
+    (city) =>
+      getAllServiceSlugs().map((service) => ({
+        url: `${BASE_URL}/locations/${city}/${service}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.85,
+        alternates: {
+          languages: { "en-IN": `${BASE_URL}/locations/${city}/${service}` },
+        },
+      }))
   );
 
   // Practice-area supporting pages — transactional depth beneath a practice area
@@ -249,6 +265,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...subServicePages,
     // Practice-area supporting pages
     ...supportPages,
+    // Service x city pages
+    ...serviceCityPages,
     // Insight article detail pages
     ...insightPages,
     // All practice area detail pages (×20)

@@ -21,12 +21,19 @@ import {
   CityPracticeEntry,
 } from "@/data/cityPracticeContent";
 
-import { composeDescription } from "@/lib/seoText";
+import { composeDescription, clampDescription } from "@/lib/seoText";
+import { getServiceLineBySlug, getAllServiceSlugs } from "@/data/serviceLines";
+import {
+  getCityAuthorities,
+  getAllAuthorityCitySlugs,
+} from "@/data/cityAuthorities";
+import { getServiceCityAngle } from "@/data/serviceCityAngles";
+import ServiceCityView from "@/components/ServiceCityView";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
 interface PageProps {
-  params: Promise<{ city: string; practice: string }>;
+  params: Promise<{ city: string; topic: string }>;
 }
 
 /**
@@ -42,22 +49,63 @@ interface PageProps {
  * See docs/SEO-PLAYBOOK.md → "Phase 1".
  */
 export async function generateStaticParams() {
-  return getAllCityPracticePairs().map(({ city, practice }) => ({
+  // Two page types share this segment: the existing city x practice pages and
+  // the new city x service pages. Practice slugs and service slugs are
+  // disjoint, so the branch in the component is unambiguous.
+  const practicePairs = getAllCityPracticePairs().map(({ city, practice }) => ({
     city,
-    practice,
+    topic: practice,
   }));
+  const servicePairs = getAllAuthorityCitySlugs().flatMap((city) =>
+    getAllServiceSlugs().map((topic) => ({ city, topic }))
+  );
+  return [...practicePairs, ...servicePairs];
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { city, practice } = await params;
+  const { city, topic } = await params;
   const office = getCityBySlug(city);
-  const area = getPracticeAreaBySlug(practice);
-  const entry = getCityPracticeEntry(city, practice);
+
+  // Service x city pages share this segment with city x practice pages.
+  const service = getServiceLineBySlug(topic);
+  const authorities = getCityAuthorities(city);
+  if (office && service && authorities) {
+    const svcUrl = `${BASE_URL}/locations/${city}/${topic}`;
+    const svcTitle = `${service.cityLabel} Lawyers in ${authorities.city}`;
+    const angle = getServiceCityAngle(city, topic) ?? service.intro;
+    const svcDesc = clampDescription(
+      `${service.shortTitle} lawyers in ${authorities.city}, ${authorities.state}. ${angle}`
+    );
+    return {
+      title: svcTitle,
+      description: svcDesc,
+      alternates: {
+        canonical: svcUrl,
+        languages: { "en-IN": svcUrl, "x-default": svcUrl },
+      },
+      openGraph: {
+        title: `${svcTitle} | Judicium Arbitration`,
+        description: svcDesc,
+        type: "article",
+        locale: "en_IN",
+        siteName: "Judicium Arbitration",
+        url: svcUrl,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: `${svcTitle} | Judicium Arbitration`,
+        description: svcDesc,
+      },
+    };
+  }
+
+  const area = getPracticeAreaBySlug(topic);
+  const entry = getCityPracticeEntry(city, topic);
   if (!office || !area || !entry) return { title: "Page Not Found" };
 
-  const pageUrl = `${BASE_URL}/locations/${city}/${practice}`;
+  const pageUrl = `${BASE_URL}/locations/${city}/${topic}`;
   // W1-07: demand-led. `shortTitle` is the taxonomy label ("Insolvency &
   // Bankruptcy"); `seoShortTitle` is what people actually search ("IBC & NCLT").
   const title = `${area.seoShortTitle} Lawyers in ${office.city}`;
@@ -225,10 +273,24 @@ function generateSchemas(
 }
 
 export default async function CityPracticePage({ params }: PageProps) {
-  const { city, practice } = await params;
+  const { city, topic } = await params;
   const office = getCityBySlug(city);
-  const area = getPracticeAreaBySlug(practice);
-  const entry = getCityPracticeEntry(city, practice);
+
+  // Service x city page?
+  const service = getServiceLineBySlug(topic);
+  const authorities = getCityAuthorities(city);
+  if (office && service && authorities) {
+    return (
+      <ServiceCityView
+        service={service}
+        office={office}
+        authorities={authorities}
+      />
+    );
+  }
+
+  const area = getPracticeAreaBySlug(topic);
+  const entry = getCityPracticeEntry(city, topic);
 
   if (!office || !area || !entry) notFound();
 
@@ -240,7 +302,7 @@ export default async function CityPracticePage({ params }: PageProps) {
 
   // Sibling practices in the same city (for internal linking)
   const siblingPractices = getPracticesForCity(city)
-    .filter((p) => p.practiceSlug !== practice)
+    .filter((p) => p.practiceSlug !== topic)
     .map((p) => getPracticeAreaBySlug(p.practiceSlug))
     .filter((p): p is PracticeArea => Boolean(p))
     .slice(0, 5);

@@ -210,7 +210,7 @@ export default function ContactPage() {
           </div>
 
           {/* Quick Contact Options */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-12">
             <a
               href="mailto:Judiciumarbitration@gmail.com"
               className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
@@ -239,13 +239,19 @@ export default function ContactPage() {
               </div>
             </a>
 
-            {/* Alternate line. A sibling, not nested: the card above is itself
-                an anchor, and anchors cannot contain anchors. */}
+            {/* Alternate line — the firm's previous number, still answered. */}
             <a
               href="tel:+919899686394"
-              className="text-center text-xs text-white/45 hover:text-gold-secondary transition-colors py-1"
+              className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
-              Alternate line: +91-9899686394
+              <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative z-10 text-center">
+                <div className="w-14 h-14 mx-auto mb-4 bg-linear-to-br from-gold-primary/70 to-gold-secondary/70 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-gold-primary/20">
+                  <LawIcons.Phone className="w-7 h-7 text-black" />
+                </div>
+                <p className="text-sm text-white/60 mb-2">Alternate Line</p>
+                <p className="text-gold-primary font-semibold">+91-9899686394</p>
+              </div>
             </a>
 
             <div className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20">

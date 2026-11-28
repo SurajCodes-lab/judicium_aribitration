@@ -18,6 +18,11 @@ export interface CityOffice {
   streetAddress: string;
   latitude: number;
   longitude: number;
+  /**
+   * DATA FIELD, not display copy. Feeds the tel: href and the
+   * LocalBusiness telephone property. The visible label on the page is
+   * "Call this office" — the number itself is shown only on /contact.
+   */
   telephone: string;
   isHeadquarters?: boolean;
   nearbyCourts: string[];
@@ -40,7 +45,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Connaught Place, New Delhi",
     latitude: 28.6328,
     longitude: 77.2197,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     isHeadquarters: true,
     nearbyCourts: [
       "Supreme Court of India",
@@ -99,7 +104,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "DLF Cyber City, Gurgaon",
     latitude: 28.4595,
     longitude: 77.0266,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Punjab and Haryana High Court (via Chandigarh)",
       "District Court Gurugram",
@@ -155,7 +160,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Sector 18, Noida",
     latitude: 28.5355,
     longitude: 77.391,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court (via Prayagraj)",
       "District Court Gautam Buddh Nagar (Surajpur)",
@@ -211,7 +216,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Sector 17, Chandigarh",
     latitude: 30.7333,
     longitude: 76.7794,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Punjab and Haryana High Court",
       "District Court Chandigarh",
@@ -267,7 +272,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "C-Scheme, Jaipur",
     latitude: 26.9124,
     longitude: 75.7873,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Rajasthan High Court — Jaipur Bench",
       "District Court Jaipur",
@@ -323,7 +328,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "GT Road, Panipat",
     latitude: 29.3909,
     longitude: 76.9635,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "District Court Panipat",
       "Punjab and Haryana High Court (via Chandigarh)",
@@ -378,7 +383,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Civil Lines, Prayagraj",
     latitude: 25.4358,
     longitude: 81.8463,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court (Principal Seat)",
       "District Court Prayagraj",
@@ -433,7 +438,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Hazratganj, Lucknow",
     latitude: 26.8467,
     longitude: 80.9462,
-    telephone: "our contact page",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court — Lucknow Bench",
       "District Court Lucknow",

@@ -39,6 +39,12 @@ export interface ServiceLine {
   h1: string;
   /** Short label for cards and nav. */
   shortTitle: string;
+  /**
+   * Compact label for city-page titles. "{cityLabel} Lawyers in {City}" plus
+   * the " | Judicium Arbitration" suffix must clear ~62 characters, and the
+   * longer shortTitles overflow on the longer city names.
+   */
+  cityLabel: string;
   metaDescription: string;
   keywords: string[];
   icon: string;
@@ -68,6 +74,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "GST Notice Reply Lawyers in Delhi",
     h1: "GST Notice Reply & Litigation Lawyers in Delhi",
     shortTitle: "GST Notices",
+    cityLabel: "GST Notice",
     metaDescription:
       "Received a GST notice? We draft replies to DRC-01, DRC-01A, ASMT-10 and REG-17 and appear in GST appeals. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -177,6 +184,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Income Tax Notice Reply, Delhi",
     h1: "Income Tax Notice Reply & Representation, Delhi",
     shortTitle: "Income Tax Notices",
+    cityLabel: "Income Tax",
     metaDescription:
       "Replies to income tax notices under Sections 143(2), 148, 148A(b), 139(9), 245 and 156, plus CIT(A) and ITAT representation. Call +91-9899686318.",
     keywords: [
@@ -286,6 +294,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Cheque Bounce Lawyers in Delhi",
     h1: "Cheque Bounce & Section 138 Lawyers in Delhi",
     shortTitle: "Cheque Bounce",
+    cityLabel: "Cheque Bounce",
     metaDescription:
       "Cheque bounce cases under Section 138 of the NI Act — demand notice, complaint, trial and interim compensation. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -394,6 +403,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "MSME Samadhaan & Money Recovery",
     h1: "Money Recovery & MSME Samadhaan Lawyers in Delhi",
     shortTitle: "Money Recovery",
+    cityLabel: "Money Recovery",
     metaDescription:
       "Recover unpaid invoices through MSME Samadhaan, summary suits under Order XXXVII, and arbitration. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -509,6 +519,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Legal Notice Drafting & Reply",
     h1: "Legal Notice Drafting & Reply, Delhi",
     shortTitle: "Legal Notices",
+    cityLabel: "Legal Notice",
     metaDescription:
       "Drafting and replying to legal notices — demand, contractual, employment and statutory. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -619,6 +630,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Labour Court Lawyers in Delhi",
     h1: "Labour Court & Employment Dispute Lawyers in Delhi",
     shortTitle: "Labour & Employment",
+    cityLabel: "Labour Court",
     metaDescription:
       "Labour court and employment disputes — termination, unpaid dues, conciliation and POSH. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -732,6 +744,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Company Registration & ROC, Delhi",
     h1: "Company Registration & ROC Compliance Lawyers in Delhi",
     shortTitle: "Company & ROC",
+    cityLabel: "Company & ROC",
     metaDescription:
       "Company and LLP incorporation, annual ROC filings, director compliance and strike-off. Delhi NCR. Call +91-9899686318.",
     keywords: [
@@ -841,6 +854,7 @@ export const serviceLines: ServiceLine[] = [
     seoTitle: "Trade Licence & Registration, Delhi",
     h1: "Trade Licence & Business Registration Lawyers in Delhi",
     shortTitle: "Licences & Registrations",
+    cityLabel: "Trade Licence",
     metaDescription:
       "Trade licence, shops and establishment, FSSAI, Udyam and GST registration, plus licence renewal and notices. Call +91-9899686318.",
     keywords: [
