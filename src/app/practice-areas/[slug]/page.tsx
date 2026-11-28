@@ -396,7 +396,7 @@ export default async function PracticeAreaPage({ params }: PageProps) {
               >
                 Book a consultation
               </Link>{" "}
-              or call <span className="text-gold-primary font-semibold">+91-9899686394</span>.
+              or call <span className="text-gold-primary font-semibold">+91-9899686318</span>.
             </p>
           </div>
 

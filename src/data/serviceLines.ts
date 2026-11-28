@@ -69,7 +69,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "GST Notice Reply & Litigation Lawyers in Delhi",
     shortTitle: "GST Notices",
     metaDescription:
-      "Received a GST notice? We draft replies to DRC-01, DRC-01A, ASMT-10 and REG-17 and appear in GST appeals. Delhi NCR. Call +91-9899686394.",
+      "Received a GST notice? We draft replies to DRC-01, DRC-01A, ASMT-10 and REG-17 and appear in GST appeals. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "GST notice reply lawyer",
       "DRC-01 reply",
@@ -178,7 +178,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Income Tax Notice Reply & Representation, Delhi",
     shortTitle: "Income Tax Notices",
     metaDescription:
-      "Replies to income tax notices under Sections 143(2), 148, 148A(b), 139(9), 245 and 156, plus CIT(A) and ITAT representation. Call +91-9899686394.",
+      "Replies to income tax notices under Sections 143(2), 148, 148A(b), 139(9), 245 and 156, plus CIT(A) and ITAT representation. Call +91-9899686318.",
     keywords: [
       "income tax notice reply lawyer",
       "Section 148 notice reply",
@@ -287,7 +287,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Cheque Bounce & Section 138 Lawyers in Delhi",
     shortTitle: "Cheque Bounce",
     metaDescription:
-      "Cheque bounce cases under Section 138 of the NI Act — demand notice, complaint, trial and interim compensation. Delhi NCR. Call +91-9899686394.",
+      "Cheque bounce cases under Section 138 of the NI Act — demand notice, complaint, trial and interim compensation. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "cheque bounce lawyer Delhi",
       "Section 138 NI Act lawyer",
@@ -395,7 +395,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Money Recovery & MSME Samadhaan Lawyers in Delhi",
     shortTitle: "Money Recovery",
     metaDescription:
-      "Recover unpaid invoices through MSME Samadhaan, summary suits under Order XXXVII, and arbitration. Delhi NCR. Call +91-9899686394.",
+      "Recover unpaid invoices through MSME Samadhaan, summary suits under Order XXXVII, and arbitration. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "money recovery lawyer Delhi",
       "MSME Samadhaan lawyer",
@@ -510,7 +510,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Legal Notice Drafting & Reply, Delhi",
     shortTitle: "Legal Notices",
     metaDescription:
-      "Drafting and replying to legal notices — demand, contractual, employment and statutory. Delhi NCR. Call +91-9899686394.",
+      "Drafting and replying to legal notices — demand, contractual, employment and statutory. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "legal notice lawyer Delhi",
       "legal notice format",
@@ -620,7 +620,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Labour Court & Employment Dispute Lawyers in Delhi",
     shortTitle: "Labour & Employment",
     metaDescription:
-      "Labour court and employment disputes — termination, unpaid dues, conciliation and POSH. Delhi NCR. Call +91-9899686394.",
+      "Labour court and employment disputes — termination, unpaid dues, conciliation and POSH. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "labour court lawyer Delhi",
       "wrongful termination lawyer India",
@@ -733,7 +733,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Company Registration & ROC Compliance Lawyers in Delhi",
     shortTitle: "Company & ROC",
     metaDescription:
-      "Company and LLP incorporation, annual ROC filings, director compliance and strike-off. Delhi NCR. Call +91-9899686394.",
+      "Company and LLP incorporation, annual ROC filings, director compliance and strike-off. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "company registration Delhi",
       "ROC compliance lawyer",
@@ -842,7 +842,7 @@ export const serviceLines: ServiceLine[] = [
     h1: "Trade Licence & Business Registration Lawyers in Delhi",
     shortTitle: "Licences & Registrations",
     metaDescription:
-      "Trade licence, shops and establishment, FSSAI, Udyam and GST registration, plus licence renewal and notices. Call +91-9899686394.",
+      "Trade licence, shops and establishment, FSSAI, Udyam and GST registration, plus licence renewal and notices. Call +91-9899686318.",
     keywords: [
       "trade licence Delhi",
       "shop establishment registration Delhi",

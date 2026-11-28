@@ -69,7 +69,7 @@ export const practiceSupport: PracticeSupport[] = [
     h1: "Section 9 Interim Relief Applications",
     shortTitle: "Section 9 relief",
     metaDescription:
-      "Urgent court relief before or during arbitration — asset freezing, injunctions, security for the claim. Delhi NCR. Call +91-9899686394.",
+      "Urgent court relief before or during arbitration — asset freezing, injunctions, security for the claim. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "Section 9 arbitration lawyer Delhi",
       "interim relief arbitration India",
@@ -153,7 +153,7 @@ export const practiceSupport: PracticeSupport[] = [
     h1: "Section 11 Arbitrator Appointment Applications",
     shortTitle: "Section 11 appointment",
     metaDescription:
-      "Where the other side will not appoint, we file the Section 11 application and get the tribunal constituted. Call +91-9899686394.",
+      "Where the other side will not appoint, we file the Section 11 application and get the tribunal constituted. Call +91-9899686318.",
     keywords: [
       "Section 11 arbitration application",
       "arbitrator appointment lawyer",
@@ -407,7 +407,7 @@ export const practiceSupport: PracticeSupport[] = [
     h1: "Operational Creditor Petition before the NCLT",
     shortTitle: "Operational creditor petition",
     metaDescription:
-      "Section 8 demand notice and Section 9 petition for unpaid operational debt above the one crore threshold. Call +91-9899686394.",
+      "Section 8 demand notice and Section 9 petition for unpaid operational debt above the one crore threshold. Call +91-9899686318.",
     keywords: [
       "Section 9 IBC petition",
       "operational creditor NCLT",
@@ -486,7 +486,7 @@ export const practiceSupport: PracticeSupport[] = [
     h1: "NCLT Filing & Representation",
     shortTitle: "NCLT representation",
     metaDescription:
-      "Filing and appearing before the NCLT — insolvency, oppression and mismanagement, compromises and company petitions. Call +91-9899686394.",
+      "Filing and appearing before the NCLT — insolvency, oppression and mismanagement, compromises and company petitions. Call +91-9899686318.",
     keywords: [
       "NCLT lawyer Delhi",
       "NCLT filing procedure",

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = composeDescription([
     `Arbitration & ADR lawyers in ${office.city}, ${office.region}.`,
     "20+ years in commercial dispute resolution under the Arbitration and Conciliation Act, 1996.",
-    "Call +91-9899686394.",
+    "Call +91-9899686318.",
   ]);
 
   return {

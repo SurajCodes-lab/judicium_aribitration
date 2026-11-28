@@ -40,7 +40,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Connaught Place, New Delhi",
     latitude: 28.6328,
     longitude: 77.2197,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     isHeadquarters: true,
     nearbyCourts: [
       "Supreme Court of India",
@@ -66,7 +66,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Delhi office located?",
         answer:
-          "Judicium Arbitration's Delhi headquarters is at Connaught Place, New Delhi 110001 — within easy reach of the Supreme Court of India, Delhi High Court, and the Delhi International Arbitration Centre (DIAC). Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Call +91-9899686394 to schedule a consultation.",
+          "Judicium Arbitration's Delhi headquarters is at Connaught Place, New Delhi 110001 — within easy reach of the Supreme Court of India, Delhi High Court, and the Delhi International Arbitration Centre (DIAC). Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Call +91-9899686318 to schedule a consultation.",
       },
       {
         question: "Which courts does the Delhi office regularly appear before?",
@@ -99,7 +99,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "DLF Cyber City, Gurgaon",
     latitude: 28.4595,
     longitude: 77.0266,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Punjab and Haryana High Court (via Chandigarh)",
       "District Court Gurugram",
@@ -122,7 +122,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Gurgaon office?",
         answer:
-          "Judicium Arbitration's Gurgaon office is at DLF Cyber City, Gurgaon 122002, Haryana — at the heart of the Millennium City's corporate hub. Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Reach the team at +91-9899686394.",
+          "Judicium Arbitration's Gurgaon office is at DLF Cyber City, Gurgaon 122002, Haryana — at the heart of the Millennium City's corporate hub. Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Reach the team at +91-9899686318.",
       },
       {
         question: "What types of cases does the Gurgaon office handle?",
@@ -155,7 +155,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Sector 18, Noida",
     latitude: 28.5355,
     longitude: 77.391,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court (via Prayagraj)",
       "District Court Gautam Buddh Nagar (Surajpur)",
@@ -178,7 +178,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Noida office?",
         answer:
-          "Judicium Arbitration's Noida office is in Sector 18, Noida 201301, Uttar Pradesh — Noida's primary commercial district. Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Noida office is in Sector 18, Noida 201301, Uttar Pradesh — Noida's primary commercial district. Office hours are Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "Can the Noida office help with UP RERA disputes?",
@@ -211,7 +211,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Sector 17, Chandigarh",
     latitude: 30.7333,
     longitude: 76.7794,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Punjab and Haryana High Court",
       "District Court Chandigarh",
@@ -234,7 +234,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Chandigarh office?",
         answer:
-          "Judicium Arbitration's Chandigarh office is at Sector 17, Chandigarh 160017 — at the heart of the city's commercial district and within walking distance of the Punjab and Haryana High Court. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Chandigarh office is at Sector 17, Chandigarh 160017 — at the heart of the city's commercial district and within walking distance of the Punjab and Haryana High Court. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "Does the Chandigarh office cover Punjab and Haryana matters?",
@@ -267,7 +267,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "C-Scheme, Jaipur",
     latitude: 26.9124,
     longitude: 75.7873,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Rajasthan High Court — Jaipur Bench",
       "District Court Jaipur",
@@ -290,7 +290,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Jaipur office?",
         answer:
-          "Judicium Arbitration's Jaipur office is at C-Scheme, Jaipur 302001, Rajasthan — Jaipur's commercial and government district. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Jaipur office is at C-Scheme, Jaipur 302001, Rajasthan — Jaipur's commercial and government district. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "What sectors does the Jaipur office focus on?",
@@ -305,7 +305,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "How much does an arbitration lawyer in Jaipur cost?",
         answer:
-          "Fees depend on the complexity and value of the dispute and the stage of work — drafting and notices, full arbitration hearings, or High Court litigation each carry different costs, charged on an hourly, stage-wise, or matter-based basis. In institutional references there are also tribunal and administration fees set by a schedule. Judicium Arbitration's Jaipur office gives a clear fee estimate at the first consultation; call +91-9899686394 to discuss your matter.",
+          "Fees depend on the complexity and value of the dispute and the stage of work — drafting and notices, full arbitration hearings, or High Court litigation each carry different costs, charged on an hourly, stage-wise, or matter-based basis. In institutional references there are also tribunal and administration fees set by a schedule. Judicium Arbitration's Jaipur office gives a clear fee estimate at the first consultation; call +91-9899686318 to discuss your matter.",
       },
       {
         question: "Where do I challenge a mining contract or royalty dispute in Rajasthan?",
@@ -323,7 +323,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "GT Road, Panipat",
     latitude: 29.3909,
     longitude: 76.9635,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "District Court Panipat",
       "Punjab and Haryana High Court (via Chandigarh)",
@@ -345,7 +345,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Panipat office?",
         answer:
-          "Judicium Arbitration's Panipat office is on GT Road, Panipat 132103, Haryana — the city's main commercial corridor and near the District Court Panipat. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Panipat office is on GT Road, Panipat 132103, Haryana — the city's main commercial corridor and near the District Court Panipat. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "Does the Panipat office help MSMEs?",
@@ -378,7 +378,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Civil Lines, Prayagraj",
     latitude: 25.4358,
     longitude: 81.8463,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court (Principal Seat)",
       "District Court Prayagraj",
@@ -400,7 +400,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Prayagraj office?",
         answer:
-          "Judicium Arbitration's Prayagraj office is at Civil Lines, Prayagraj 211001, Uttar Pradesh — close to the Allahabad High Court's Principal Seat. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Prayagraj office is at Civil Lines, Prayagraj 211001, Uttar Pradesh — close to the Allahabad High Court's Principal Seat. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "Does the Prayagraj office appear at the Allahabad High Court?",
@@ -433,7 +433,7 @@ export const cityOffices: CityOffice[] = [
     streetAddress: "Hazratganj, Lucknow",
     latitude: 26.8467,
     longitude: 80.9462,
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     nearbyCourts: [
       "Allahabad High Court — Lucknow Bench",
       "District Court Lucknow",
@@ -456,7 +456,7 @@ export const cityOffices: CityOffice[] = [
       {
         question: "Where is Judicium Arbitration's Lucknow office?",
         answer:
-          "Judicium Arbitration's Lucknow office is at Hazratganj, Lucknow 226001, Uttar Pradesh — Lucknow's central commercial district and close to the Allahabad High Court Lucknow Bench. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686394.",
+          "Judicium Arbitration's Lucknow office is at Hazratganj, Lucknow 226001, Uttar Pradesh — Lucknow's central commercial district and close to the Allahabad High Court Lucknow Bench. Office hours: Monday–Friday, 9:00 AM – 6:00 PM. Phone: +91-9899686318.",
       },
       {
         question: "Does the Lucknow office cover the Awadh region of UP?",

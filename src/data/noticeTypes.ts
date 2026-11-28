@@ -62,7 +62,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a GST DRC-01 Show Cause Notice",
     shortTitle: "DRC-01",
     metaDescription:
-      "Received Form DRC-01? It is the formal GST show cause notice under Section 73 or 74. Reply window, consequences and how we respond. Call +91-9899686394.",
+      "Received Form DRC-01? It is the formal GST show cause notice under Section 73 or 74. Reply window, consequences and how we respond. Call +91-9899686318.",
     keywords: [
       "DRC-01 reply",
       "GST show cause notice reply",
@@ -126,7 +126,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a GST DRC-01A Intimation",
     shortTitle: "DRC-01A",
     metaDescription:
-      "Form DRC-01A is a pre-notice intimation under Rule 142(1A). A proper reply can stop a DRC-01 being issued at all. Call +91-9899686394.",
+      "Form DRC-01A is a pre-notice intimation under Rule 142(1A). A proper reply can stop a DRC-01 being issued at all. Call +91-9899686318.",
     keywords: [
       "DRC-01A reply",
       "DRC-01A format",
@@ -188,7 +188,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a GST ASMT-10 Scrutiny Notice",
     shortTitle: "ASMT-10",
     metaDescription:
-      "Form ASMT-10 flags discrepancies in your GST returns. Reply in ASMT-11 within 30 days or face a DRC-01. Call +91-9899686394.",
+      "Form ASMT-10 flags discrepancies in your GST returns. Reply in ASMT-11 within 30 days or face a DRC-01. Call +91-9899686318.",
     keywords: [
       "ASMT-10 reply",
       "ASMT-11 format",
@@ -250,7 +250,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a GST REG-17 Cancellation Notice",
     shortTitle: "REG-17",
     metaDescription:
-      "Form REG-17 proposes cancelling your GST registration. Reply in REG-18 within 7 working days, or apply for revocation in REG-21. Call +91-9899686394.",
+      "Form REG-17 proposes cancelling your GST registration. Reply in REG-18 within 7 working days, or apply for revocation in REG-21. Call +91-9899686318.",
     keywords: [
       "REG-17 reply",
       "GST registration cancellation notice",
@@ -312,7 +312,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "GST Appeal Against a Demand Order (APL-01)",
     shortTitle: "APL-01 appeal",
     metaDescription:
-      "Appeal a GST demand order in Form APL-01 within 3 months, with a 10% pre-deposit of the disputed tax. Call +91-9899686394.",
+      "Appeal a GST demand order in Form APL-01 within 3 months, with a 10% pre-deposit of the disputed tax. Call +91-9899686318.",
     keywords: [
       "GST appeal APL-01",
       "GST appeal time limit",
@@ -376,7 +376,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a Section 143(2) Scrutiny Notice",
     shortTitle: "Section 143(2)",
     metaDescription:
-      "A Section 143(2) notice means your return is under scrutiny. Faceless assessment decides on what you upload. Call +91-9899686394.",
+      "A Section 143(2) notice means your return is under scrutiny. Faceless assessment decides on what you upload. Call +91-9899686318.",
     keywords: [
       "Section 143(2) notice",
       "income tax scrutiny notice reply",
@@ -439,7 +439,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a Section 148 Reassessment Notice",
     shortTitle: "Section 148",
     metaDescription:
-      "A Section 148 notice reopens a past assessment. Limitation under Section 149 and the 148A procedure are the first things to check. Call +91-9899686394.",
+      "A Section 148 notice reopens a past assessment. Limitation under Section 149 and the 148A procedure are the first things to check. Call +91-9899686318.",
     keywords: [
       "Section 148 notice reply",
       "income tax reassessment notice",
@@ -501,7 +501,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to a Section 148A(b) Show Cause Notice",
     shortTitle: "Section 148A(b)",
     metaDescription:
-      "Section 148A(b) is the stage at which reassessment can be stopped before it starts. Reply with the information cited addressed. Call +91-9899686394.",
+      "Section 148A(b) is the stage at which reassessment can be stopped before it starts. Reply with the information cited addressed. Call +91-9899686318.",
     keywords: [
       "Section 148A(b) notice reply",
       "148A(b) show cause",
@@ -562,7 +562,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Responding to a Section 139(9) Defective Return Notice",
     shortTitle: "Section 139(9)",
     metaDescription:
-      "A defective return notice gives you 15 days to rectify. If you do not, the return is treated as never filed. Call +91-9899686394.",
+      "A defective return notice gives you 15 days to rectify. If you do not, the return is treated as never filed. Call +91-9899686318.",
     keywords: [
       "Section 139(9) notice",
       "defective return notice reply",
@@ -623,7 +623,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Responding to a Section 245 Refund Adjustment Intimation",
     shortTitle: "Section 245",
     metaDescription:
-      "Section 245 requires prior intimation before your refund is set off against an old demand. Respond on the portal disputing it. Call +91-9899686394.",
+      "Section 245 requires prior intimation before your refund is set off against an old demand. Respond on the portal disputing it. Call +91-9899686318.",
     keywords: [
       "Section 245 intimation",
       "refund adjusted against demand",
@@ -684,7 +684,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Responding to a Section 156 Income Tax Demand Notice",
     shortTitle: "Section 156",
     metaDescription:
-      "A Section 156 notice demands tax within 30 days. Appeal and apply for stay under Section 220(6) before recovery starts. Call +91-9899686394.",
+      "A Section 156 notice demands tax within 30 days. Appeal and apply for stay under Section 220(6) before recovery starts. Call +91-9899686318.",
     keywords: [
       "Section 156 demand notice",
       "income tax demand notice reply",
@@ -745,7 +745,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Reply to an Income Tax Penalty Notice",
     shortTitle: "Penalty notice",
     metaDescription:
-      "Penalty notices under Sections 270A and 271 are separate proceedings with their own defences. Reply before the order. Call +91-9899686394.",
+      "Penalty notices under Sections 270A and 271 are separate proceedings with their own defences. Reply before the order. Call +91-9899686318.",
     keywords: [
       "Section 271 penalty notice",
       "Section 270A under reporting",
@@ -808,7 +808,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Replying to a Show Cause or Termination Letter",
     shortTitle: "Termination reply",
     metaDescription:
-      "Received a show cause notice or termination letter? What you write now shapes the case. Reply before the inquiry. Call +91-9899686394.",
+      "Received a show cause notice or termination letter? What you write now shapes the case. Reply before the inquiry. Call +91-9899686318.",
     keywords: [
       "show cause notice reply employee",
       "termination letter reply format",
@@ -871,7 +871,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Responding to a Labour Commissioner Conciliation Notice",
     shortTitle: "Conciliation notice",
     metaDescription:
-      "A conciliation notice requires attendance before the Labour Commissioner. A settlement under Section 12(3) binds both parties. Call +91-9899686394.",
+      "A conciliation notice requires attendance before the Labour Commissioner. A settlement under Section 12(3) binds both parties. Call +91-9899686318.",
     keywords: [
       "labour commissioner notice reply",
       "conciliation proceedings labour",
@@ -934,7 +934,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Section 138 Demand Notice — Sending or Receiving",
     shortTitle: "S.138 demand notice",
     metaDescription:
-      "The Section 138 demand notice must go within 30 days of the bank return memo. Miss it and the remedy is gone. Call +91-9899686394.",
+      "The Section 138 demand notice must go within 30 days of the bank return memo. Miss it and the remedy is gone. Call +91-9899686318.",
     keywords: [
       "Section 138 demand notice",
       "cheque bounce notice format",
@@ -998,7 +998,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "How to Reply to a Legal Notice",
     shortTitle: "Notice reply",
     metaDescription:
-      "Received a legal notice? Silence is pleaded as admission. What to check, what to deny, and what not to concede. Call +91-9899686394.",
+      "Received a legal notice? Silence is pleaded as admission. What to check, what to deny, and what not to concede. Call +91-9899686318.",
     keywords: [
       "reply to legal notice",
       "legal notice reply format",
@@ -1065,7 +1065,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Filing an MSME Samadhaan Delayed Payment Reference",
     shortTitle: "Samadhaan reference",
     metaDescription:
-      "Registered MSMEs can refer delayed payments to the Facilitation Council with compound interest at 3x the bank rate. Call +91-9899686394.",
+      "Registered MSMEs can refer delayed payments to the Facilitation Council with compound interest at 3x the bank rate. Call +91-9899686318.",
     keywords: [
       "MSME Samadhaan reference",
       "Section 18 MSMED Act",
@@ -1127,7 +1127,7 @@ export const noticeTypes: NoticeType[] = [
     h1: "Summary Suit for Recovery under Order XXXVII",
     shortTitle: "Summary suit",
     metaDescription:
-      "Order XXXVII lets a documented debt claim proceed without full trial — the defendant must obtain leave to defend. Call +91-9899686394.",
+      "Order XXXVII lets a documented debt claim proceed without full trial — the defendant must obtain leave to defend. Call +91-9899686318.",
     keywords: [
       "Order XXXVII summary suit",
       "summary suit for recovery",

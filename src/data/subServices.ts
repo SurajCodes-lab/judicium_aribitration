@@ -64,7 +64,7 @@ export const subServices: SubService[] = [
     h1: "GST Registration Cancellation & Revocation",
     shortTitle: "Cancellation & revocation",
     metaDescription:
-      "Cancelled GST registration? We file REG-21 revocation, clear the return backlog, and contest retrospective cancellation. Call +91-9899686394.",
+      "Cancelled GST registration? We file REG-21 revocation, clear the return backlog, and contest retrospective cancellation. Call +91-9899686318.",
     keywords: [
       "GST registration revocation",
       "GST cancellation revocation lawyer",
@@ -132,7 +132,7 @@ export const subServices: SubService[] = [
     h1: "GST Appeal Filing & Representation",
     shortTitle: "GST appeals",
     metaDescription:
-      "First appeals under Section 107 and writ petitions where no appellate remedy is efficacious. Pre-deposit, limitation and grounds. Call +91-9899686394.",
+      "First appeals under Section 107 and writ petitions where no appellate remedy is efficacious. Pre-deposit, limitation and grounds. Call +91-9899686318.",
     keywords: [
       "GST appeal lawyer Delhi",
       "Section 107 GST appeal",
@@ -200,7 +200,7 @@ export const subServices: SubService[] = [
     h1: "Input Tax Credit Mismatch — GSTR-2A and 3B",
     shortTitle: "ITC mismatch",
     metaDescription:
-      "Credit claimed in 3B but not reflected in 2A or 2B? We reconcile, defend Section 16(2)(c) supplier-default cases and reply to the notice. Call +91-9899686394.",
+      "Credit claimed in 3B but not reflected in 2A or 2B? We reconcile, defend Section 16(2)(c) supplier-default cases and reply to the notice. Call +91-9899686318.",
     keywords: [
       "ITC mismatch GSTR-2A 3B",
       "input tax credit mismatch notice",
@@ -268,7 +268,7 @@ export const subServices: SubService[] = [
     h1: "GST Audit Representation",
     shortTitle: "GST audit",
     metaDescription:
-      "Representation through departmental audit under Section 65 and special audit under Section 66, from ADT-01 to the ADT-02 findings. Call +91-9899686394.",
+      "Representation through departmental audit under Section 65 and special audit under Section 66, from ADT-01 to the ADT-02 findings. Call +91-9899686318.",
     keywords: [
       "GST audit representation",
       "Section 65 GST audit",
@@ -336,7 +336,7 @@ export const subServices: SubService[] = [
     h1: "GST Refund Rejection & Appeal",
     shortTitle: "Refund rejection",
     metaDescription:
-      "Refund rejected or withheld? Replies to RFD-08 show cause, appeals against RFD-06 rejection, and interest on delayed refund. Call +91-9899686394.",
+      "Refund rejected or withheld? Replies to RFD-08 show cause, appeals against RFD-06 rejection, and interest on delayed refund. Call +91-9899686318.",
     keywords: [
       "GST refund rejection appeal",
       "RFD-08 reply",
@@ -404,7 +404,7 @@ export const subServices: SubService[] = [
     h1: "E-Way Bill Penalty & Goods Detention",
     shortTitle: "E-way bill detention",
     metaDescription:
-      "Goods detained in transit? We handle MOV-07 replies, Section 129 penalty, release of goods and vehicle, and appeals. Call +91-9899686394.",
+      "Goods detained in transit? We handle MOV-07 replies, Section 129 penalty, release of goods and vehicle, and appeals. Call +91-9899686318.",
     keywords: [
       "e-way bill penalty",
       "goods detention GST",
@@ -474,7 +474,7 @@ export const subServices: SubService[] = [
     h1: "Scrutiny Assessment Representation",
     shortTitle: "Scrutiny representation",
     metaDescription:
-      "Representation through faceless scrutiny assessment — building the record, answering every query, and responding to the draft order. Call +91-9899686394.",
+      "Representation through faceless scrutiny assessment — building the record, answering every query, and responding to the draft order. Call +91-9899686318.",
     keywords: [
       "income tax scrutiny representation",
       "faceless assessment lawyer",
@@ -541,7 +541,7 @@ export const subServices: SubService[] = [
     h1: "Capital Gains Scrutiny",
     shortTitle: "Capital gains",
     metaDescription:
-      "Property sale under scrutiny? Section 50C valuation, cost of improvement, and exemptions under Sections 54, 54F and 54EC. Call +91-9899686394.",
+      "Property sale under scrutiny? Section 50C valuation, cost of improvement, and exemptions under Sections 54, 54F and 54EC. Call +91-9899686318.",
     keywords: [
       "capital gains scrutiny notice",
       "Section 50C valuation dispute",
@@ -608,7 +608,7 @@ export const subServices: SubService[] = [
     h1: "Cash Deposit & Unexplained Credit Scrutiny",
     shortTitle: "Unexplained credits",
     metaDescription:
-      "Section 68 and 69A additions carry tax at 60% plus surcharge. Establishing identity, creditworthiness and genuineness. Call +91-9899686394.",
+      "Section 68 and 69A additions carry tax at 60% plus surcharge. Establishing identity, creditworthiness and genuineness. Call +91-9899686318.",
     keywords: [
       "Section 68 unexplained cash credit",
       "cash deposit notice income tax",
@@ -674,7 +674,7 @@ export const subServices: SubService[] = [
     h1: "TDS Default Notices & Representation",
     shortTitle: "TDS defaults",
     metaDescription:
-      "Short deduction, late deposit and Section 201 demands. Defending assessee-in-default findings and Section 40(a)(ia) disallowance. Call +91-9899686394.",
+      "Short deduction, late deposit and Section 201 demands. Defending assessee-in-default findings and Section 40(a)(ia) disallowance. Call +91-9899686318.",
     keywords: [
       "TDS default notice",
       "Section 201 assessee in default",
@@ -741,7 +741,7 @@ export const subServices: SubService[] = [
     h1: "Appeal before the Commissioner (Appeals)",
     shortTitle: "CIT(A) appeals",
     metaDescription:
-      "First appeals under Section 246A — grounds, stay of demand under Section 220(6), additional evidence and faceless appeal hearings. Call +91-9899686394.",
+      "First appeals under Section 246A — grounds, stay of demand under Section 220(6), additional evidence and faceless appeal hearings. Call +91-9899686318.",
     keywords: [
       "CIT Appeals lawyer Delhi",
       "Section 246A appeal",
@@ -816,7 +816,7 @@ export const subServices: SubService[] = [
     h1: "Private Limited Company Registration in Delhi",
     shortTitle: "Pvt Ltd registration",
     metaDescription:
-      "Incorporation through SPICe+ — name approval, MOA and AOA, DSC and the first-year compliance calendar. Delhi NCR. Call +91-9899686394.",
+      "Incorporation through SPICe+ — name approval, MOA and AOA, DSC and the first-year compliance calendar. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "private limited company registration Delhi",
       "SPICe+ filing",
@@ -883,7 +883,7 @@ export const subServices: SubService[] = [
     h1: "Limited Liability Partnership Registration",
     shortTitle: "LLP registration",
     metaDescription:
-      "LLP incorporation through FiLLiP, the LLP agreement within 30 days, and annual Form 8 and Form 11 compliance. Call +91-9899686394.",
+      "LLP incorporation through FiLLiP, the LLP agreement within 30 days, and annual Form 8 and Form 11 compliance. Call +91-9899686318.",
     keywords: [
       "LLP registration Delhi",
       "FiLLiP form filing",
@@ -1083,7 +1083,7 @@ export const subServices: SubService[] = [
     h1: "Annual ROC Filing & DIR-3 KYC",
     shortTitle: "Annual ROC filing",
     metaDescription:
-      "AOC-4, MGT-7 and DIR-3 KYC on time. Late fees accrue per day with no cap and three years of default disqualifies directors. Call +91-9899686394.",
+      "AOC-4, MGT-7 and DIR-3 KYC on time. Late fees accrue per day with no cap and three years of default disqualifies directors. Call +91-9899686318.",
     keywords: [
       "annual ROC filing",
       "AOC-4 MGT-7 filing",
@@ -1151,7 +1151,7 @@ export const subServices: SubService[] = [
     h1: "Company Strike-Off & Revival before the NCLT",
     shortTitle: "Strike-off & revival",
     metaDescription:
-      "Voluntary strike-off under Section 248 and restoration appeals under Section 252 before the NCLT. Call +91-9899686394.",
+      "Voluntary strike-off under Section 248 and restoration appeals under Section 252 before the NCLT. Call +91-9899686318.",
     keywords: [
       "company strike off",
       "NCLT restoration of company",
@@ -1221,7 +1221,7 @@ export const subServices: SubService[] = [
     h1: "MCD & NDMC Trade Licence",
     shortTitle: "Trade licence",
     metaDescription:
-      "Municipal trade licence applications and renewals in Delhi, plus replies to suspension and sealing notices. Call +91-9899686394.",
+      "Municipal trade licence applications and renewals in Delhi, plus replies to suspension and sealing notices. Call +91-9899686318.",
     keywords: [
       "MCD trade licence Delhi",
       "NDMC trade licence",
@@ -1288,7 +1288,7 @@ export const subServices: SubService[] = [
     h1: "Shops and Establishment Registration",
     shortTitle: "Shops & Establishment",
     metaDescription:
-      "Registration under the Delhi Shops and Establishments Act — who must register, the records to maintain, and renewal. Call +91-9899686394.",
+      "Registration under the Delhi Shops and Establishments Act — who must register, the records to maintain, and renewal. Call +91-9899686318.",
     keywords: [
       "shops and establishment registration Delhi",
       "shop act licence",
@@ -1354,7 +1354,7 @@ export const subServices: SubService[] = [
     h1: "FSSAI Licence & Registration",
     shortTitle: "FSSAI licence",
     metaDescription:
-      "Basic registration, State and Central FSSAI licences by turnover, plus improvement notices and prosecutions. Call +91-9899686394.",
+      "Basic registration, State and Central FSSAI licences by turnover, plus improvement notices and prosecutions. Call +91-9899686318.",
     keywords: [
       "FSSAI licence Delhi",
       "food licence registration",
@@ -1421,7 +1421,7 @@ export const subServices: SubService[] = [
     h1: "Factory Licence & Fire NOC",
     shortTitle: "Factory licence",
     metaDescription:
-      "Factory registration and licensing under the Factories Act, plus fire safety clearance and renewal. Delhi NCR. Call +91-9899686394.",
+      "Factory registration and licensing under the Factories Act, plus fire safety clearance and renewal. Delhi NCR. Call +91-9899686318.",
     keywords: [
       "factory licence Delhi",
       "Factories Act registration",
@@ -1489,7 +1489,7 @@ export const subServices: SubService[] = [
     h1: "DPCC Pollution Consent — Establish & Operate",
     shortTitle: "Pollution consent",
     metaDescription:
-      "Consent to Establish and Consent to Operate from the DPCC, by red, orange, green or white category. Call +91-9899686394.",
+      "Consent to Establish and Consent to Operate from the DPCC, by red, orange, green or white category. Call +91-9899686318.",
     keywords: [
       "DPCC consent to operate",
       "consent to establish Delhi",
@@ -1695,7 +1695,7 @@ export const subServices: SubService[] = [
     h1: "Gratuity, Provident Fund & ESI Disputes",
     shortTitle: "Gratuity, PF & ESI",
     metaDescription:
-      "Gratuity claims before the Controlling Authority, PF Section 7A proceedings and ESI contribution disputes. Call +91-9899686394.",
+      "Gratuity claims before the Controlling Authority, PF Section 7A proceedings and ESI contribution disputes. Call +91-9899686318.",
     keywords: [
       "gratuity claim lawyer",
       "PF Section 7A proceedings",
@@ -1764,7 +1764,7 @@ export const subServices: SubService[] = [
     h1: "POSH Complaints & Industrial Disputes",
     shortTitle: "POSH & industrial disputes",
     metaDescription:
-      "Internal Committee constitution, inquiry conduct and appeals under the POSH Act, plus collective industrial disputes. Call +91-9899686394.",
+      "Internal Committee constitution, inquiry conduct and appeals under the POSH Act, plus collective industrial disputes. Call +91-9899686318.",
     keywords: [
       "POSH Act compliance lawyer",
       "internal committee POSH",
@@ -1900,7 +1900,7 @@ export const subServices: SubService[] = [
     h1: "Interim Compensation under Section 143A",
     shortTitle: "Interim compensation",
     metaDescription:
-      "Up to 20% of the cheque amount during trial, and the Section 148 appellate deposit. Seeking it, and resisting it. Call +91-9899686394.",
+      "Up to 20% of the cheque amount during trial, and the Section 148 appellate deposit. Seeking it, and resisting it. Call +91-9899686318.",
     keywords: [
       "Section 143A interim compensation",
       "cheque bounce interim compensation",
@@ -1966,7 +1966,7 @@ export const subServices: SubService[] = [
     h1: "Defence & Quashing in Section 138 Matters",
     shortTitle: "S.138 defence",
     metaDescription:
-      "Defending a cheque bounce prosecution — rebutting the presumption, defective notice, and quashing under Section 482. Call +91-9899686394.",
+      "Defending a cheque bounce prosecution — rebutting the presumption, defective notice, and quashing under Section 482. Call +91-9899686318.",
     keywords: [
       "cheque bounce defence lawyer",
       "quash 138 complaint",
@@ -2035,7 +2035,7 @@ export const subServices: SubService[] = [
     h1: "Legal Notice for Breach of Contract",
     shortTitle: "Breach of contract",
     metaDescription:
-      "Notices for breach, non-performance and termination — the clause relied on, the remedy elected, and the forum named. Call +91-9899686394.",
+      "Notices for breach, non-performance and termination — the clause relied on, the remedy elected, and the forum named. Call +91-9899686318.",
     keywords: [
       "legal notice for breach of contract",
       "breach of contract notice India",
@@ -2106,7 +2106,7 @@ export const subServices: SubService[] = [
     h1: "Execution & Enforcement of Decrees and Awards",
     shortTitle: "Execution",
     metaDescription:
-      "A decree is only worth what you can recover. Attachment, garnishee, asset discovery and enforcement of arbitral awards. Call +91-9899686394.",
+      "A decree is only worth what you can recover. Attachment, garnishee, asset discovery and enforcement of arbitral awards. Call +91-9899686318.",
     keywords: [
       "execution of decree lawyer",
       "Order XXI execution petition",

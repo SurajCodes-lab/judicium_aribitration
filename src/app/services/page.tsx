@@ -23,7 +23,7 @@ const BASE_URL = "https://www.judiciumarbitration.com";
 export const metadata: Metadata = {
   title: "Legal Services — Notices & Recovery",
   description:
-    "Notice replies, cheque bounce, money recovery, labour disputes, company and licence compliance across Delhi NCR. Call +91-9899686394.",
+    "Notice replies, cheque bounce, money recovery, labour disputes, company and licence compliance across Delhi NCR. Call +91-9899686318.",
   alternates: {
     canonical: `${BASE_URL}/services`,
     languages: {

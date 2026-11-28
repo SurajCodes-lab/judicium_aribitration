@@ -36,7 +36,7 @@ const homepageFaqs = [
   },
   {
     question: "How do I schedule a consultation with Judicium Arbitration?",
-    answer: "You can schedule a consultation by emailing us at Judiciumarbitration@gmail.com, calling +91-9899686394, or visiting our Contact page. We offer initial consultations to understand your dispute and recommend the best resolution strategy."
+    answer: "You can schedule a consultation by emailing us at Judiciumarbitration@gmail.com, calling +91-9899686318, or visiting our Contact page. We offer initial consultations to understand your dispute and recommend the best resolution strategy."
   },
   {
     question: "What is Section 9 of the Arbitration and Conciliation Act?",
@@ -109,7 +109,7 @@ const howToSchema = {
       "@type": "HowToStep",
       position: 3,
       name: "Schedule an initial consultation",
-      text: "Contact Judicium Arbitration via email (Judiciumarbitration@gmail.com), phone (+91-9899686394), or the contact form to schedule an initial consultation. Consultations are available in person across Delhi NCR, Chandigarh, Jaipur and online.",
+      text: "Contact Judicium Arbitration via email (Judiciumarbitration@gmail.com), phone (+91-9899686318), or the contact form to schedule an initial consultation. Consultations are available in person across Delhi NCR, Chandigarh, Jaipur and online.",
       url: `${BASE_URL}/contact`,
     },
     {
@@ -225,7 +225,7 @@ const qaPageSchema = {
     acceptedAnswer: {
       "@type": "Answer",
       text:
-        "Judicium Arbitration is a premier arbitration and Alternative Dispute Resolution (ADR) law firm in North India with 20+ years of experience and 500+ resolved commercial disputes (98% success rate). The firm serves eight cities — New Delhi (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj and Lucknow — and covers 20+ practice areas including commercial arbitration under the Arbitration and Conciliation Act 1996, DIAC/MCIA/ICC/SIAC/LCIA proceedings, Section 9 and Section 17 interim relief, banking & finance, real estate, IP, insolvency, and corporate disputes. Contact: +91-9899686394 / Judiciumarbitration@gmail.com.",
+        "Judicium Arbitration is a premier arbitration and Alternative Dispute Resolution (ADR) law firm in North India with 20+ years of experience and 500+ resolved commercial disputes (98% success rate). The firm serves eight cities — New Delhi (HQ), Gurgaon, Noida, Chandigarh, Jaipur, Panipat, Prayagraj and Lucknow — and covers 20+ practice areas including commercial arbitration under the Arbitration and Conciliation Act 1996, DIAC/MCIA/ICC/SIAC/LCIA proceedings, Section 9 and Section 17 interim relief, banking & finance, real estate, IP, insolvency, and corporate disputes. Contact: +91-9899686318 / Judiciumarbitration@gmail.com.",
       url: BASE_URL,
       dateCreated: "2026-01-01",
       upvoteCount: 84,

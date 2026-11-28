@@ -7,7 +7,7 @@ import { LawIcons } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Contact Us | Judicium Arbitration - Get Legal Consultation",
-  description: "Contact arbitration lawyers in Delhi NCR, Chandigarh and Jaipur. Book a consultation — we reply within 24 hours. Call +91-9899686394.",
+  description: "Contact arbitration lawyers in Delhi NCR, Chandigarh and Jaipur. Book a consultation — we reply within 24 hours. Call +91-9899686318.",
   // Week 10: meta keywords removed — targeting handled in visible content.
   openGraph: {
     title: "Contact Us | Judicium Arbitration",
@@ -81,9 +81,17 @@ const contactPointSchema = {
     "@type": "LegalService",
     "@id": "https://www.judiciumarbitration.com/#organization",
     name: "Judicium Arbitration",
-    telephone: "+91-9899686394",
+    telephone: "+91-9899686318",
     email: "Judiciumarbitration@gmail.com",
     contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+91-9899686318",
+        email: "Judiciumarbitration@gmail.com",
+        contactType: "customer service",
+        availableLanguage: ["English", "Hindi"],
+        areaServed: "IN",
+      },
       {
         "@type": "ContactPoint",
         telephone: "+91-9899686394",
@@ -94,7 +102,7 @@ const contactPointSchema = {
       },
       {
         "@type": "ContactPoint",
-        telephone: "+91-9899686394",
+        telephone: "+91-9899686318",
         email: "Judiciumarbitration@gmail.com",
         contactType: "legal consultation",
         availableLanguage: ["English", "Hindi"],
@@ -218,7 +226,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="tel:+91-9899686394"
+              href="tel:+919899686318"
               className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20 hover:border-gold-primary/40 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gold-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -227,8 +235,17 @@ export default function ContactPage() {
                   <LawIcons.Handshake className="w-7 h-7 text-black" />
                 </div>
                 <p className="text-sm text-white/60 mb-2">Call Us</p>
-                <p className="text-gold-primary font-semibold">+91-9899686394</p>
+                <p className="text-gold-primary font-semibold">+91-9899686318</p>
               </div>
+            </a>
+
+            {/* Alternate line. A sibling, not nested: the card above is itself
+                an anchor, and anchors cannot contain anchors. */}
+            <a
+              href="tel:+919899686394"
+              className="text-center text-xs text-white/45 hover:text-gold-secondary transition-colors py-1"
+            >
+              Alternate line: +91-9899686394
             </a>
 
             <div className="group relative bg-bg-alt-dark p-6 rounded-2xl border border-gold-primary/20">
@@ -384,8 +401,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-sm text-white/50 mb-1">Phone</p>
-                        <a href="tel:+91-9899686394" className="text-gold-primary hover:text-gold-secondary transition-colors">
-                          +91-9899686394
+                        <a href="tel:+919899686318" className="text-gold-primary hover:text-gold-secondary transition-colors">
+                          +91-9899686318
                         </a>
                       </div>
                     </div>

@@ -161,7 +161,25 @@ const organizationSchema = {
     "Arbitration and Conciliation Act 1996",
   ],
   knowsLanguage: ["en", "hi"],
-  telephone: "+91-9899686394",
+  telephone: "+91-9899686318",
+  // The firm's previous line, kept active. Declared so a cached listing or an
+  // AI answer surfacing the old number still routes the caller correctly.
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-9899686318",
+      contactType: "customer service",
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+91-9899686394",
+      contactType: "customer service",
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "IN",
+    },
+  ],
   email: "Judiciumarbitration@gmail.com",
   foundingDate: "2003",
   numberOfEmployees: {

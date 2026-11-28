@@ -66,7 +66,7 @@ export async function generateMetadata({
   const description = composeDescription([
     `${area.seoShortTitle} lawyers in ${office.city}, ${office.region}.`,
     entry.metaAngle,
-    "Call +91-9899686394.",
+    "Call +91-9899686318.",
   ]);
 
   return {
