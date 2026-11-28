@@ -56,7 +56,8 @@ export async function generateMetadata({
 
   const pageUrl = `${BASE_URL}/team/${member.slug}`;
   // The root layout applies the "%s | Judicium Arbitration" template — no suffix here.
-  const title = `${member.name} — ${member.title}`;
+  // titleShort exists for designations that would push the tag past 62 chars.
+  const title = `${member.name} — ${member.titleShort ?? member.title}`;
   const description =
     member.headline.length > 158
       ? `${member.headline.slice(0, 155)}…`
@@ -104,10 +105,16 @@ function buildSchemas(member: TeamMember) {
       url: BASE_URL,
     },
     knowsAbout: member.specializations,
-    alumniOf: member.education.map((edu) => ({
-      "@type": "EducationalOrganization",
-      name: edu,
-    })),
+    // Omitted entirely rather than emitted empty when the source profile
+    // states no qualifications.
+    ...(member.education.length
+      ? {
+          alumniOf: member.education.map((edu) => ({
+            "@type": "EducationalOrganization",
+            name: edu,
+          })),
+        }
+      : {}),
     hasOccupation: {
       "@type": "Occupation",
       name: member.title,
@@ -538,24 +545,29 @@ export default async function AdvocateProfilePage({ params }: PageProps) {
           </ProfileHeading>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-            {/* Education */}
+            {/* Education — omitted where the source profile does not state it,
+                rather than rendering an empty heading and rule. */}
             <div className="lg:col-span-5">
-              <h3 className="text-base font-semibold text-gold-secondary uppercase tracking-wider mb-5">
-                Education
-              </h3>
+              {member.education.length > 0 && (
+                <>
+                  <h3 className="text-base font-semibold text-gold-secondary uppercase tracking-wider mb-5">
+                    Education
+                  </h3>
 
-              <ol className="relative border-l border-gold-primary/25 pl-6 space-y-6">
-                {member.education.map((edu) => (
-                  <li key={edu} className="relative">
-                    <span className="absolute -left-[1.84rem] top-1.5 w-2.5 h-2.5 rounded-full bg-gold-primary border-2 border-bg-dark" />
-                    <span className="block text-sm sm:text-base text-foreground/80 leading-snug">
-                      {edu}
-                    </span>
-                  </li>
-                ))}
-              </ol>
+                  <ol className="relative border-l border-gold-primary/25 pl-6 space-y-6">
+                    {member.education.map((edu) => (
+                      <li key={edu} className="relative">
+                        <span className="absolute -left-[1.84rem] top-1.5 w-2.5 h-2.5 rounded-full bg-gold-primary border-2 border-bg-dark" />
+                        <span className="block text-sm sm:text-base text-foreground/80 leading-snug">
+                          {edu}
+                        </span>
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              )}
 
-              <div className="mt-8 rounded-xl border border-gold-primary/20 bg-gold-primary/5 p-5">
+              <div className="mt-8 first:mt-0 rounded-xl border border-gold-primary/20 bg-gold-primary/5 p-5">
                 <span className="block text-3xl font-bold text-gold-primary">
                   {member.yearsExperience}+
                 </span>

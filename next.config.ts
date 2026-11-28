@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // Departed advocate. /team/rishika-chaudhary was live and in the
+      // submitted sitemap, so it is redirected to the roster rather than
+      // left to 404 — it keeps any accumulated signal and gives a visitor
+      // arriving from a search result somewhere useful to land.
+      {
+        source: "/team/rishika-chaudhary",
+        destination: "/team",
+        permanent: true,
+      },
       // Redirect non-www to www (canonical domain)
       {
         source: "/:path*",

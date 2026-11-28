@@ -182,6 +182,25 @@ const organizationSchema = {
   ],
   email: "Judiciumarbitration@gmail.com",
   foundingDate: "2003",
+  // Both co-founders, linked by @id to the Person entities their own profile
+  // pages emit. This is the property Google uses to tie a business to the
+  // people behind it, and it was missing entirely.
+  founder: [
+    {
+      "@type": "Person",
+      "@id": `${BASE_URL}/team/nadeem-qureshi#person`,
+      name: "Nadeem Qureshi",
+      jobTitle: "Founder & CEO",
+      url: `${BASE_URL}/team/nadeem-qureshi`,
+    },
+    {
+      "@type": "Person",
+      "@id": `${BASE_URL}/team/renu-choudhary#person`,
+      name: "Renu Choudhary",
+      jobTitle: "Co-Founder, Advocate & Legal Consultant",
+      url: `${BASE_URL}/team/renu-choudhary`,
+    },
+  ],
   numberOfEmployees: {
     "@type": "QuantitativeValue",
     minValue: 8,

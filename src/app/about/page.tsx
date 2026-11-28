@@ -53,10 +53,14 @@ function generateTeamSchema() {
     },
     description: member.bio,
     knowsAbout: member.specializations,
-    alumniOf: member.education.map((edu) => ({
-      "@type": "EducationalOrganization",
-      name: edu,
-    })),
+    ...(member.education.length
+      ? {
+          alumniOf: member.education.map((edu) => ({
+            "@type": "EducationalOrganization",
+            name: edu,
+          })),
+        }
+      : {}),
     hasOccupation: {
       "@type": "Occupation",
       name: member.title,
@@ -321,10 +325,12 @@ export default function AboutPage() {
                   experience, our team has established itself as a trusted name in the legal landscape.
                 </p>
                 <p className="text-base sm:text-lg">
-                  Our co-founder Nadeem's extensive 20-year tenure at KKD Court has given us unparalleled
-                  insights into the dispute lifecycle and ground realities of India's legal system. This
-                  experience, combined with our strategic presence across 8 major cities, enables us to
-                  deliver exceptional results for our clients.
+                  Co-founder Nadeem Qureshi&apos;s extensive 20-year tenure at KKD Court has given us
+                  unparalleled insights into the dispute lifecycle and ground realities of India&apos;s
+                  legal system, while co-founder Renu Choudhary brings a decade across civil, criminal,
+                  commercial and matrimonial disputes alongside arbitration and ADR. That experience,
+                  combined with our strategic presence across 8 major cities, enables us to deliver
+                  exceptional results for our clients.
                 </p>
                 <p className="text-base sm:text-lg">
                   We specialize in resolving complex commercial disputes through arbitration, mediation,

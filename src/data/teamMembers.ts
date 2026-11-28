@@ -23,6 +23,12 @@ export interface TeamMember {
   name: string;
   /** Professional designation shown under the name. */
   title: string;
+  /**
+   * Shorter designation used only in the <title> tag, for advocates whose full
+   * designation pushes "Name — Title | Judicium Arbitration" past 62
+   * characters. The full `title` is still what the page, card and schema show.
+   */
+  titleShort?: string;
   /** Position within the firm. */
   role: string;
   image: string;
@@ -38,6 +44,7 @@ export interface TeamMember {
   /** Geographic reach of the practice. */
   jurisdiction: string;
   officeBase: string;
+  /** Empty when the source profile does not state it — never inferred. */
   education: string[];
   /** Ten skills per advocate — the expertise grid and Person.knowsAbout. */
   specializations: string[];
@@ -181,7 +188,7 @@ export const teamMembers: TeamMember[] = [
       "Legal opinions and research memoranda",
       "Transaction risk assessment",
     ],
-    order: 2,
+    order: 3,
   },
   {
     slug: "suryakant-bhardwaj",
@@ -229,51 +236,65 @@ export const teamMembers: TeamMember[] = [
       "Settlement terms and negotiation support",
       "Award enforcement strategy",
     ],
-    order: 3,
+    order: 4,
   },
   {
-    slug: "rishika-chaudhary",
-    name: "Rishika Chaudhary",
-    title: "Advocate",
-    role: "Associate",
+    slug: "renu-choudhary",
+    name: "Renu Choudhary",
+    title: "Co-Founder, Advocate & Legal Consultant",
+    // The full designation would make the <title> 79 characters. The short
+    // form keeps it at 61 while the page, card and Person.jobTitle carry the
+    // whole thing — and it keeps "Co-Founder" in the tag, which is the part
+    // a name search is most likely to be looking for.
+    titleShort: "Co-Founder & Advocate",
+    role: "Co-Founder",
     image: "",
     headline:
-      "Associate with practical experience across arbitration, court-annexed mediation at the Punjab & Haryana High Court, and independent civil and criminal trial work.",
-    bio: "An Advocate with strong foundation in arbitration, mediation, and dispute resolution. Having worked at the District & Sessions Court, Panipat, and at the Mediation Centre of the Punjab & Haryana High Court, Chandigarh, she has developed comprehensive experience in both litigation and alternative dispute resolution processes.",
+      "Co-founder of Judicium Arbitration, with ten years across civil, criminal, commercial and matrimonial disputes, arbitration and ADR.",
+    bio: "Renu Choudhary is a co-founder of Judicium Arbitration, and an Advocate and Legal Consultant with 10 years of professional experience. Her practice encompasses civil, criminal and commercial litigation, matrimonial disputes, arbitration, dispute resolution and legal advisory services. Practising across India from a professional office in New Delhi, she advises individuals, businesses, corporate entities and other organisations on contentious and advisory matters.",
     experience:
-      "Practical exposure to arbitration, mediation, and courtroom proceedings. Worked on arbitration-related matters, assisted in drafting arbitration petitions, responses, and settlement terms, and observed the conduct of arbitral hearings. Independently handled civil, criminal, and NACT cases from filing to final argument. Contributed to mediation efforts aimed at achieving amicable settlements.",
-    yearsExperience: 3,
-    jurisdiction: "Haryana, Punjab & Chandigarh",
-    officeBase: "Panipat",
-    education: ["LL.M", "LL.B"],
+      "Ten years of practice spanning judicial proceedings, legal research, case preparation and litigation strategy. Handles diverse legal disputes, court proceedings, contractual matters and complex legal issues across various fields of law. Her practice also encompasses Alternative Dispute Resolution — mediation, conciliation and negotiation — alongside arbitration and conventional litigation, identifying the appropriate remedy and forum for the nature and objectives of each case.",
+    yearsExperience: 10,
+    jurisdiction: "Pan India",
+    officeBase: "New Delhi",
+    // The source profile states no qualifications; nothing is inferred here.
+    // The profile page omits the Education block when this is empty.
+    education: [],
     specializations: [
-      "Arbitration Proceedings",
-      "Mediation & Settlement",
       "Civil Litigation",
-      "Criminal Law",
-      "NACT Cases",
-      "Client Counseling",
-      "Case Management",
-      "Legal Drafting",
-      "Arbitration Petitions & Responses",
-      "Trial Advocacy",
+      "Commercial & Business Disputes",
+      "Criminal Litigation",
+      "Matrimonial & Family Disputes",
+      "Arbitration & Alternative Dispute Resolution",
+      "Mediation, Conciliation & Negotiation",
+      "Contract Drafting & Document Vetting",
+      "Legal Consultation & Advisory",
+      "Property & Real Estate Disputes",
+      "Recovery & Execution Proceedings",
     ],
     practiceAreaSlugs: [
       "arbitration-alternative-dispute-resolution",
       "dispute-resolution-litigation",
+      "corporate-commercial",
+      "real-estate-urban-development",
     ],
     courtsAndTribunals: [
-      "District & Sessions Court, Panipat",
-      "Mediation Centre, Punjab & Haryana High Court, Chandigarh",
-      "Arbitral tribunals",
+      "Arbitral tribunals, ad-hoc and institutional",
+      "Civil courts — suits, injunctions, specific performance and execution",
+      "Criminal trial and sessions courts — bail, trial, appeals and revisions",
+      "Family courts — divorce, maintenance and custody matters",
+      "Mediation and conciliation forums",
     ],
     advisoryServices: [
-      "Drafting arbitration petitions, replies and settlement terms",
-      "Pre-litigation notices and case assessment",
-      "Mediation preparation and representation",
-      "Case file management and court filings",
+      "Drafting and vetting commercial agreements, partnership deeds and memoranda of understanding",
+      "Lease, licence and service agreements",
+      "Legal opinions and pre-litigation advice",
+      "Dispute assessment, legal strategy and risk management",
+      "Guidance on contractual and statutory compliance",
     ],
-    order: 4,
+    // Co-founder — placed directly below the Founder & CEO, ahead of the
+    // partners, so the roster reads in order of standing in the firm.
+    order: 2,
   },
   {
     slug: "kshitij-chauhan",
