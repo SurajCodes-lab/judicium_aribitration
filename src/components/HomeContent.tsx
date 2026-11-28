@@ -436,7 +436,7 @@ export default function HomeContent({
           {/* Contact Cards */}
           <div className="grid sm:grid-cols-3 gap-5 mb-10">
             {[
-              { Icon: LawIcons.Phone, title: "Call Us", value: PHONE_DISPLAY, href: TEL_LINK, color: "from-gold-primary to-gold-secondary" },
+              { Icon: LawIcons.Phone, title: "Call Us", value: "Speak to our team", href: TEL_LINK, color: "from-gold-primary to-gold-secondary" },
               { Icon: LawIcons.WhatsApp, title: "WhatsApp", value: "Chat with our team", href: WHATSAPP_LINK, color: "from-gold-secondary to-gold-primary" },
               { Icon: LawIcons.Mail, title: "Email", value: EMAIL, href: MAILTO_LINK, color: "from-gold-primary to-gold-secondary" },
             ].map((item, i) => (
@@ -474,7 +474,7 @@ export default function HomeContent({
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="primary" size="lg" href={TEL_LINK}>
-                  Call {PHONE_DISPLAY}
+                  Call us now
                 </Button>
                 <Button variant="secondary" size="lg" href={WHATSAPP_LINK}>
                   Message on WhatsApp

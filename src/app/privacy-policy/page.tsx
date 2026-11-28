@@ -260,7 +260,12 @@ export default function PrivacyPolicyPage() {
               <div className="bg-linear-to-br from-gold-primary/10 to-transparent p-6 rounded-xl border border-gold-primary/30">
                 <p className="mb-2"><strong>Judicium Arbitration</strong></p>
                 <p className="mb-2">Email: <a href="mailto:Judiciumarbitration@gmail.com" className="text-gold-primary hover:text-gold-secondary">Judiciumarbitration@gmail.com</a></p>
-                <p className="mb-2">Phone: +91-9899686318</p>
+                <p className="mb-2">
+                  Phone: see our{" "}
+                  <a href="/contact" className="text-gold-primary hover:underline">
+                    contact page
+                  </a>
+                </p>
                 <p>Address: New Delhi, India</p>
               </div>
             </section>

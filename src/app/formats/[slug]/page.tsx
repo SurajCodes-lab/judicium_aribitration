@@ -13,7 +13,7 @@ import {
 import { getServiceLineBySlug } from "@/data/serviceLines";
 import { getNoticeBySlug } from "@/data/noticeTypes";
 import { clampDescription } from "@/lib/seoText";
-import { TEL_LINK, PHONE_DISPLAY, WHATSAPP_LINK } from "@/data/contactInfo";
+import { TEL_LINK, WHATSAPP_LINK } from "@/data/contactInfo";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -260,7 +260,7 @@ export default async function FormatPage({ params }: PageProps) {
               Have this drafted properly
             </Button>
             <Button href={TEL_LINK} variant="outline" size="sm">
-              {PHONE_DISPLAY}
+              Call us
             </Button>
             <Button href={WHATSAPP_LINK} variant="outline" size="sm">
               WhatsApp
@@ -481,7 +481,7 @@ export default async function FormatPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">Request a consultation</Button>
             <Button href={TEL_LINK} variant="outline">
-              {PHONE_DISPLAY}
+              Call us
             </Button>
           </div>
         </div>

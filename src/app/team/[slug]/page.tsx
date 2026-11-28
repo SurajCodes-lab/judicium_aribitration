@@ -14,7 +14,7 @@ import {
   TeamMember,
 } from "@/data/teamMembers";
 import { getPracticeAreaBySlug } from "@/data/practiceAreas";
-import { TEL_LINK, PHONE_DISPLAY } from "@/data/contactInfo";
+import { TEL_LINK } from "@/data/contactInfo";
 
 const BASE_URL = "https://www.judiciumarbitration.com";
 
@@ -629,7 +629,7 @@ export default async function AdvocateProfilePage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">Request a consultation</Button>
             <Button href={TEL_LINK} variant="outline">
-              {PHONE_DISPLAY}
+              Call us
             </Button>
           </div>
         </div>

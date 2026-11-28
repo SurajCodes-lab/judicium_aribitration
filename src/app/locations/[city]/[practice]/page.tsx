@@ -519,7 +519,7 @@ export default async function CityPracticePage({ params }: PageProps) {
                 Book Consultation
               </Button>
               <Button variant="secondary" size="lg" href={telHref}>
-                Call {office.telephone}
+                Call us
               </Button>
             </div>
           </div>

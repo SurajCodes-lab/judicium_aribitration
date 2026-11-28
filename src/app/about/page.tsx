@@ -160,7 +160,7 @@ const aboutFaqs = [
   {
     question: "How can I engage Judicium Arbitration?",
     answer:
-      "You can reach us by email at Judiciumarbitration@gmail.com, by phone at +91-9899686318, or through the contact form on our website. We offer an initial consultation to understand your matter and recommend the most effective resolution strategy.",
+      "You can reach us by email at Judiciumarbitration@gmail.com, by phone, or through the contact form on our website. We offer an initial consultation to understand your matter and recommend the most effective resolution strategy.",
   },
 ];
 

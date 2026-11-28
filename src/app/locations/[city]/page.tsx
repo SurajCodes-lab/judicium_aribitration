@@ -360,7 +360,7 @@ export default async function CityLocationPage({ params }: PageProps) {
                         href={`tel:${office.telephone.replace(/[^+\d]/g, "")}`}
                         className="block text-gold-primary hover:underline"
                       >
-                        {office.telephone}
+                        Call this office
                       </a>
                       <a
                         href="mailto:Judiciumarbitration@gmail.com"
@@ -641,7 +641,7 @@ export default async function CityLocationPage({ params }: PageProps) {
                 size="lg"
                 href={`tel:${office.telephone.replace(/[^+\d]/g, "")}`}
               >
-                Call {office.telephone}
+                Call this office
               </Button>
             </div>
           </div>

@@ -399,7 +399,7 @@ export default function Header() {
                 aria-label={`Call Judicium Arbitration on ${PHONE_DISPLAY}`}
               >
                 <LawIcons.Phone className="w-4 h-4" />
-                <span className="hidden 2xl:inline">{PHONE_DISPLAY}</span>
+                <span className="hidden 2xl:inline">Call</span>
               </a>
 
               <Link
